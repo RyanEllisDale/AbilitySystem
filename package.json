@@ -23,12 +23,5 @@
     "name": "Ryan-Ellis Dale",
     "email": "RyanEllisDale@protonmail.com",
     "url": "https://ryanellisdale.github.io/Portfolio/"
-  },
-  "samples": [
-    {
-      "displayName": "Sample Scene",
-      "description": "Miniture scene that shows the example runtime and editor scripts.",
-      "path": "Samples/SampleScene"
-    }
-  ]
+  }
 }
