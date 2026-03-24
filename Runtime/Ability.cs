@@ -13,6 +13,7 @@ namespace AbilitySystem
         [SerializeField] private string name;
         [SerializeField] private List<Effect> effects;
         [SerializeField] private List<Condition> conditions;
+        [SerializeField] private DataReference<AbilityCategory> category; 
 
         private void Awake()
         {

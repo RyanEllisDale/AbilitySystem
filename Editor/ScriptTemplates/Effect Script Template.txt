@@ -1,7 +1,7 @@
+// Dependancies :
 using UnityEngine;
-
-namespace AbilitySystem
-{
+#NOTRIM#
+#ROOTNAMESPACEBEGIN#
     [CreateAssetMenu(fileName="#SCRIPTNAME#", menuName="Abilities/Effects/#SCRIPTNAME#")]
     public class #SCRIPTNAME# : Effect
     {
@@ -14,4 +14,4 @@ namespace AbilitySystem
             #NOTRIM#
         }
     }
-}
+#ROOTNAMESPACEEND#
