@@ -1,0 +1,17 @@
+using UnityEngine;
+
+namespace AbilitySystem
+{
+    [CreateAssetMenu(fileName="#SCRIPTNAME#", menuName="Abilities/Effects/#SCRIPTNAME#")]
+    public class #SCRIPTNAME# : Effect
+    {
+        // Data Variables:
+        #NOTRIM#
+        #NOTRIM#
+        // Activation :
+        public override void Activate(GameObject parent, GameObject target)
+        {
+            #NOTRIM#
+        }
+    }
+}

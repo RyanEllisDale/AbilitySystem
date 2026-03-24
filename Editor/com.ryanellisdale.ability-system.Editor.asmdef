@@ -1,0 +1,17 @@
+{
+    "name": "com.ryanellisdale.ability-system.Editor",
+    "rootNamespace": "AbilitySystem.Editor",
+    "references": [
+        "GUID:fd0cf5948cdae7f4e819fe2c99b256f9",
+        "GUID:3b0683e91042ad041b681415b1e2c6d9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
