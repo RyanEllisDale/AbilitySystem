@@ -10,10 +10,29 @@ namespace AbilitySystem
     public class Ability : ScriptableObject
     {
         // Data : 
+        [Header("Effects:")]
         [SerializeField] private string name;
         [SerializeField] private List<Effect> effects;
-        [SerializeField] private List<Condition> conditions;
+        
+        [Header("Categorization:")]
+        [SerializeField] private DataReference<DamageTypes> damageType;
         [SerializeField] private DataReference<AbilityCategory> category; 
+
+        [Header("Requirements:")]
+        [SerializeField] private List<Condition> conditions;
+        [SerializeField] private List<Resource> resources;
+
+        [Header("NDI:")]
+        [SerializeField] private GameEvent NDIGameEvent;
+        [SerializeField] private DataReference<int> NDITurnCooldown;
+        [SerializeField] private DataReference<int> NDIRange;
+
+        // Buffs
+        // Status Effects
+        // States
+
+
+
 
         private void Awake()
         {
@@ -23,23 +42,36 @@ namespace AbilitySystem
         public virtual void Activate(GameObject parent, GameObject target)
         {
             // check conditions
-            bool conditionsMet = true;
             foreach (Condition currentCondition in conditions)
             {
                 if (currentCondition.Evaluate() == false)
                 {
-                    conditionsMet = false;
+                    return;
                 }
             }
         
-            if (conditionsMet == true)
+            // Resources : 
+            foreach (Resource currentResource in resources)
             {
-                foreach(Effect currentEffect in effects)
+                if (currentResource.Evaluate() == false)
                 {
-                    currentEffect.Activate(parent, target);
+                    return;
                 }
             }
-            
+
+            foreach (Resource currentResource in resources)
+            {
+                currentResource.Use();
+            }
+
+
+            // Conditions :
+            foreach(Effect currentEffect in effects)
+            {
+                currentEffect.Activate(parent, target);
+            }
+
+            NDIGameEvent?.Raise();
         }
     }
 }
