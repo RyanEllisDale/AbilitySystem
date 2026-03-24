@@ -5,7 +5,7 @@
   "description": "A modular ability system for grid-based turn-based tactics games built in Unity. Built using the modular architecture package available at: https://github.com/RyanEllisDale/ModularArchitecture",
   "unity": "2019.1",
   "dependencies": {
-    "com.ryanellisdale.modular-architecture": "1.0.0"
+    "com.ryanellisdale.modular-architecture": "https://github.com/RyanEllisDale/ModularArchitecture.git#v1.0.0"
   },
   "license": "MIT",
   "licensesURL": "https://mit-license.org/",
