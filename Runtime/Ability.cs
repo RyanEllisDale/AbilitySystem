@@ -27,20 +27,48 @@ namespace AbilitySystem
         [SerializeField] private DataReference<int> NDITurnCooldown;
         [SerializeField] private DataReference<int> NDIRange;
 
+        [SerializeField] private int currentCooldown = 0;
+
+        [SerializeField] private GameEventListenerSerial listener;
+
         // Buffs
         // Status Effects
         // States
 
-
-
-
-        private void Awake()
+        public void TurnDown()
         {
-            
+            PrintDetails("Cooldown- Down ! :)");
+            currentCooldown = currentCooldown - 1;
         }
+
+        private void OnEnable()
+        {
+            Debug.Log("On Enable - Ability");
+            listener.OnEnable();
+        }
+
+        private void PrintDetails()
+        {
+            Debug.Log("Ability Print Details:\nAbility Name: " + name);
+        }
+
+        private void PrintDetails(string message)
+        {
+            Debug.Log("Ability Print Details:\nAbility Name: " + name + "\n" + message);
+        }
+
 
         public virtual void Activate(GameObject parent, GameObject target)
         {
+            // Cooldown : 
+            if (currentCooldown > 0)
+            {
+                PrintDetails("Cooldown still active for this ability.");
+                return;
+            }
+
+
+
             // check conditions
             foreach (Condition currentCondition in conditions)
             {
@@ -72,6 +100,7 @@ namespace AbilitySystem
             }
 
             NDIGameEvent?.Raise();
+            currentCooldown = NDITurnCooldown;
         }
     }
 }
