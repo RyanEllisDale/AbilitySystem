@@ -20,32 +20,21 @@ namespace AbilitySystem
 
         [Header("Requirements:")]
         [SerializeField] private List<Condition> conditions;
-        [SerializeField] private List<Resource> resources;
+        [SerializeField] private List<Supply> Supplies;
+        [SerializeField] public DataReference<int> turnCooldown;
 
         [Header("NDI:")]
         [SerializeField] private GameEvent NDIGameEvent;
-        [SerializeField] private DataReference<int> NDITurnCooldown;
         [SerializeField] private DataReference<int> NDIRange;
 
-        [SerializeField] private int currentCooldown = 0;
-
-        [SerializeField] private GameEventListenerSerial listener;
+        
+        
 
         // Buffs
         // Status Effects
         // States
 
-        public void TurnDown()
-        {
-            PrintDetails("Cooldown- Down ! :)");
-            currentCooldown = currentCooldown - 1;
-        }
-
-        private void OnEnable()
-        {
-            Debug.Log("On Enable - Ability");
-            listener.OnEnable();
-        }
+        // Disable
 
         private void PrintDetails()
         {
@@ -57,18 +46,8 @@ namespace AbilitySystem
             Debug.Log("Ability Print Details:\nAbility Name: " + name + "\n" + message);
         }
 
-
         public virtual void Activate(GameObject parent, GameObject target)
         {
-            // Cooldown : 
-            if (currentCooldown > 0)
-            {
-                PrintDetails("Cooldown still active for this ability.");
-                return;
-            }
-
-
-
             // check conditions
             foreach (Condition currentCondition in conditions)
             {
@@ -79,17 +58,17 @@ namespace AbilitySystem
             }
         
             // Resources : 
-            foreach (Resource currentResource in resources)
+            foreach (Supply currentSupplies in Supplies)
             {
-                if (currentResource.Evaluate() == false)
+                if (currentSupplies.Evaluate() == false)
                 {
                     return;
                 }
             }
 
-            foreach (Resource currentResource in resources)
+            foreach (Supply currentSupplies in Supplies)
             {
-                currentResource.Use();
+                currentSupplies.Use();
             }
 
 
@@ -99,8 +78,7 @@ namespace AbilitySystem
                 currentEffect.Activate(parent, target);
             }
 
-            NDIGameEvent?.Raise();
-            currentCooldown = NDITurnCooldown;
+            // NDIGameEvent?.Raise();
         }
     }
 }

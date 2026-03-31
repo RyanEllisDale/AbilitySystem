@@ -25,11 +25,11 @@ MonoBehaviour:
     variable: {fileID: 0}
   conditions: []
   resources: []
-  NDIGameEvent: {fileID: 0}
-  NDITurnCooldown:
+  turnCooldown:
     useConstant: 1
-    constantValue: 0
+    constantValue: 1
     variable: {fileID: 0}
+  NDIGameEvent: {fileID: 0}
   NDIRange:
     useConstant: 1
     constantValue: 0
