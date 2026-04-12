@@ -10,9 +10,9 @@ namespace AbilitySystem
         [SerializeField] private DataReference<float> healAmount; 
         
         // Activation :
-        public override void Activate(GameObject parent, GameObject target)
+        public override void Activate(GameObject parent, IUnit target)
         {
-            target.GetComponent<HealthInterface>().UpdateHealth(healAmount);
+            target.UpdateHealth(healAmount);
         }
     }
 }

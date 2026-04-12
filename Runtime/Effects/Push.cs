@@ -9,9 +9,9 @@ namespace AbilitySystem
         [SerializeField] private Vector2Int pushForce;
         
         // Activation :
-        public override void Activate(GameObject parent, GameObject target)
+        public override void Activate(GameObject parent, IUnit target)
         {
-            target.GetComponent<GridInterface>().MoveUnit(pushForce);
+            target.MoveUnit(pushForce);
         }
     }
 }

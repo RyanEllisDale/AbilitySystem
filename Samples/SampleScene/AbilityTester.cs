@@ -35,7 +35,8 @@ namespace AbilitySystem
         [ContextMenu("Activate")]
         private void Activate()
         {
-            ability.Activate(gameObject, target);
+            IUnit unit = target.GetComponent<IUnit>();
+            ability.Activate(gameObject, unit);
         }
 
         [ContextMenu("Initalize")]

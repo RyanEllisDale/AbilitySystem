@@ -6,6 +6,6 @@ namespace AbilitySystem
 {
     public abstract class Effect : ScriptableObject
     {
-        public abstract void Activate(GameObject parent, GameObject target);  
+        public abstract void Activate(GameObject parent, IUnit target);  
     }
 }

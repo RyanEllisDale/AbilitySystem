@@ -10,9 +10,9 @@ namespace AbilitySystem
         [SerializeField] private Vector3 offset;
         
         // Activation :
-        public override void Activate(GameObject parent, GameObject target)
+        public override void Activate(GameObject parent, IUnit target)
         {
-            GameObject newObject = Instantiate(objectPrefab, target.transform.position + offset, target.transform.rotation);
+            // GameObject newObject = Instantiate(objectPrefab, target.transform.position + offset, target.transform.rotation);
         }
     }
 }

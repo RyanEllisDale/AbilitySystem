@@ -10,7 +10,7 @@ namespace AbilitySystem
         [SerializeField] private string message;
         
         // Activation :
-        public override void Activate(GameObject parent, GameObject target)
+        public override void Activate(GameObject parent, IUnit target)
         {
             Debug.Log(message);
         }

@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7d71649266eca844a9739af09c246db, type: 3}
+  m_Name: Test Ability
+  m_EditorClassIdentifier: 
+  name: 'Test Ability - Push '
+  effects:
+  - {fileID: 11400000, guid: e267cea624fcad6448433addcc38d9d5, type: 2}
+  - {fileID: 11400000, guid: 9efd295ab7534ef408813b2df0277281, type: 2}
+  - {fileID: 11400000, guid: 68a26682952bc5047a2309f89ab5fb12, type: 2}
+  damageType:
+    useConstant: 1
+    constantValue: 0
+    variable: {fileID: 0}
+  category:
+    useConstant: 1
+    constantValue: 3
+    variable: {fileID: 0}
+  actionTags: 02000000
+  conditions: []
+  Supplies:
+  - name: Gold
+    resource:
+      useConstant: 0
+      constantValue: 0
+      variable: {fileID: 11400000, guid: 3ac289df06ce06e41ae46e9e2768cb4b, type: 2}
+    cost:
+      useConstant: 1
+      constantValue: 20
+      variable: {fileID: 0}
+  - name: Mana
+    resource:
+      useConstant: 0
+      constantValue: 0
+      variable: {fileID: 11400000, guid: 002e2532a8e7df3429760c352bb9e3dd, type: 2}
+    cost:
+      useConstant: 0
+      constantValue: 0
+      variable: {fileID: 11400000, guid: f4d684066f87b64479084158632d3241, type: 2}
+  turnCooldown:
+    useConstant: 1
+    constantValue: 1
+    variable: {fileID: 0}
+  NDIGameEvent: {fileID: 0}
+  NDIRange:
+    useConstant: 1
+    constantValue: 0
+    variable: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []
