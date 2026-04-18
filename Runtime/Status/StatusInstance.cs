@@ -24,6 +24,17 @@ namespace AbilitySystem
             target.ApplyDamage(data.valueOverTime);
         }
 
+        public StatusData? FindStatusCombination(StatusData aStatusData)
+        {
+            if (data.combination.combinesWith == aStatusData)
+                return data.combination.resultsIn;
+
+            return null;
+        }
+
+
+        
+
 
         // Ignores Duration : 
         public bool Equals(StatusInstance other)

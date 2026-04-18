@@ -17,16 +17,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e267cea624fcad6448433addcc38d9d5, type: 2}
   - {fileID: 11400000, guid: 9efd295ab7534ef408813b2df0277281, type: 2}
   - {fileID: 11400000, guid: 68a26682952bc5047a2309f89ab5fb12, type: 2}
-  damageType:
-    useConstant: 1
-    constantValue: 0
-    variable: {fileID: 0}
-  category:
-    useConstant: 1
-    constantValue: 3
-    variable: {fileID: 0}
+  damageType: 0
+  category: 0
   actionTags: 02000000
-  conditions: []
+  conditions:
+  - name: HealtCheck
+    type: 1
+    comparison: 5
+    subject:
+      rid: 7869257917373087782
+    target:
+      rid: 7869257917373087783
   Supplies:
   - name: Gold
     resource:
@@ -50,6 +51,7 @@ MonoBehaviour:
     useConstant: 1
     constantValue: 1
     variable: {fileID: 0}
+  NDIaudioClips: []
   NDIGameEvent: {fileID: 0}
   NDIRange:
     useConstant: 1
@@ -57,4 +59,16 @@ MonoBehaviour:
     variable: {fileID: 0}
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 7869257917373087782
+      type: {class: FloatReference, ns: ModularArchitecture, asm: com.ryanellisdale.modular-architecture}
+      data:
+        useConstant: 0
+        constantValue: 0
+        variable: {fileID: 11400000, guid: df7bcfd73f43cd840940fe895f3b290d, type: 2}
+    - rid: 7869257917373087783
+      type: {class: FloatReference, ns: ModularArchitecture, asm: com.ryanellisdale.modular-architecture}
+      data:
+        useConstant: 1
+        constantValue: 80
+        variable: {fileID: 0}

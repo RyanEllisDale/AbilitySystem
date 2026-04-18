@@ -1,6 +1,7 @@
 // Dependancies :
 using UnityEngine;
 using ModularArchitecture;
+using System;
 
 namespace AbilitySystem
 {
@@ -10,5 +11,5 @@ namespace AbilitySystem
     }
     
     [CreateAssetMenu(menuName = "Modular/Enums/New DamageTypes")]
-    public class ExtendableDamageTypes : DataContainer<DamageTypes>, EnumBase {}
+    public class ExtendableDamageTypes : DataContainer<DamageTypes> {}
 }

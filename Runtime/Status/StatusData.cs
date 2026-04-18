@@ -5,11 +5,11 @@ using UnityEngine;
 namespace AbilitySystem
 {
     [System.Serializable]
-    public struct Combinations
+    public struct Combination
     {
         [SerializeField] private string name;
-        [SerializeField] public List<StatusData> combinesWith;
-        [SerializeField] public List<StatusData> resultsIn;
+        [SerializeField] public StatusData combinesWith;
+        [SerializeField] public StatusData resultsIn;
     }
 
     public struct placeholderModifier
@@ -27,6 +27,6 @@ namespace AbilitySystem
         [SerializeField] public int valueOverTime;
         [SerializeField] public List<placeholderModifier> modifiers; 
         [SerializeField] public List<ActionTag> targetTags;
-        [SerializeField] public List<Combinations> combinations;
+        [SerializeField] public Combination combination;
     }
 }

@@ -10,5 +10,5 @@ namespace AbilitySystem
     }
     
     [CreateAssetMenu(menuName = "Modular/Enums/New AbilityCategory")]
-    public class ExtendableAbilityCategory : DataContainer<AbilityCategory>, EnumBase {}
+    public class ExtendableAbilityCategory : DataContainer<AbilityCategory> {}
 }

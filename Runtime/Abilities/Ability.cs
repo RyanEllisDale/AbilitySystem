@@ -25,8 +25,8 @@ namespace AbilitySystem
         [SerializeField] private List<Effect> effects;
         
         [Header("Categorization:")]
-        [SerializeField] private DataReference<DamageTypes> damageType;
-        [SerializeField] private DataReference<AbilityCategory> category; 
+        [SerializeField] private DamageTypes damageType;
+        [SerializeField] private AbilityCategory category; 
         [SerializeField] public List<ActionTag> actionTags;
 
         [Header("Requirements:")]
@@ -35,11 +35,9 @@ namespace AbilitySystem
         [SerializeField] public DataReference<int> turnCooldown;
 
         [Header("NDI:")]
+        [SerializeField] private List<AudioClip> NDIaudioClips;
         [SerializeField] private GameEvent NDIGameEvent;
         [SerializeField] private DataReference<int> NDIRange;
-
-        
-        
 
         // Buffs
         // Status Effects
@@ -57,6 +55,16 @@ namespace AbilitySystem
             Debug.Log("Ability Print Details:\nAbility Name: " + name + "\n" + message);
         }
 
+        // /// <summary>
+        // /// Testing XML Parse
+        // /// </summary>
+        // /// <param name="a">First number</param>
+        // /// <param name="b">Second number</param>
+        // public void TestXML()
+        // {
+        //
+        // }
+        
         public virtual bool Activate(GameObject parent, IUnit target)
         {
             Debug.Log("Ability Activation Called");

@@ -9,65 +9,94 @@ namespace AbilitySystem
     public class ApplyStatus : Effect
     {
         // Data Variables:
-        [SerializeField] private StatusData status;
+        [SerializeField] private StatusData statusData;
 
         
+        // Recurse
+        // public void ApplyStatusToTarget(GameObject parent, IUnit target, StatusData aStatusData)
+        // {
+        //     StatusInstance statusInstance = new StatusInstance(status);
+        //     List<StatusInstance> targetStatus = target.GetStatus();
+
+        //     // Redundancy :
+
+        //     if (targetStatus.Contains(statusInstance) == true)
+        //     {
+        //         Debug.Log("DuplicateStatus");
+        //         return;
+        //     }
+
+        //     // Combination Matrix : 
+        //     bool hasCombination = false;
+        //     for (int i = targetStatus.Count -1; i > -1; i = i - 1)
+        //     {
+        //         StatusInstance currentInstance = targetStatus[i];
+        //         HashSet<StatusData> combinationResults = currentInstance.FindStatusCombination(statusInstance);
+
+        //         if (combinationResults.Count > 0)
+        //         {
+        //             hasCombination = true;
+        //             foreach (StatusData status in combinationResults)
+        //             {
+        //                 Debug.Log("Combination Found");                    
+        //                 Debug.Log(status.name + "Has been added");
+
+        //                 target.ApplyStatus(new StatusInstance(status));
+        //             }
+
+        //             Debug.Log(currentInstance.data.name + " has been removed");
+        //             target.RemoveStatus(currentInstance);
+        //         }
+        //     }
+
+        //     if (hasCombination == false)
+        //     {
+        //         target.ApplyStatus(statusInstance);
+        //     } 
+
+
+        // }
+
         // Activation :
         public override void Activate(GameObject parent, IUnit target)
         {
-            StatusInstance statusInstance = new StatusInstance(status);
+            // Make The Instance : 
+            StatusInstance statusInstance = new StatusInstance(statusData);
+            List<StatusInstance> targetStatusInstances = target.GetStatus();
 
-
-            //
-
-            List<StatusInstance> targetStatus = target.GetStatus();
-
-            // Redundancy :
-
-            if (targetStatus.Contains(statusInstance) == true)
+            // Redundancy : 
+            if (targetStatusInstances.Contains(statusInstance) == true)
             {
                 Debug.Log("DuplicateStatus");
                 return;
             }
 
-            // Combination Matrix : 
-            
-            foreach (StatusInstance currentInstance in targetStatus)
+            // Combination Matrix: 
+            bool hasCombination = false;
+            for (int i = targetStatusInstances.Count -1; i > -1; i = i - 1)
             {
-                foreach (Combinations currentCombination in currentInstance.data.combinations)
+                StatusInstance currentInstance = targetStatusInstances[i];
+                StatusData? combinationResult = statusInstance.FindStatusCombination(currentInstance.data);
+                
+                if (combinationResult != null)
                 {
-                    if (currentCombination.combinesWith.Contains(statusInstance.data))
-                    {
-                        Debug.Log("Combination Found");
-
-                        List<StatusData> combinationResults = currentCombination.resultsIn;
-
-
-                        Debug.Log(currentInstance.data.name + " has been removed");
-                        target.RemoveStatus(currentInstance);
-
-                        foreach(StatusData result in combinationResults)
-                        {
-                            Debug.Log(result.name + "Has been added");
-                            target.ApplyStatus(new StatusInstance(result));
-                        }
-
-
-                        
-
-                        return; 
-                    }
+                    hasCombination = true;
+                    Debug.Log("Combination Found");                    
+                    Debug.Log(combinationResult.name + "Has been added");
+                    target.ApplyStatus(new StatusInstance(combinationResult));
                 }
             }
 
+            if (hasCombination == true)
+            {
+                Debug.Log(statusInstance.data.name + " has been removed");
+                target.RemoveStatus(statusInstance);
+                return;
+            }
 
-            // status data combination 
-            // target status 
-
-
+            Debug.Log(statusInstance.data.name + "Has been added");
             target.ApplyStatus(statusInstance);
         }
-
-
     }
+
 }

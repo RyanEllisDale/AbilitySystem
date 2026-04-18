@@ -17,9 +17,7 @@ MonoBehaviour:
   duration: 3
   valueOverTime: 0
   targetTags: 02000000
-  combinations:
-  - name: FrostBurn
-    combinesWith:
-    - {fileID: 11400000, guid: d7e6449e8d7a28845a0d5497f5837ff9, type: 2}
-    resultsIn:
-    - {fileID: 11400000, guid: bba564351d545b84093eeef5ecb65e23, type: 2}
+  combination:
+    name: FrostBurn
+    combinesWith: {fileID: 11400000, guid: d7e6449e8d7a28845a0d5497f5837ff9, type: 2}
+    resultsIn: {fileID: 11400000, guid: bba564351d545b84093eeef5ecb65e23, type: 2}
