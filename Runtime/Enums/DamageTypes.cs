@@ -5,11 +5,14 @@ using System;
 
 namespace AbilitySystem
 {
-    public enum DamageTypes
+    public enum DamageType
     {
         None, Direct, Magical, Area    
     }
-    
-    [CreateAssetMenu(menuName = "Modular/Enums/New DamageTypes")]
-    public class ExtendableDamageTypes : DataContainer<DamageTypes> {}
+
+    [CreateAssetMenu(fileName = "DamageTypes", menuName = "Modular/Enums/Enum : DamageTypes", order = 1)]
+    public class ExtendableDamageType : ExtendableEnum<DamageType> 
+    {
+    }
+
 }

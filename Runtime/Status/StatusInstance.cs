@@ -18,23 +18,10 @@ namespace AbilitySystem
             data = aData;
         }
 
-        public void Activation(IUnit target)
-        {
-            Debug.Log("Status Activation");
-            target.ApplyDamage(data.valueOverTime);
-        }
-
-        public StatusData? FindStatusCombination(StatusData aStatusData)
-        {
-            if (data.combination.combinesWith == aStatusData)
-                return data.combination.resultsIn;
-
-            return null;
-        }
-
-
-        
-
+        public virtual bool OnTurnStart(IStatus target) { return false; }
+        public virtual bool OnTurnEnd(IStatus target) { return false; }
+        public virtual void OnApply(IStatus target) { }
+        public virtual void OnRemove(IStatus target) { }
 
         // Ignores Duration : 
         public bool Equals(StatusInstance other)
@@ -59,6 +46,5 @@ namespace AbilitySystem
                 return HashCode.Combine(data, currentDuration);
             }
         }
-
     }
 }

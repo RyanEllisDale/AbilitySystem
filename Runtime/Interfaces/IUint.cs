@@ -4,13 +4,8 @@ using UnityEngine;
 
 namespace AbilitySystem
 {
-    public interface IUnit : IGrid, IHealth
+    public interface IUnit : IGrid, IHealth, IStatus, IStats
     {
-        public void ApplyStatusEffects(List<StatusInstance> aStatusInstanceList);
-        public void ApplyStatus(StatusInstance aStatusInstance);
-        public void RemoveStatus(StatusInstance aStatusInstance);
-        public void ApplyDamage(int damage);
-        public void TriggerStatus();
-        public List<StatusInstance> GetStatus();
+        public List<AbilityInstance> abilityInstances { get; }
     }
 }

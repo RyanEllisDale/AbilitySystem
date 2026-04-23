@@ -9,6 +9,9 @@ namespace AbilitySystem
         None, Offense,Defense,Support    
     }
     
-    [CreateAssetMenu(menuName = "Modular/Enums/New AbilityCategory")]
-    public class ExtendableAbilityCategory : DataContainer<AbilityCategory> {}
+    [CreateAssetMenu(fileName = "AbilityCategory", menuName = "Modular/Enums/Enum : AbilityCategory", order = 1)]
+    public class ExtendableAbilityCategory : ExtendableEnum<AbilityCategory> 
+    {
+
+    }
 }

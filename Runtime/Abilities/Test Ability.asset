@@ -12,23 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d71649266eca844a9739af09c246db, type: 3}
   m_Name: Test Ability
   m_EditorClassIdentifier: 
-  name: 'Test Ability - Push '
-  effects:
+  name: 
+  audioClips:
+  - {fileID: 8300000, guid: 868329efab2ca464f9935216bfd64f59, type: 3}
+  - {fileID: 8300000, guid: 360d400b93c93b44ea1a6ca964366f9f, type: 3}
+  plugInEffects:
   - {fileID: 11400000, guid: e267cea624fcad6448433addcc38d9d5, type: 2}
-  - {fileID: 11400000, guid: 9efd295ab7534ef408813b2df0277281, type: 2}
   - {fileID: 11400000, guid: 68a26682952bc5047a2309f89ab5fb12, type: 2}
-  damageType: 0
-  category: 0
+  - {fileID: 11400000, guid: 0ccd2abb3b863704db2584abfc9b241b, type: 2}
+  - {fileID: 11400000, guid: 7c114968cb5aa344e90f55c654a86b26, type: 2}
+  range: 0
+  damageType: 2
+  category: 3
   actionTags: 02000000
   conditions:
-  - name: HealtCheck
-    type: 1
-    comparison: 5
-    subject:
-      rid: 7869257917373087782
-    target:
-      rid: 7869257917373087783
-  Supplies:
+  - useConstant: 0
+    constantValue:
+      name: 
+      type: 1
+      comparison: 4
+      subject:
+        rid: 109475543128211464
+      target:
+        rid: 109475543128211465
+    variable: {fileID: 11400000, guid: 1f16e169ef9ba8d40a14e01aa7895c2e, type: 2}
+  supplies:
   - name: Gold
     resource:
       useConstant: 0
@@ -38,37 +46,22 @@ MonoBehaviour:
       useConstant: 1
       constantValue: 20
       variable: {fileID: 0}
-  - name: Mana
-    resource:
-      useConstant: 0
-      constantValue: 0
-      variable: {fileID: 11400000, guid: 002e2532a8e7df3429760c352bb9e3dd, type: 2}
-    cost:
-      useConstant: 0
-      constantValue: 0
-      variable: {fileID: 11400000, guid: f4d684066f87b64479084158632d3241, type: 2}
   turnCooldown:
     useConstant: 1
     constantValue: 1
     variable: {fileID: 0}
-  NDIaudioClips: []
-  NDIGameEvent: {fileID: 0}
-  NDIRange:
-    useConstant: 1
-    constantValue: 0
-    variable: {fileID: 0}
   references:
     version: 2
     RefIds:
-    - rid: 7869257917373087782
-      type: {class: FloatReference, ns: ModularArchitecture, asm: com.ryanellisdale.modular-architecture}
-      data:
-        useConstant: 0
-        constantValue: 0
-        variable: {fileID: 11400000, guid: df7bcfd73f43cd840940fe895f3b290d, type: 2}
-    - rid: 7869257917373087783
+    - rid: 109475543128211464
       type: {class: FloatReference, ns: ModularArchitecture, asm: com.ryanellisdale.modular-architecture}
       data:
         useConstant: 1
-        constantValue: 80
+        constantValue: 0
+        variable: {fileID: 0}
+    - rid: 109475543128211465
+      type: {class: FloatReference, ns: ModularArchitecture, asm: com.ryanellisdale.modular-architecture}
+      data:
+        useConstant: 1
+        constantValue: 0
         variable: {fileID: 0}
