@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['ibuffcontainer_0',['IBuffContainer',['../interface_ability_system_1_1_buff_1_1_i_buff_container.html',1,'AbilitySystem::Buff']]],
+  ['ibuffcontainer_0',['IBuffContainer',['../buff_page.html#autotoc_md54',1,'5. IBuffContainer'],['../interface_ability_system_1_1_buff_1_1_i_buff_container.html',1,'AbilitySystem.Buff.IBuffContainer']]],
   ['id_1',['id',['../class_ability_system_1_1_ability_1_1_ability_data.html#a1730f7a1a8a224bbe2967387d0c3aceb',1,'AbilitySystem.Ability.AbilityData.id'],['../class_ability_system_1_1_buff_1_1_buff_data.html#a07a3c927d81caeda17ce266a83e53567',1,'AbilitySystem.Buff.BuffData.id'],['../class_ability_system_1_1_status_1_1_status_data.html#a1e87b42f1b9fb438d989f9a067031ec9',1,'AbilitySystem.Status.StatusData.id'],['../class_ability_system_1_1_supplies_1_1_supply.html#a41af1e8a16fe4ef39a5cff75d7899827',1,'AbilitySystem.Supplies.Supply.id']]],
   ['if_20an_20ability_20can_20be_20used_2',['Checking if an Ability Can Be Used',['../ability_page.html#autotoc_md17',1,'']]],
   ['in_20code_3',['B) Create and assign abilities entirely in code',['../ability_page.html#autotoc_md12',1,'']]],
@@ -15,14 +15,15 @@ var searchData=
   ['instance_12',['instance',['../class_ability_system_1_1_status_1_1_status_effect_mixer.html#adc83a0f032adcbe755d2264ed9e0f050',1,'AbilitySystem::Status::StatusEffectMixer']]],
   ['instances_13',['3. Creating Ability Instances',['../ability_page.html#autotoc_md9',1,'']]],
   ['instances_20at_20runtime_14',['A) Assign AbilityData in the inspector and create instances at runtime',['../ability_page.html#autotoc_md11',1,'']]],
-  ['integrate_20with_20abilities_15',['3. How Effects Integrate With Abilities',['../effect_page.html#autotoc_md55',1,'']]],
+  ['integrate_20with_20abilities_15',['3. How Effects Integrate With Abilities',['../effect_page.html#autotoc_md70',1,'']]],
   ['integrating_20abilities_20into_20gameplay_16',['6. Integrating Abilities Into Gameplay',['../ability_page.html#autotoc_md19',1,'']]],
-  ['integrating_20effects_20with_20ui_20vfx_20and_20audio_17',['7. Integrating Effects With UI, VFX, and Audio',['../effect_page.html#autotoc_md59',1,'']]],
-  ['integrating_20statuses_20into_20gameplay_18',['8. Integrating Statuses Into Gameplay',['../status_page.html#autotoc_md74',1,'']]],
-  ['into_20gameplay_19',['Into Gameplay',['../ability_page.html#autotoc_md19',1,'6. Integrating Abilities Into Gameplay'],['../status_page.html#autotoc_md74',1,'8. Integrating Statuses Into Gameplay']]],
-  ['isactivatable_20',['IsActivatable',['../class_ability_system_1_1_ability_system_a_p_i.html#ae500c351b3e72b01d205be90d4be26f2',1,'AbilitySystem::AbilitySystemAPI']]],
-  ['iscomponentofactive_21',['IsComponentOfActive',['../class_ability_system_1_1_status_1_1_status_manager.html#a5fdbc900cfd8d370d24addefb9699264',1,'AbilitySystem::Status::StatusManager']]],
-  ['istatuscontainer_22',['IStatusContainer',['../interface_ability_system_1_1_status_1_1_i_status_container.html',1,'AbilitySystem::Status']]],
-  ['it_23',['Step 4 — Execute It',['../ability_page.html#autotoc_md26',1,'']]],
-  ['iunit_24',['IUnit',['../interface_ability_system_1_1_i_unit.html',1,'AbilitySystem']]]
+  ['integrating_20buffs_20with_20units_17',['9. Integrating Buffs With Units',['../buff_page.html#autotoc_md58',1,'']]],
+  ['integrating_20effects_20with_20ui_20vfx_20and_20audio_18',['7. Integrating Effects With UI, VFX, and Audio',['../effect_page.html#autotoc_md74',1,'']]],
+  ['integrating_20statuses_20into_20gameplay_19',['8. Integrating Statuses Into Gameplay',['../status_page.html#autotoc_md89',1,'']]],
+  ['into_20gameplay_20',['Into Gameplay',['../ability_page.html#autotoc_md19',1,'6. Integrating Abilities Into Gameplay'],['../status_page.html#autotoc_md89',1,'8. Integrating Statuses Into Gameplay']]],
+  ['isactivatable_21',['IsActivatable',['../class_ability_system_1_1_ability_system_a_p_i.html#ae500c351b3e72b01d205be90d4be26f2',1,'AbilitySystem::AbilitySystemAPI']]],
+  ['iscomponentofactive_22',['IsComponentOfActive',['../class_ability_system_1_1_status_1_1_status_manager.html#a5fdbc900cfd8d370d24addefb9699264',1,'AbilitySystem::Status::StatusManager']]],
+  ['istatuscontainer_23',['IStatusContainer',['../interface_ability_system_1_1_status_1_1_i_status_container.html',1,'AbilitySystem::Status']]],
+  ['it_24',['Step 4 — Execute It',['../ability_page.html#autotoc_md26',1,'']]],
+  ['iunit_25',['IUnit',['../interface_ability_system_1_1_i_unit.html',1,'AbilitySystem']]]
 ];

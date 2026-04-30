@@ -96,7 +96,7 @@ $(function(){initNavTree('status_page.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__documentation_2_status_page"></a></p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md66"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md81"></a>
 How‑To: Status Effects</h1>
 <p>Statuses are long‑lasting effects applied to units during gameplay. They can heal over time, deal damage over time, apply buffs, combine into new effects, or trigger logic at the start or end of each turn.</p>
 <p>This chapter explains: </p><pre class="fragment">- What a StatusData is
@@ -109,7 +109,7 @@ How‑To: Status Effects</h1>
 - How to integrate statuses into your turn system
 - How to connect statuses to UI, VFX, and audio
 - Best practices
-</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md67"></a>
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md82"></a>
 1. Understanding Statuses</h2>
 <p>Statuses in this system are split into two layers: StatusData (Permanent Data)</p>
 <p>A ScriptableObject that defines: </p><pre class="fragment">- id
@@ -133,7 +133,7 @@ How‑To: Status Effects</h1>
 - Statuses can be composite (multiple sub‑effects)
 - Statuses can apply buffs
 </pre><p>Statuses do not handle UI, VFX, or audio. Developers should use AbilitySystemAPI events to connect statuses to presentation. </p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md83"></a>
 2. StatusData</h2>
 <p>A StatusData defines the permanent configuration of a status. </p><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span>StatusData : ScriptableObject</div>
 <div class="line">{</div>
@@ -148,13 +148,9 @@ How‑To: Status Effects</h1>
 - description  A multiline description for UI or debugging.
 - duration  How many turns the status lasts once applied.
 - components  A flattened list of sub‑effects used for mixing logic.
-</pre><p>Creating a StatusData Code</p>
-<p>Right‑click → Create → Abilities → Status → Status : &lt;Type&gt;</p>
-<p>Script Generation Template</p>
-<p>You can also generate a new status script via: Code</p>
-<p>Assets → Create → Abilities → Status → Create New Status</p>
-<p>This produces a ready‑to‑edit StatusData + StatusInstance pair. </p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md69"></a>
+</pre><p>Creating a StatusData :</p>
+<p>Assets → Create → Abilities → Status → Create New Status This produces a ready‑to‑edit StatusData + StatusInstance pair.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md84"></a>
 3. StatusInstance</h2>
 <p>A StatusInstance stores runtime state and implements turn‑based behavior. </p><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>StatusInstance : IEquatable&lt;StatusInstance&gt;</div>
 <div class="line">{</div>
@@ -170,9 +166,8 @@ How‑To: Status Effects</h1>
 - OnRemove  Called when the status expires or is removed.
 - OnTurnStart  Called at the start of each turn.
 - OnTurnEnd  Called at the end of each turn.
-</pre><p>Equality</p>
-<p>Two StatusInstances are considered equal if they share the same StatusData. </p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
+</pre><p><b>IEquatable</b> : Two StatusInstances are considered equal if they share the same StatusData.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md85"></a>
 4. StatusManager</h2>
 <p>Each unit implementing IStatusContainer owns a StatusManager. </p><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>StatusManager</div>
 <div class="line">{</div>
@@ -194,7 +189,7 @@ How‑To: Status Effects</h1>
 </pre><p>Removing a Status </p><div class="fragment"><div class="line">RemoveEffect(StatusData effect)</div>
 <div class="line">RemoveEffect(StatusInstance instance)</div>
 </div><!-- fragment --><p> Both remove the status and call OnRemove. </p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md71"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md86"></a>
 5. Status Mixing</h2>
 <p>Statuses can combine into new statuses using MixRules. MixRule </p><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>MixRule</div>
 <div class="line">{</div>
@@ -202,10 +197,8 @@ How‑To: Status Effects</h1>
 <div class="line">    <span class="keyword">public</span> StatusData effectB;</div>
 <div class="line">    <span class="keyword">public</span> StatusData result;</div>
 <div class="line">}</div>
-</div><!-- fragment --><p> StatusEffectMixingDatabase</p>
-<p>A ScriptableObject containing all mix rules. Code</p>
-<p>Right‑click → Create → Abilities → Status → Mixing Database</p>
-<p>StatusEffectMixer Singleton </p><div class="fragment"><div class="line">StatusEffectMixer.instance.TryMix(a, b)</div>
+</div><!-- fragment --><p> StatusEffectMixingDatabase A ScriptableObject containing all mix rules. Right‑click → Create → Abilities → Status → Mixing Database StatusEffectMixer Singleton</p>
+<div class="fragment"><div class="line">StatusEffectMixer.instance.TryMix(a, b)</div>
 </div><!-- fragment --><p> How Mixing Works</p>
 <p>When applying a new status: </p><pre class="fragment">- Check if it mixes with any active status
 - If so, remove the active status
@@ -216,7 +209,7 @@ How‑To: Status Effects</h1>
 <p>MixRules automatically generate flattened component lists so the system knows: </p><pre class="fragment">- Which statuses are “ingredients”
 - Which statuses should not be re‑applied
 - How to prevent circular mixes
-</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md72"></a>
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md87"></a>
 6. Built‑In Statuses</h2>
 <p>The package includes several ready‑to‑use statuses. Built‑In Status Summary </p><table class="markdownTable">
 <tr class="markdownTableHead">
@@ -248,12 +241,12 @@ How‑To: Status Effects</h1>
 - Forwards OnRemove
 </pre><p>BuffStatus</p>
 <p>Applies a BuffData as a status. </p><div class="fragment"><div class="line">AbilitySystemAPI.ApplyBuff(statsContainer, _buffStatusData.data);</div>
-</div><!-- fragment --> <h2 class="doxsection"><a class="anchor" id="autotoc_md73"></a>
+</div><!-- fragment --> <h2 class="doxsection"><a class="anchor" id="autotoc_md88"></a>
 7. Creating Custom Statuses</h2>
-<p>Use the script template: Code</p>
+<p>Use the script template:</p>
 <p>Assets → Create → Abilities → Status → Create New Status</p>
-<p>This generates: </p><pre class="fragment">- &lt;Name&gt;StatusData
-- &lt;Name&gt;StatusInstance
+<p>This generates: </p><pre class="fragment">- &lt;New Status&gt;StatusData
+- &lt;New Status&gt;StatusInstance
 </pre><p>Example: Stun </p><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">bool</span> OnApply(IStatusContainer target)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// Disable movement or actions</span></div>
@@ -268,7 +261,7 @@ How‑To: Status Effects</h1>
 <div class="line">    <span class="comment">// Reduce movement range</span></div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
-</div><!-- fragment --> <h2 class="doxsection"><a class="anchor" id="autotoc_md74"></a>
+</div><!-- fragment --> <h2 class="doxsection"><a class="anchor" id="autotoc_md89"></a>
 8. Integrating Statuses Into Gameplay</h2>
 <p>Applying a Status </p><div class="fragment"><div class="line">AbilitySystemAPI.ApplyStatus(unit, statusData);</div>
 </div><!-- fragment --><p> Removing a Status </p><div class="fragment"><div class="line">AbilitySystemAPI.RemoveStatus(unit, statusData);</div>
@@ -289,7 +282,7 @@ How‑To: Status Effects</h1>
 - Spawn VFX
 - Play audio
 - Update UI
-</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md75"></a>
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md90"></a>
 9. Best Practices</h2>
 <pre class="fragment">- Keep statuses small and focused
 - Use mixing for emergent gameplay
@@ -299,7 +292,7 @@ How‑To: Status Effects</h1>
 - Keep StatusData immutable
 - Use StatusInstance for runtime state only
 - Use components to prevent re‑applying ingredient statuses
-</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md76"></a>
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md91"></a>
 10. Summary</h2>
 <p>Statuses in the Tactics Ability System Package are: </p><pre class="fragment">- Modular
 - Turn‑based
@@ -307,9 +300,9 @@ How‑To: Status Effects</h1>
 - Mixable
 - Backend‑only
 - Designed for tactics games
-</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md77"></a>
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md92"></a>
 Thank You For Reading</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md78"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md93"></a>
 <span class="tt">Suggested Readings</span></h3>
 <p><a class="el" href="_installation.html" title="Installation">How to install the package</a></p>
 <p><a href="https://ryanellisdale.github.io/ModularArchitecture/md__documentation_2_credits.html">Credits</a></p>

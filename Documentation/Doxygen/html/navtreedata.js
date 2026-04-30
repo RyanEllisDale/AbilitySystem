@@ -51,14 +51,14 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Credits", "md__documentation_2_credits.html", [
-      [ "Doxygen", "md__documentation_2_credits.html#autotoc_md50", null ],
-      [ "Doxygen Awesome CSS", "md__documentation_2_credits.html#autotoc_md51", null ]
+      [ "Doxygen", "md__documentation_2_credits.html#autotoc_md65", null ],
+      [ "Doxygen Awesome CSS", "md__documentation_2_credits.html#autotoc_md66", null ]
     ] ],
     [ "How-To-Use", "md__documentation_2_how-_to-_use.html", "md__documentation_2_how-_to-_use" ],
     [ "LICENSE", "md__l_i_c_e_n_s_e.html", null ],
     [ "Third Party Notices", "md__third_01_party_01_notices.html", [
-      [ "Doxygen Awesome CSS", "md__third_01_party_01_notices.html#autotoc_md80", null ],
-      [ "Modular Architecture", "md__third_01_party_01_notices.html#autotoc_md81", null ]
+      [ "Doxygen Awesome CSS", "md__third_01_party_01_notices.html#autotoc_md95", null ],
+      [ "Modular Architecture", "md__third_01_party_01_notices.html#autotoc_md96", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]
@@ -81,7 +81,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_p_i_page.html",
-"class_ability_system_1_1_status_1_1_composite_status_data.html#ada1230706de645607127b18a8b0517b3"
+"class_ability_system_1_1_status_1_1_buff_status_instance.html",
+"struct_ability_system_1_1_buff_1_1_stat_modifier.html#a516e7b403d4266fec17cef512b6fe3f7"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

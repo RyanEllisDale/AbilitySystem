@@ -12,8 +12,8 @@ var searchData=
   ['direct_9',['Direct',['../namespace_ability_system_1_1_ability.html#a04e93bd629369376e7f264f946bb438aafd1dd0c603be8170f9eae0be9f2f6afb',1,'AbilitySystem::Ability']]],
   ['disk_10',['Package Manager Disk',['../_installation.html#autotoc_md43',1,'']]],
   ['documentation_11',['Documentation',['../index.html#autotoc_md34',1,'']]],
-  ['doxygen_12',['Doxygen',['../md__documentation_2_credits.html#autotoc_md50',1,'']]],
-  ['doxygen_20awesome_20css_13',['Doxygen Awesome CSS',['../md__documentation_2_credits.html#autotoc_md51',1,'Doxygen Awesome CSS'],['../md__third_01_party_01_notices.html#autotoc_md80',1,'Doxygen Awesome CSS']]],
+  ['doxygen_12',['Doxygen',['../md__documentation_2_credits.html#autotoc_md65',1,'']]],
+  ['doxygen_20awesome_20css_13',['Doxygen Awesome CSS',['../md__documentation_2_credits.html#autotoc_md66',1,'Doxygen Awesome CSS'],['../md__third_01_party_01_notices.html#autotoc_md95',1,'Doxygen Awesome CSS']]],
   ['duration_14',['duration',['../class_ability_system_1_1_buff_1_1_buff_data.html#ab49b96ae70848a8afabd42aaaf7fc24e',1,'AbilitySystem.Buff.BuffData.duration'],['../class_ability_system_1_1_status_1_1_status_data.html#ab7f95c7ddf2d75a7bdf96faa45d3332e',1,'AbilitySystem.Status.StatusData.duration']]],
   ['during_20execution_15',['What Happens During Execution',['../ability_page.html#autotoc_md18',1,'']]]
 ];
