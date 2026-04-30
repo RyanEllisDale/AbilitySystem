@@ -1,0 +1,81 @@
+\doxysection{Ability\+System.\+Status.\+Composite\+Status\+Data Class Reference}
+\hypertarget{class_ability_system_1_1_status_1_1_composite_status_data}{}\label{class_ability_system_1_1_status_1_1_composite_status_data}\index{AbilitySystem.Status.CompositeStatusData@{AbilitySystem.Status.CompositeStatusData}}
+
+
+\doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} representing a composite effect made up of multiple sub‑effects. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ sub\+Effects :\+}} An array of \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} assets that will activate together. ~\newline
+.  
+
+
+Inheritance diagram for Ability\+System.\+Status.\+Composite\+Status\+Data:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_ability_system_1_1_status_1_1_composite_status_data}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance}{Status\+Instance}} \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_composite_status_data_ada1230706de645607127b18a8b0517b3}{Create\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Creates a runtime instance that manages all sub‑effect instances. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data}{Ability\+System.\+Status.\+Status\+Data}}}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance}{Status\+Instance}} \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data_a680b84696d6d3f2097d8d7664d948f0e}{Create\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Creates a runtime instance of this status effect. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data}}\+[$\,$]\+ \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_composite_status_data_a27ceace14a95bff2c8e0a0927d5f7db5}{sub\+Effects}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data}{Ability\+System.\+Status.\+Status\+Data}}}
+\begin{DoxyCompactItemize}
+\item 
+string \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data_a1e87b42f1b9fb438d989f9a067031ec9}{id}}
+\item 
+string \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data_a8e1133b175443d9a505cf50dc3bc7aaf}{description}}
+\item 
+int \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data_ab7f95c7ddf2d75a7bdf96faa45d3332e}{duration}} = 1
+\item 
+List$<$ \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data}} $>$ \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data_a1eef5e48ceb1cc8f271595fcfb443ca2}{components}} = new List$<$\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data}}$>$()
+\begin{DoxyCompactList}\small\item\em Component effects used for mixing and combination logic. Flatened list of \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} that is used to check if this status is the restulf of a combination. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} representing a composite effect made up of multiple sub‑effects. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ sub\+Effects :\+}} An array of \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} assets that will activate together. ~\newline
+. 
+
+\label{doc-func-members}
+\Hypertarget{class_ability_system_1_1_status_1_1_composite_status_data_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ability_system_1_1_status_1_1_composite_status_data_ada1230706de645607127b18a8b0517b3}\index{AbilitySystem.Status.CompositeStatusData@{AbilitySystem.Status.CompositeStatusData}!CreateInstance@{CreateInstance}}
+\index{CreateInstance@{CreateInstance}!AbilitySystem.Status.CompositeStatusData@{AbilitySystem.Status.CompositeStatusData}}
+\doxysubsubsection{\texorpdfstring{CreateInstance()}{CreateInstance()}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_status_1_1_composite_status_data_ada1230706de645607127b18a8b0517b3} 
+override \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance}{Status\+Instance}} Ability\+System.\+Status.\+Composite\+Status\+Data.\+Create\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a runtime instance that manages all sub‑effect instances. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_ability_system_1_1_status_1_1_composite_status_data_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ability_system_1_1_status_1_1_composite_status_data_a27ceace14a95bff2c8e0a0927d5f7db5}\index{AbilitySystem.Status.CompositeStatusData@{AbilitySystem.Status.CompositeStatusData}!subEffects@{subEffects}}
+\index{subEffects@{subEffects}!AbilitySystem.Status.CompositeStatusData@{AbilitySystem.Status.CompositeStatusData}}
+\doxysubsubsection{\texorpdfstring{subEffects}{subEffects}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_status_1_1_composite_status_data_a27ceace14a95bff2c8e0a0927d5f7db5} 
+\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data}} \+[$\,$]\+ Ability\+System.\+Status.\+Composite\+Status\+Data.\+sub\+Effects}
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Runtime/\+\+Status/\+\+Status Types/\+Composite\+Status.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,117 @@
+\doxysection{Ability\+System.\+Ability.\+Ability\+Data Class Reference}
+\hypertarget{class_ability_system_1_1_ability_1_1_ability_data}{}\label{class_ability_system_1_1_ability_1_1_ability_data}\index{AbilitySystem.Ability.AbilityData@{AbilitySystem.Ability.AbilityData}}
+
+
+Data asset defining an ability within the \doxylink{namespace_ability_system_1_1_ability}{Ability} System. Stores all permanent configuration such as effects, audio, categorization, requirements, and cooldown settings. ~\newline
+~\newline
+.  
+
+
+Inheritance diagram for Ability\+System.\+Ability.\+Ability\+Data:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ability_system_1_1_ability_1_1_ability_data}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_ability_data_a1730f7a1a8a224bbe2967387d0c3aceb}{id}}
+\item 
+List$<$ Audio\+Clip $>$ \doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_ability_data_a614d44eeb94a8d2801320ad54ae6185a}{audio\+Clips}}
+\item 
+List$<$ \doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_effect}{Effect}} $>$ \doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_ability_data_afb25d2e034a28b82af4d00c5496c8378}{plug\+In\+Effects}}
+\item 
+int \doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_ability_data_afd49d12f44914eddf20501aace3f6e6e}{range}}
+\item 
+\doxymbox{\hyperlink{namespace_ability_system_1_1_ability_a04e93bd629369376e7f264f946bb438a}{Damage\+Type}} \doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_ability_data_a4f53c41804f0359201f3da9d7cd2ec79}{damage\+Type}}
+\item 
+\doxymbox{\hyperlink{namespace_ability_system_1_1_ability_a9f71bffef370480022c5fbc45907bed2}{Ability\+Category}} \doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_ability_data_a5937f2426a931e63d2adab47c4f5d708}{ability\+Category}}
+\item 
+List$<$ Condition\+Reference $>$ \doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_ability_data_a19edde0572214aeeda0245b5ae108701}{conditions}}
+\item 
+List$<$ \doxymbox{\hyperlink{class_ability_system_1_1_supplies_1_1_supply}{Supply}} $>$ \doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_ability_data_aabfaa426d876e75d93e1cc33f41f8305}{supplies}}
+\item 
+Data\+Reference$<$ int $>$ \doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_ability_data_aa5499535be74b975b80a9bb3c4a86178}{turn\+Cooldown}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Data asset defining an ability within the \doxylink{namespace_ability_system_1_1_ability}{Ability} System. Stores all permanent configuration such as effects, audio, categorization, requirements, and cooldown settings. ~\newline
+~\newline
+. 
+
+Contains :\+ ~\newline
+ {\bfseries{-\/ id :\+}} A unique string identifier for referencing this ability, ~\newline
+ {\bfseries{-\/ audio\+Clips :\+}} A list of audio clips to be referenced by developers ( via event calls or reading data ), ~\newline
+ {\bfseries{-\/ plug\+In\+Effects :\+}} A list of \doxylink{class_ability_system_1_1_ability_1_1_effect}{Effect} objects executed when the ability is used , ~\newline
+ {\bfseries{-\/ range :\+}} The maximum distance at which the ability can target ( must be implemented ny developers for their own range system ), ~\newline
+ {\bfseries{-\/ damage\+Type :\+}} The type of damage this ability deals, ~\newline
+ {\bfseries{-\/ ability\+Category :\+}} The ability category this ability belongs to, ~\newline
+ {\bfseries{-\/ conditions :\+}} Requirements that must be met before the ability can be used, ~\newline
+ {\bfseries{-\/ supplies :\+}} Resource costs required to activate the ability, ~\newline
+ {\bfseries{-\/ turn\+Cooldown :\+}} The number of turns required before the ability can be reused. ~\newline
+ 
+
+\label{doc-variable-members}
+\Hypertarget{class_ability_system_1_1_ability_1_1_ability_data_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ability_system_1_1_ability_1_1_ability_data_a5937f2426a931e63d2adab47c4f5d708}\index{AbilitySystem.Ability.AbilityData@{AbilitySystem.Ability.AbilityData}!abilityCategory@{abilityCategory}}
+\index{abilityCategory@{abilityCategory}!AbilitySystem.Ability.AbilityData@{AbilitySystem.Ability.AbilityData}}
+\doxysubsubsection{\texorpdfstring{abilityCategory}{abilityCategory}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_ability_1_1_ability_data_a5937f2426a931e63d2adab47c4f5d708} 
+\doxymbox{\hyperlink{namespace_ability_system_1_1_ability_a9f71bffef370480022c5fbc45907bed2}{Ability\+Category}} Ability\+System.\+Ability.\+Ability\+Data.\+ability\+Category}
+
+\Hypertarget{class_ability_system_1_1_ability_1_1_ability_data_a614d44eeb94a8d2801320ad54ae6185a}\index{AbilitySystem.Ability.AbilityData@{AbilitySystem.Ability.AbilityData}!audioClips@{audioClips}}
+\index{audioClips@{audioClips}!AbilitySystem.Ability.AbilityData@{AbilitySystem.Ability.AbilityData}}
+\doxysubsubsection{\texorpdfstring{audioClips}{audioClips}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_ability_1_1_ability_data_a614d44eeb94a8d2801320ad54ae6185a} 
+List$<$Audio\+Clip$>$ Ability\+System.\+Ability.\+Ability\+Data.\+audio\+Clips}
+
+\Hypertarget{class_ability_system_1_1_ability_1_1_ability_data_a19edde0572214aeeda0245b5ae108701}\index{AbilitySystem.Ability.AbilityData@{AbilitySystem.Ability.AbilityData}!conditions@{conditions}}
+\index{conditions@{conditions}!AbilitySystem.Ability.AbilityData@{AbilitySystem.Ability.AbilityData}}
+\doxysubsubsection{\texorpdfstring{conditions}{conditions}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_ability_1_1_ability_data_a19edde0572214aeeda0245b5ae108701} 
+List$<$Condition\+Reference$>$ Ability\+System.\+Ability.\+Ability\+Data.\+conditions}
+
+\Hypertarget{class_ability_system_1_1_ability_1_1_ability_data_a4f53c41804f0359201f3da9d7cd2ec79}\index{AbilitySystem.Ability.AbilityData@{AbilitySystem.Ability.AbilityData}!damageType@{damageType}}
+\index{damageType@{damageType}!AbilitySystem.Ability.AbilityData@{AbilitySystem.Ability.AbilityData}}
+\doxysubsubsection{\texorpdfstring{damageType}{damageType}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_ability_1_1_ability_data_a4f53c41804f0359201f3da9d7cd2ec79} 
+\doxymbox{\hyperlink{namespace_ability_system_1_1_ability_a04e93bd629369376e7f264f946bb438a}{Damage\+Type}} Ability\+System.\+Ability.\+Ability\+Data.\+damage\+Type}
+
+\Hypertarget{class_ability_system_1_1_ability_1_1_ability_data_a1730f7a1a8a224bbe2967387d0c3aceb}\index{AbilitySystem.Ability.AbilityData@{AbilitySystem.Ability.AbilityData}!id@{id}}
+\index{id@{id}!AbilitySystem.Ability.AbilityData@{AbilitySystem.Ability.AbilityData}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_ability_1_1_ability_data_a1730f7a1a8a224bbe2967387d0c3aceb} 
+string Ability\+System.\+Ability.\+Ability\+Data.\+id}
+
+\Hypertarget{class_ability_system_1_1_ability_1_1_ability_data_afb25d2e034a28b82af4d00c5496c8378}\index{AbilitySystem.Ability.AbilityData@{AbilitySystem.Ability.AbilityData}!plugInEffects@{plugInEffects}}
+\index{plugInEffects@{plugInEffects}!AbilitySystem.Ability.AbilityData@{AbilitySystem.Ability.AbilityData}}
+\doxysubsubsection{\texorpdfstring{plugInEffects}{plugInEffects}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_ability_1_1_ability_data_afb25d2e034a28b82af4d00c5496c8378} 
+List$<$\doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_effect}{Effect}}$>$ Ability\+System.\+Ability.\+Ability\+Data.\+plug\+In\+Effects}
+
+\Hypertarget{class_ability_system_1_1_ability_1_1_ability_data_afd49d12f44914eddf20501aace3f6e6e}\index{AbilitySystem.Ability.AbilityData@{AbilitySystem.Ability.AbilityData}!range@{range}}
+\index{range@{range}!AbilitySystem.Ability.AbilityData@{AbilitySystem.Ability.AbilityData}}
+\doxysubsubsection{\texorpdfstring{range}{range}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_ability_1_1_ability_data_afd49d12f44914eddf20501aace3f6e6e} 
+int Ability\+System.\+Ability.\+Ability\+Data.\+range}
+
+\Hypertarget{class_ability_system_1_1_ability_1_1_ability_data_aabfaa426d876e75d93e1cc33f41f8305}\index{AbilitySystem.Ability.AbilityData@{AbilitySystem.Ability.AbilityData}!supplies@{supplies}}
+\index{supplies@{supplies}!AbilitySystem.Ability.AbilityData@{AbilitySystem.Ability.AbilityData}}
+\doxysubsubsection{\texorpdfstring{supplies}{supplies}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_ability_1_1_ability_data_aabfaa426d876e75d93e1cc33f41f8305} 
+List$<$\doxymbox{\hyperlink{class_ability_system_1_1_supplies_1_1_supply}{Supply}}$>$ Ability\+System.\+Ability.\+Ability\+Data.\+supplies}
+
+\Hypertarget{class_ability_system_1_1_ability_1_1_ability_data_aa5499535be74b975b80a9bb3c4a86178}\index{AbilitySystem.Ability.AbilityData@{AbilitySystem.Ability.AbilityData}!turnCooldown@{turnCooldown}}
+\index{turnCooldown@{turnCooldown}!AbilitySystem.Ability.AbilityData@{AbilitySystem.Ability.AbilityData}}
+\doxysubsubsection{\texorpdfstring{turnCooldown}{turnCooldown}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_ability_1_1_ability_data_aa5499535be74b975b80a9bb3c4a86178} 
+Data\+Reference$<$int$>$ Ability\+System.\+Ability.\+Ability\+Data.\+turn\+Cooldown}
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Runtime/\+\+Abilities/\+Ability\+Data.\+cs\end{DoxyCompactItemize}

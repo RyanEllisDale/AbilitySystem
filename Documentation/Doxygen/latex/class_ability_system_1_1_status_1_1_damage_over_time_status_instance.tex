@@ -1,0 +1,113 @@
+\doxysection{Ability\+System.\+Status.\+Damage\+Over\+Time\+Status\+Instance Class Reference}
+\hypertarget{class_ability_system_1_1_status_1_1_damage_over_time_status_instance}{}\label{class_ability_system_1_1_status_1_1_damage_over_time_status_instance}\index{AbilitySystem.Status.DamageOverTimeStatusInstance@{AbilitySystem.Status.DamageOverTimeStatusInstance}}
+
+
+Runtime instance for {\bfseries{\doxylink{class_ability_system_1_1_status_1_1_damage_over_time_status_data}{Damage\+Over\+Time\+Status\+Data}}}. Applies damage to the target at the end of each turn. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ \+\_\+dot\+Data :\+}} Cached reference to the DOT data asset. ~\newline
+.  
+
+
+Inheritance diagram for Ability\+System.\+Status.\+Damage\+Over\+Time\+Status\+Instance:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_ability_system_1_1_status_1_1_damage_over_time_status_instance}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_damage_over_time_status_instance_a3e3f1dd26fcfc83c94e11002a3662269}{Damage\+Over\+Time\+Status\+Instance}} (\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_damage_over_time_status_data}{Damage\+Over\+Time\+Status\+Data}} \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance_ade01302d97167c1d62996c8378453457}{data}})
+\begin{DoxyCompactList}\small\item\em Constructs a DOT instance based on the given data. \end{DoxyCompactList}\item 
+override bool \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_damage_over_time_status_instance_a748d2ca0a3364e5344b418b9caeea1e4}{On\+Turn\+End}} (\doxymbox{\hyperlink{interface_ability_system_1_1_status_1_1_i_status_container}{IStatus\+Container}} target)
+\begin{DoxyCompactList}\small\item\em Applies damage to the target at the end of each turn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance}{Ability\+System.\+Status.\+Status\+Instance}}}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance_abf210a59efb42e95afb9275caa52f756}{Status\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for serialization. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance_aed8a36cff5a9124d637f92a0db8cd21f}{Status\+Instance}} (\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data}} a\+Data)
+\begin{DoxyCompactList}\small\item\em Creates a new \doxylink{class_ability_system_1_1_status_1_1_status_instance}{Status\+Instance} based on the given \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data}. \end{DoxyCompactList}\item 
+virtual bool \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance_a75800dc1d009a72c7c173d7e69b5acb1}{On\+Turn\+Start}} (\doxymbox{\hyperlink{interface_ability_system_1_1_status_1_1_i_status_container}{IStatus\+Container}} target)
+\begin{DoxyCompactList}\small\item\em Called at the start of a turn. Override to implement custom behavior. \end{DoxyCompactList}\item 
+virtual void \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance_ae45ed93ddb66bbc79c560cb978e19314}{On\+Apply}} (\doxymbox{\hyperlink{interface_ability_system_1_1_status_1_1_i_status_container}{IStatus\+Container}} target)
+\begin{DoxyCompactList}\small\item\em Called when the status is first applied to a target. \end{DoxyCompactList}\item 
+virtual void \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance_a07b68804993033cfe47fc54b71a5f1a8}{On\+Remove}} (\doxymbox{\hyperlink{interface_ability_system_1_1_status_1_1_i_status_container}{IStatus\+Container}} target)
+\begin{DoxyCompactList}\small\item\em Called when the status is removed from a target. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance_a3b293b00347732e5c087be2d3f7bbcd1}{Equals}} (\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance_abf210a59efb42e95afb9275caa52f756}{Status\+Instance}} other)
+\begin{DoxyCompactList}\small\item\em Determines equality based on underlying \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} (ignores duration). \end{DoxyCompactList}\item 
+override bool \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance_a8a535900d7cb66aa4c54a58feeff9a10}{Equals}} (object obj)
+\item 
+override int \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance_a94191e85fc878c134ad140f8145cbb5a}{Get\+Hash\+Code}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_damage_over_time_status_data}{Damage\+Over\+Time\+Status\+Data}} \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_damage_over_time_status_instance_ae70f0322913831e38e8a9d6af92fb408}{\+\_\+dot\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance}{Ability\+System.\+Status.\+Status\+Instance}}}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data}} \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance_ade01302d97167c1d62996c8378453457}{data}}
+\item 
+int \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance_a1f24a7f589ab956c30fb260e182f99f9}{current\+Duration}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Runtime instance for {\bfseries{\doxylink{class_ability_system_1_1_status_1_1_damage_over_time_status_data}{Damage\+Over\+Time\+Status\+Data}}}. Applies damage to the target at the end of each turn. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ \+\_\+dot\+Data :\+}} Cached reference to the DOT data asset. ~\newline
+. 
+
+\label{doc-constructors}
+\Hypertarget{class_ability_system_1_1_status_1_1_damage_over_time_status_instance_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ability_system_1_1_status_1_1_damage_over_time_status_instance_a3e3f1dd26fcfc83c94e11002a3662269}\index{AbilitySystem.Status.DamageOverTimeStatusInstance@{AbilitySystem.Status.DamageOverTimeStatusInstance}!DamageOverTimeStatusInstance@{DamageOverTimeStatusInstance}}
+\index{DamageOverTimeStatusInstance@{DamageOverTimeStatusInstance}!AbilitySystem.Status.DamageOverTimeStatusInstance@{AbilitySystem.Status.DamageOverTimeStatusInstance}}
+\doxysubsubsection{\texorpdfstring{DamageOverTimeStatusInstance()}{DamageOverTimeStatusInstance()}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_status_1_1_damage_over_time_status_instance_a3e3f1dd26fcfc83c94e11002a3662269} 
+Ability\+System.\+Status.\+Damage\+Over\+Time\+Status\+Instance.\+Damage\+Over\+Time\+Status\+Instance (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_damage_over_time_status_data}{Damage\+Over\+Time\+Status\+Data}}}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a DOT instance based on the given data. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_ability_system_1_1_status_1_1_damage_over_time_status_instance_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ability_system_1_1_status_1_1_damage_over_time_status_instance_a748d2ca0a3364e5344b418b9caeea1e4}\index{AbilitySystem.Status.DamageOverTimeStatusInstance@{AbilitySystem.Status.DamageOverTimeStatusInstance}!OnTurnEnd@{OnTurnEnd}}
+\index{OnTurnEnd@{OnTurnEnd}!AbilitySystem.Status.DamageOverTimeStatusInstance@{AbilitySystem.Status.DamageOverTimeStatusInstance}}
+\doxysubsubsection{\texorpdfstring{OnTurnEnd()}{OnTurnEnd()}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_status_1_1_damage_over_time_status_instance_a748d2ca0a3364e5344b418b9caeea1e4} 
+override bool Ability\+System.\+Status.\+Damage\+Over\+Time\+Status\+Instance.\+On\+Turn\+End (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_ability_system_1_1_status_1_1_i_status_container}{IStatus\+Container}}}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Applies damage to the target at the end of each turn. 
+
+
+
+Reimplemented from \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance_a8d8df55c42ff4959447cf3fa30fae002}{Ability\+System.\+Status.\+Status\+Instance}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_ability_system_1_1_status_1_1_damage_over_time_status_instance_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ability_system_1_1_status_1_1_damage_over_time_status_instance_ae70f0322913831e38e8a9d6af92fb408}\index{AbilitySystem.Status.DamageOverTimeStatusInstance@{AbilitySystem.Status.DamageOverTimeStatusInstance}!\_dotData@{\_dotData}}
+\index{\_dotData@{\_dotData}!AbilitySystem.Status.DamageOverTimeStatusInstance@{AbilitySystem.Status.DamageOverTimeStatusInstance}}
+\doxysubsubsection{\texorpdfstring{\_dotData}{\_dotData}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_status_1_1_damage_over_time_status_instance_ae70f0322913831e38e8a9d6af92fb408} 
+\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_damage_over_time_status_data}{Damage\+Over\+Time\+Status\+Data}} Ability\+System.\+Status.\+Damage\+Over\+Time\+Status\+Instance.\+\_\+dot\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Runtime/\+\+Status/\+\+Status Types/\+Damage\+Over\+Time.\+cs\end{DoxyCompactItemize}

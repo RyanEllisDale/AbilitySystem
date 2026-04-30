@@ -1,0 +1,157 @@
+\doxysection{Modular\+Architecture.\+Data.\+Data\+Reference\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_modular_architecture_1_1_data_1_1_data_reference-1-g}{}\label{class_modular_architecture_1_1_data_1_1_data_reference-1-g}\index{ModularArchitecture.Data.DataReference$<$ T $>$@{ModularArchitecture.Data.DataReference$<$ T $>$}}
+
+
+Data\+Reference contains either a constant value or points to a data container asset in the project ~\newline
+ It is used in place of default types to reference variable objects and allow for implicit comparisons. ~\newline
+ It contains types that are comparable ( consist of IComperable ), so that custom types can be made ~\newline
+.  
+
+
+Inheritance diagram for Modular\+Architecture.\+Data.\+Data\+Reference\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.560976cm]{class_modular_architecture_1_1_data_1_1_data_reference-1-g}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference-1-g_a87d752b30a3f64051c8f3f016337d702}{Data\+Reference}} ()
+\item 
+\doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference-1-g_a92946d42edf909d67b481d3e09e3dcd1}{Data\+Reference}} (T \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference-1-g_aa69c8696648db0f1aa7ee08247d6447c}{value}})
+\item 
+override int \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference-1-g_a90db6706908bed1b7761a523f90af853}{Compare\+To}} (\doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Data\+Reference\+Base}} other)
+\begin{DoxyCompactList}\small\item\em Used to define over arithmetic and comparison operators in \doxylink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Data\+Reference\+Base} since value is IComparable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Modular\+Architecture.\+Data.\+Data\+Reference\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base_aa66703adcf14755d4586a46a7e0ad4b3}{Compare\+To}} (\doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Data\+Reference\+Base}} other)
+\item 
+override bool \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base_adcc2a6fa6c8ccd82a44e7699891f6aa0}{Equals}} (object obj)
+\item 
+override int \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base_a540a45378f8d451c653c44f44cfe7e8d}{Get\+Hash\+Code}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static implicit \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference-1-g_a2a70710b577f5a45c09356a32bbbbd05}{operator T}} (\doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference-1-g_a87d752b30a3f64051c8f3f016337d702}{Data\+Reference}}$<$ T $>$ reference)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Modular\+Architecture.\+Data.\+Data\+Reference\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+static bool \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base_a27aab67da0fa7203d4544895462da5e5}{operator$<$}} (\doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Data\+Reference\+Base}} a, \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Data\+Reference\+Base}} b)
+\item 
+static bool \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base_aff4842fa11506924c0d6d529ef7ceff6}{operator$>$}} (\doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Data\+Reference\+Base}} a, \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Data\+Reference\+Base}} b)
+\item 
+static bool \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base_a267158e6cc1c7777efa82cb35ac183e2}{operator$<$=}} (\doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Data\+Reference\+Base}} a, \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Data\+Reference\+Base}} b)
+\item 
+static bool \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base_a2188d6a926a80230feefaa78a3aa4895}{operator$>$=}} (\doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Data\+Reference\+Base}} a, \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Data\+Reference\+Base}} b)
+\item 
+static bool \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base_a6063634c45d84ff802344cc3a1b1015c}{operator==}} (\doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Data\+Reference\+Base}} a, \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Data\+Reference\+Base}} b)
+\item 
+static bool \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base_ad5bd6633c94822ebf9aab937201e4dab}{operator!=}} (\doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Data\+Reference\+Base}} a, \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Data\+Reference\+Base}} b)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference-1-g_a39e1bfd22e58a977c9f10030136209cb}{use\+Constant}} = true
+\item 
+T \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference-1-g_afae442bc0c171c932027968f1d3dac98}{constant\+Value}}
+\item 
+Data\+Container$<$ T $>$ \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference-1-g_ae062ec6ca9b97a9da5101ae425ceb7de}{variable}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+T \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference-1-g_aa69c8696648db0f1aa7ee08247d6447c}{value}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Data\+Reference contains either a constant value or points to a data container asset in the project ~\newline
+ It is used in place of default types to reference variable objects and allow for implicit comparisons. ~\newline
+ It contains types that are comparable ( consist of IComperable ), so that custom types can be made ~\newline
+. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & A comparable type that can be in a data asset (Data\+Container)\\
+\hline
+\end{DoxyTemplParams}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em IComparable$<$T$>$}]\end{description}
+\end{Desc}
+
+
+\label{doc-func-members}
+\Hypertarget{class_modular_architecture_1_1_data_1_1_data_reference-1-g_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_modular_architecture_1_1_data_1_1_data_reference-1-g_a90db6706908bed1b7761a523f90af853}\index{ModularArchitecture.Data.DataReference$<$ T $>$@{ModularArchitecture.Data.DataReference$<$ T $>$}!CompareTo@{CompareTo}}
+\index{CompareTo@{CompareTo}!ModularArchitecture.Data.DataReference$<$ T $>$@{ModularArchitecture.Data.DataReference$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{CompareTo()}{CompareTo()}}
+{\footnotesize\ttfamily \label{class_modular_architecture_1_1_data_1_1_data_reference-1-g_a90db6706908bed1b7761a523f90af853} 
+override int Modular\+Architecture.\+Data.\+Data\+Reference$<$ T $>$.Compare\+To (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Data\+Reference\+Base}}}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Used to define over arithmetic and comparison operators in \doxylink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Data\+Reference\+Base} since value is IComparable. 
+
+\Hypertarget{class_modular_architecture_1_1_data_1_1_data_reference-1-g_a87d752b30a3f64051c8f3f016337d702}\index{ModularArchitecture.Data.DataReference$<$ T $>$@{ModularArchitecture.Data.DataReference$<$ T $>$}!DataReference@{DataReference}}
+\index{DataReference@{DataReference}!ModularArchitecture.Data.DataReference$<$ T $>$@{ModularArchitecture.Data.DataReference$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{DataReference()}{DataReference()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_modular_architecture_1_1_data_1_1_data_reference-1-g_a87d752b30a3f64051c8f3f016337d702} 
+Modular\+Architecture.\+Data.\+Data\+Reference$<$ T $>$.Data\+Reference (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_modular_architecture_1_1_data_1_1_data_reference-1-g_a92946d42edf909d67b481d3e09e3dcd1}\index{ModularArchitecture.Data.DataReference$<$ T $>$@{ModularArchitecture.Data.DataReference$<$ T $>$}!DataReference@{DataReference}}
+\index{DataReference@{DataReference}!ModularArchitecture.Data.DataReference$<$ T $>$@{ModularArchitecture.Data.DataReference$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{DataReference()}{DataReference()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_modular_architecture_1_1_data_1_1_data_reference-1-g_a92946d42edf909d67b481d3e09e3dcd1} 
+Modular\+Architecture.\+Data.\+Data\+Reference$<$ T $>$.Data\+Reference (\begin{DoxyParamCaption}\item[{T}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_modular_architecture_1_1_data_1_1_data_reference-1-g_a2a70710b577f5a45c09356a32bbbbd05}\index{ModularArchitecture.Data.DataReference$<$ T $>$@{ModularArchitecture.Data.DataReference$<$ T $>$}!operator T@{operator T}}
+\index{operator T@{operator T}!ModularArchitecture.Data.DataReference$<$ T $>$@{ModularArchitecture.Data.DataReference$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator T()}{operator T()}}
+{\footnotesize\ttfamily \label{class_modular_architecture_1_1_data_1_1_data_reference-1-g_a2a70710b577f5a45c09356a32bbbbd05} 
+implicit Modular\+Architecture.\+Data.\+Data\+Reference$<$ T $>$.operator T (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference-1-g_a87d752b30a3f64051c8f3f016337d702}{Data\+Reference}}$<$ T $>$}]{reference}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_modular_architecture_1_1_data_1_1_data_reference-1-g_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_modular_architecture_1_1_data_1_1_data_reference-1-g_afae442bc0c171c932027968f1d3dac98}\index{ModularArchitecture.Data.DataReference$<$ T $>$@{ModularArchitecture.Data.DataReference$<$ T $>$}!constantValue@{constantValue}}
+\index{constantValue@{constantValue}!ModularArchitecture.Data.DataReference$<$ T $>$@{ModularArchitecture.Data.DataReference$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{constantValue}{constantValue}}
+{\footnotesize\ttfamily \label{class_modular_architecture_1_1_data_1_1_data_reference-1-g_afae442bc0c171c932027968f1d3dac98} 
+T Modular\+Architecture.\+Data.\+Data\+Reference$<$ T $>$.constant\+Value}
+
+\Hypertarget{class_modular_architecture_1_1_data_1_1_data_reference-1-g_a39e1bfd22e58a977c9f10030136209cb}\index{ModularArchitecture.Data.DataReference$<$ T $>$@{ModularArchitecture.Data.DataReference$<$ T $>$}!useConstant@{useConstant}}
+\index{useConstant@{useConstant}!ModularArchitecture.Data.DataReference$<$ T $>$@{ModularArchitecture.Data.DataReference$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{useConstant}{useConstant}}
+{\footnotesize\ttfamily \label{class_modular_architecture_1_1_data_1_1_data_reference-1-g_a39e1bfd22e58a977c9f10030136209cb} 
+bool Modular\+Architecture.\+Data.\+Data\+Reference$<$ T $>$.use\+Constant = true}
+
+\Hypertarget{class_modular_architecture_1_1_data_1_1_data_reference-1-g_ae062ec6ca9b97a9da5101ae425ceb7de}\index{ModularArchitecture.Data.DataReference$<$ T $>$@{ModularArchitecture.Data.DataReference$<$ T $>$}!variable@{variable}}
+\index{variable@{variable}!ModularArchitecture.Data.DataReference$<$ T $>$@{ModularArchitecture.Data.DataReference$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{variable}{variable}}
+{\footnotesize\ttfamily \label{class_modular_architecture_1_1_data_1_1_data_reference-1-g_ae062ec6ca9b97a9da5101ae425ceb7de} 
+Data\+Container$<$T$>$ Modular\+Architecture.\+Data.\+Data\+Reference$<$ T $>$.variable}
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_modular_architecture_1_1_data_1_1_data_reference-1-g_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_modular_architecture_1_1_data_1_1_data_reference-1-g_aa69c8696648db0f1aa7ee08247d6447c}\index{ModularArchitecture.Data.DataReference$<$ T $>$@{ModularArchitecture.Data.DataReference$<$ T $>$}!value@{value}}
+\index{value@{value}!ModularArchitecture.Data.DataReference$<$ T $>$@{ModularArchitecture.Data.DataReference$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily \label{class_modular_architecture_1_1_data_1_1_data_reference-1-g_aa69c8696648db0f1aa7ee08247d6447c} 
+T Modular\+Architecture.\+Data.\+Data\+Reference$<$ T $>$.value\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Runtime/\+\+Data Containers/\+Data\+Reference.\+cs\end{DoxyCompactItemize}

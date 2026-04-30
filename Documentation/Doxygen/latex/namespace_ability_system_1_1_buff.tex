@@ -1,0 +1,99 @@
+\doxysection{Ability\+System.\+Buff Namespace Reference}
+\hypertarget{namespace_ability_system_1_1_buff}{}\label{namespace_ability_system_1_1_buff}\index{AbilitySystem.Buff@{AbilitySystem.Buff}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_ability_system_1_1_buff_1_1_stat_modifier}{Stat\+Modifier}}
+\begin{DoxyCompactList}\small\item\em Stat Modifier is a small struct that contains the rules and values for changing and how to change a stat ~\newline
+ ~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ target\+Stat\+ID :\+}} The string identifier /\+ name of that stat to be modified, ~\newline
+ {\bfseries{-\/ modifier\+Value :\+}} The float value that will be used to change the target\+Stat relative to the modifier\+Type, ~\newline
+ {\bfseries{-\/cmodifier\+Type :\+}} Small enum which determines how the modifier\+Value will affect the target\+Stat. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_ability_system_1_1_buff_1_1_buff_data}{Buff\+Data}}
+\begin{DoxyCompactList}\small\item\em Data asset for buffs, contains all the permenant data for buffs, and lives within the project\textquotesingle{}s files. ~\newline
+ Contains the list of modifier rules which determine how buffs interact with the stats of {\bfseries{IBuff}} references. ~\newline
+ ~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ id :\+}} A unique string identifier for referencing this buff, ~\newline
+ {\bfseries{-\/ description :\+}} A multiline description used for UI, debugging, or doccumentation, ~\newline
+ {\bfseries{-\/ duration :\+}} How many turns the buff remains active once applied, ~\newline
+ {\bfseries{-\/ modifiers :\+}} The array of {\bfseries{\doxylink{struct_ability_system_1_1_buff_1_1_stat_modifier}{Stat\+Modifier}}} rules that define how this buff affects stats. ~\newline
+. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_ability_system_1_1_buff_1_1_buff_instance}{Buff\+Instance}}
+\begin{DoxyCompactList}\small\item\em A runtime instance for buff data to be applied to buff managers, modifies the stats of {\bfseries{\doxylink{interface_ability_system_1_1_buff_1_1_i_buff_container}{IBuff\+Container}}} containers based on the data\textquotesingle{}s modifiers. ~\newline
+ Contains the inpermenant runtime data for active buffs /\+ de-\/buffs that are applied to a target /\+ buff-\/manager. ~\newline
+ ~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ Data :\+}} The permenant data asset file for the instance to read from, ~\newline
+ {\bfseries{-\/ Current\+Duration :\+}} How many turns the Instance has left before being removed. ~\newline
+ ~\newline
+ Responsible for:\+ ~\newline
+ {\bfseries{-\/ Triggering Modification :\+}} When a \doxylink{class_ability_system_1_1_buff_1_1_buff_instance}{Buff\+Instance} is applied it will trigger all the stat modifications in it\textquotesingle{}s data, ~\newline
+ {\bfseries{-\/ Expiring Modification :\+}} When a \doxylink{class_ability_system_1_1_buff_1_1_buff_instance}{Buff\+Instance}\textquotesingle{}s duration ends, it will trigger the inverse of stat modifications in it\textquotesingle{}s data, ~\newline
+ {\bfseries{-\/ Storing Current Duration :\+}} As each turn passes the API will reduce it\textquotesingle{}s duration and remove the Instance when it hits 0. ~\newline
+. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_ability_system_1_1_buff_1_1_buff_manager}{Buff\+Manager}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{namespace_ability_system_1_1_buff}{Buff} Manager is a composite runtime container that manages all active {\bfseries{\doxylink{class_ability_system_1_1_buff_1_1_buff_instance}{Buff\+Instance}}} objects applied to a target implementing {\bfseries{\doxylink{interface_ability_system_1_1_buff_1_1_i_buff_container}{IBuff\+Container}}}. ~\newline
+ This class is a the \doxylink{namespace_ability_system_1_1_buff}{Buff} Functionality mirror to {\bfseries{\doxylink{namespace_ability_system_1_1_status}{Status} Manager.}} ~\newline
+~\newline
+ Responsible for:\+ ~\newline
+ {\bfseries{-\/ Adding Buffs :\+}} Creates new runtime instances and applies their stat modifiers, ~\newline
+ {\bfseries{-\/ Removing Buffs :\+}} Expires instances and reverses their stat modifiers, ~\newline
+ {\bfseries{-\/ Tracking Active Buffs :\+}} Maintains a list of all currently applied Buff\+Instances. ~\newline
+. \end{DoxyCompactList}\item 
+interface \doxymbox{\hyperlink{interface_ability_system_1_1_buff_1_1_i_buff_container}{IBuff\+Container}}
+\begin{DoxyCompactList}\small\item\em Interface for any object capable of receiving and managing buffs. ~\newline
+~\newline
+ Implementers must provide:\+ ~\newline
+ {\bfseries{-\/ buff\+Manager :\+}} A \doxylink{class_ability_system_1_1_buff_1_1_buff_manager}{Buff\+Manager} instance responsible for handling Buff\+Instances, ~\newline
+ {\bfseries{-\/ Get\+Stat :\+}} Retrieves a stat value (float) by its string identifier, ~\newline
+ {\bfseries{-\/ Modify\+Stat :\+}} Applies additive or multiplicative changes to a stat. ~\newline
+~\newline
+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \doxymbox{\hyperlink{namespace_ability_system_1_1_buff_ad34d78be7a21eb408125193ce681dd6e}{Stat\+Modifier\+Type}} :\+ byte \{ \doxymbox{\hyperlink{namespace_ability_system_1_1_buff_ad34d78be7a21eb408125193ce681dd6eaec211f7c20af43e742bf2570c3cb84f9}{Add}}
+, \doxymbox{\hyperlink{namespace_ability_system_1_1_buff_ad34d78be7a21eb408125193ce681dd6eae257376d913f3b53cbb4a9b19d770648}{Multiply}}
+ \}
+\begin{DoxyCompactList}\small\item\em Small enumeration type for telling buffs ( positive and negative ) how their value responds to the respective target stat. ~\newline
+ Stat values are modified upon application and removal of a buff. ~\newline
+ ~\newline
+ {\bfseries{Add :\+}} Addiction /\+ Subtract to target stat. ~\newline
+ {\bfseries{Multiply :\+}} Multiplication /\+ Divison to target stat. ~\newline
+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-enum-members}
+\Hypertarget{namespace_ability_system_1_1_buff_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespace_ability_system_1_1_buff_ad34d78be7a21eb408125193ce681dd6e}\index{AbilitySystem.Buff@{AbilitySystem.Buff}!StatModifierType@{StatModifierType}}
+\index{StatModifierType@{StatModifierType}!AbilitySystem.Buff@{AbilitySystem.Buff}}
+\doxysubsubsection{\texorpdfstring{StatModifierType}{StatModifierType}}
+{\footnotesize\ttfamily \label{namespace_ability_system_1_1_buff_ad34d78be7a21eb408125193ce681dd6e} 
+enum \doxymbox{\hyperlink{namespace_ability_system_1_1_buff_ad34d78be7a21eb408125193ce681dd6e}{Ability\+System.\+Buff.\+Stat\+Modifier\+Type}} :\+ byte}
+
+
+
+Small enumeration type for telling buffs ( positive and negative ) how their value responds to the respective target stat. ~\newline
+ Stat values are modified upon application and removal of a buff. ~\newline
+ ~\newline
+ {\bfseries{Add :\+}} Addiction /\+ Subtract to target stat. ~\newline
+ {\bfseries{Multiply :\+}} Multiplication /\+ Divison to target stat. ~\newline
+. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Add@{Add}!AbilitySystem.Buff@{AbilitySystem.Buff}}
+\index{AbilitySystem.Buff@{AbilitySystem.Buff}!Add@{Add}}
+}\Hypertarget{namespace_ability_system_1_1_buff_ad34d78be7a21eb408125193ce681dd6eaec211f7c20af43e742bf2570c3cb84f9}\label{namespace_ability_system_1_1_buff_ad34d78be7a21eb408125193ce681dd6eaec211f7c20af43e742bf2570c3cb84f9} 
+Add&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Multiply@{Multiply}!AbilitySystem.Buff@{AbilitySystem.Buff}}
+\index{AbilitySystem.Buff@{AbilitySystem.Buff}!Multiply@{Multiply}}
+}\Hypertarget{namespace_ability_system_1_1_buff_ad34d78be7a21eb408125193ce681dd6eae257376d913f3b53cbb4a9b19d770648}\label{namespace_ability_system_1_1_buff_ad34d78be7a21eb408125193ce681dd6eae257376d913f3b53cbb4a9b19d770648} 
+Multiply&\\
+\hline
+
+\end{DoxyEnumFields}

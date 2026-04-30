@@ -1,0 +1,128 @@
+\chapter{How-\/\+To-\/\+Use }
+\hypertarget{_how-_to-_use}{}\label{_how-_to-_use}\index{How-\/To-\/Use@{How-\/To-\/Use}}
+Modular architecture comes with 4 main features :\+
+\begin{DoxyItemize}
+\item Data Variables /\+ References
+\item Modular Conditions
+\item Extendable Enums
+\item Events
+\end{DoxyItemize}
+
+In this page I will briefly talk about how these can be used. It is reccomended you have been through the Installation Guide ( \doxysectlink{_installation}{Here}{0} ) before reading through this.\hypertarget{_how-_to-_use_autotoc_md36}{}\doxysubsection{\texorpdfstring{Samples}{Samples}}\label{_how-_to-_use_autotoc_md36}
+Each of the 4 Main features of Modular architecture has it\textquotesingle{}s own sample piece /\+ demostration that shows off the functionality /\+ theory behind it. These samples can be installed by opening up the package-\/manager window in your Unity project, finding the Modular Architecture package, moving to the samples view and importing the relevant sample(s) you want. All the samples are designed to be small in scope and easy to follow along with.\hypertarget{_how-_to-_use_autotoc_md37}{}\doxysubsection{\texorpdfstring{Conditions}{Conditions}}\label{_how-_to-_use_autotoc_md37}
+The {\ttfamily Condition} system allows you to create simple logic checks without writing code by comparing two values using a chosen operator.\hypertarget{_how-_to-_use_autotoc_md38}{}\doxysubsubsection{\texorpdfstring{Setup}{Setup}}\label{_how-_to-_use_autotoc_md38}
+
+\begin{DoxyEnumerate}
+\item Choose a {\bfseries{Value Type}} (Int, Float, String, or Bool).
+\item Assign a {\bfseries{Subject}} (the current value).
+\item Assign a {\bfseries{Target}} (the value to compare against).
+\item Select a {\bfseries{Comparison}} type (e.\+g. Equal, Greater, Less).
+\end{DoxyEnumerate}\hypertarget{_how-_to-_use_autotoc_md39}{}\doxysubsubsection{\texorpdfstring{Example}{Example}}\label{_how-_to-_use_autotoc_md39}
+To check if a player’s health is low:\+
+
+
+\begin{DoxyItemize}
+\item Type:\+ {\ttfamily Float}
+\item Subject:\+ {\ttfamily Player\+Health} (Data Reference)
+\item Target:\+ {\ttfamily 30}
+\item Comparison:\+ {\ttfamily Less}
+\end{DoxyItemize}
+
+This represents:\+ {\ttfamily Player\+Health \texorpdfstring{$<$}{<} 30}\hypertarget{_how-_to-_use_autotoc_md40}{}\doxysubsubsection{\texorpdfstring{Usage}{Usage}}\label{_how-_to-_use_autotoc_md40}
+Call:\+ condition.\+Evaluate() This returns {\ttfamily true} or {\ttfamily false} depending on whether the condition is met.\hypertarget{_how-_to-_use_autotoc_md41}{}\doxysubsubsection{\texorpdfstring{Common Use Cases}{Common Use Cases}}\label{_how-_to-_use_autotoc_md41}
+
+\begin{DoxyItemize}
+\item Triggering events (e.\+g. player health is low)
+\item Unlocking actions (e.\+g. score ≥ required amount)
+\item AI decision making
+\item UI updates (e.\+g. show warning states)
+\end{DoxyItemize}
+
+Conditions are fully data-\/driven, meaning they can be configured in the Inspector and reused across systems without modifying code.\hypertarget{_how-_to-_use_autotoc_md42}{}\doxysubsection{\texorpdfstring{Data}{Data}}\label{_how-_to-_use_autotoc_md42}
+\hypertarget{_how-_to-_use_autotoc_md43}{}\doxysubsection{\texorpdfstring{How to Use Data References}{How to Use Data References}}\label{_how-_to-_use_autotoc_md43}
+The data system allows you to use either {\bfseries{constant values}} or {\bfseries{shared data assets}} interchangeably, without changing your code.\hypertarget{_how-_to-_use_autotoc_md44}{}\doxysubsubsection{\texorpdfstring{Setup}{Setup}}\label{_how-_to-_use_autotoc_md44}
+Choose how the value is provided:\+
+\begin{DoxyItemize}
+\item {\bfseries{Constant}} → uses a fixed value set in the Inspector
+\item {\bfseries{Variable}} → references a {\ttfamily Data\+Container} asset
+\end{DoxyItemize}\hypertarget{_how-_to-_use_autotoc_md45}{}\doxysubsubsection{\texorpdfstring{Example}{Example}}\label{_how-_to-_use_autotoc_md45}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ FloatReference\ speed;}
+
+\end{DoxyCode}
+
+
+Set {\ttfamily Use Constant} = true → speed = 5 OR Set {\ttfamily Use Constant} = false → assign a {\ttfamily Float Variable} asset\hypertarget{_how-_to-_use_autotoc_md46}{}\doxysubsubsection{\texorpdfstring{Usage}{Usage}}\label{_how-_to-_use_autotoc_md46}
+References /\+ Variables are just data values, you can reference them directly with {\ttfamily \+[Reference]\+.value} or implicity {\ttfamily =\+[Reference]\+}, These values are also modifiable even when in the data asset ( data variable ).\hypertarget{_how-_to-_use_autotoc_md47}{}\doxysubsection{\texorpdfstring{Events}{Events}}\label{_how-_to-_use_autotoc_md47}
+\hypertarget{_how-_to-_use_autotoc_md48}{}\doxysubsection{\texorpdfstring{How to Use Game Events}{How to Use Game Events}}\label{_how-_to-_use_autotoc_md48}
+The event system allows different parts of your game to communicate without being directly connected.
+
+A {\ttfamily Game\+Event} is a reusable asset that can be triggered from anywhere, and all registered listeners will respond automatically.\hypertarget{_how-_to-_use_autotoc_md49}{}\doxysubsubsection{\texorpdfstring{Setup}{Setup}}\label{_how-_to-_use_autotoc_md49}
+
+\begin{DoxyEnumerate}
+\item Create a {\ttfamily Game\+Event} asset (e.\+g. {\ttfamily Player\+Died}, {\ttfamily Button\+Pressed})
+\item Add a {\ttfamily Game\+Event\+Listener} to any object that should react
+\item Define a response using a {\ttfamily Unity\+Event} or method call
+\item Link the listener to the event
+\end{DoxyEnumerate}\hypertarget{_how-_to-_use_autotoc_md50}{}\doxysubsubsection{\texorpdfstring{Raising an Event}{Raising an Event}}\label{_how-_to-_use_autotoc_md50}
+Trigger the event from code or inspector:\+ game\+Event.\+Raise();
+
+This will notify all subscribed listeners.\hypertarget{_how-_to-_use_autotoc_md51}{}\doxysubsubsection{\texorpdfstring{Listening to an Event}{Listening to an Event}}\label{_how-_to-_use_autotoc_md51}
+A listener automatically subscribes when enabled:\+
+
+
+\begin{DoxyItemize}
+\item On\+Enable → subscribes to the event ~\newline
+
+\item On\+Disable → unsubscribes from the event ~\newline
+
+\end{DoxyItemize}
+
+When the event is raised, the listener executes its response.\hypertarget{_how-_to-_use_autotoc_md52}{}\doxysubsubsection{\texorpdfstring{Example}{Example}}\label{_how-_to-_use_autotoc_md52}
+
+\begin{DoxyItemize}
+\item {\ttfamily Player\+Died} → show game over UI, play sound, pause game ~\newline
+
+\item {\ttfamily Door\+Opened} → play animation, unlock area ~\newline
+
+\item {\ttfamily Button\+Pressed} → start level or trigger action ~\newline
+
+\end{DoxyItemize}\hypertarget{_how-_to-_use_autotoc_md53}{}\doxysubsubsection{\texorpdfstring{Usage}{Usage}}\label{_how-_to-_use_autotoc_md53}
+Game Events are used to:\+
+
+
+\begin{DoxyItemize}
+\item Decouple systems (UI, gameplay, audio, etc.)
+\item Trigger multiple reactions from a single action
+\item Remove direct references between objects
+\item Build flexible event-\/driven gameplay flow
+\end{DoxyItemize}\hypertarget{_how-_to-_use_autotoc_md54}{}\doxysubsubsection{\texorpdfstring{Summary}{Summary}}\label{_how-_to-_use_autotoc_md54}
+Game Events act as global signals that systems can react to. Instead of calling each other directly, objects simply respond when an event is raised, making the project more modular and scalable.\hypertarget{_how-_to-_use_autotoc_md55}{}\doxysubsection{\texorpdfstring{Enums}{Enums}}\label{_how-_to-_use_autotoc_md55}
+\hypertarget{_how-_to-_use_autotoc_md56}{}\doxysubsection{\texorpdfstring{How to Use Extendable Enums}{How to Use Extendable Enums}}\label{_how-_to-_use_autotoc_md56}
+The enum system allows traditional C\# enums to be represented as Scriptable\+Object assets, making them more flexible and designer-\/friendly. Instead of being hardcoded in code, enum values can be created, referenced, and swapped like data.\hypertarget{_how-_to-_use_autotoc_md57}{}\doxysubsubsection{\texorpdfstring{Setup}{Setup}}\label{_how-_to-_use_autotoc_md57}
+Right click in your project asset browser, navigate to the create menu, in there you will find Modular Architecture\texorpdfstring{$>$}{>}Enums\texorpdfstring{$>$}{>}Create New Enum. This is how we define new enums, when you\textquotesingle{}ve created an enum it will be compiled into that same context asset browser.
+
+This behaves like a normal enum but is stored as data.\hypertarget{_how-_to-_use_autotoc_md58}{}\doxysubsubsection{\texorpdfstring{Example Use Cases}{Example Use Cases}}\label{_how-_to-_use_autotoc_md58}
+
+\begin{DoxyItemize}
+\item Game states (Menu, Gameplay, Paused)
+\item Enemy types (Melee, Ranged, Boss)
+\item Item categories (Weapon, Armor, Consumable)
+\item AI modes or behavior types
+\end{DoxyItemize}\hypertarget{_how-_to-_use_autotoc_md59}{}\doxysubsubsection{\texorpdfstring{Benefits}{Benefits}}\label{_how-_to-_use_autotoc_md59}
+
+\begin{DoxyItemize}
+\item Enums can be extended without changing code
+\item Designers can add or modify values through assets
+\item Systems can reference enum data instead of hardcoded values
+\item Works well with data-\/driven architectures (conditions, events, references)
+\end{DoxyItemize}\hypertarget{_how-_to-_use_autotoc_md60}{}\doxysubsection{\texorpdfstring{Thank You For Reading}{Thank You For Reading}}\label{_how-_to-_use_autotoc_md60}
+\hypertarget{_how-_to-_use_autotoc_md61}{}\doxysubsubsection{\texorpdfstring{{\ttfamily Suggested Readings}}{{\ttfamily Suggested Readings}}}\label{_how-_to-_use_autotoc_md61}
+\doxysectlink{_installation}{How to install the package}{0}
+
+\href{https://ryanellisdale.github.io/ModularArchitecture/md__documentation_2_credits.html}{\texttt{Credits}}
+
+\href{https://ryanellisdale.github.io/ModularArchitecture/md__third_01_party_01_notices.html}{\texttt{Third Party Notices}}
+
+\href{https://ryanellisdale.github.io/ModularArchitecture/md__l_i_c_e_n_s_e.html}{\texttt{Licensing}} 

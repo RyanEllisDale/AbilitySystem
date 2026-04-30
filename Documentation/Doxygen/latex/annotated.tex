@@ -1,0 +1,228 @@
+\doxysection{Class List}
+Here are the classes, structs, unions and interfaces with brief descriptions:\+\begin{DoxyCompactList}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_ability_data}{Ability\+System.\+Ability.\+Ability\+Data}} \\*Data asset defining an ability within the \doxylink{namespace_ability_system_1_1_ability}{Ability} System. Stores all permanent configuration such as effects, audio, categorization, requirements, and cooldown settings. ~\newline
+~\newline
+ }{\pageref{class_ability_system_1_1_ability_1_1_ability_data}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_ability_instance}{Ability\+System.\+Ability.\+Ability\+Instance}} \\*Runtime instance of an {\bfseries{\doxylink{class_ability_system_1_1_ability_1_1_ability_data}{Ability\+Data}}} asset. Stores temporary state such as cooldown and provides a reference to the permanent ability configuration. ~\newline
+~\newline
+ }{\pageref{class_ability_system_1_1_ability_1_1_ability_instance}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_ability_system_a_p_i}{Ability\+System.\+Ability\+System\+API}} \\*Central API for executing abilities, applying statuses, applying buffs, and managing turn‑based progression within the \doxylink{namespace_ability_system_1_1_ability}{Ability} System. Provides a unified interface for gameplay code to interact with abilities, buffs, and statuses. ~\newline
+ This class acts as the main integration layer between units, abilities, buffs, and statuses. ~\newline
+~\newline
+ }{\pageref{class_ability_system_1_1_ability_system_a_p_i}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_apply_buff}{Ability\+System.\+Ability.\+Apply\+Buff}} \\*\doxylink{class_ability_system_1_1_ability_1_1_effect}{Effect} that applies a {\bfseries{\doxylink{class_ability_system_1_1_buff_1_1_buff_data}{Buff\+Data}}} to the target unit. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ \+\_\+buff\+Data :\+}} The buff to apply when this effect activates. ~\newline
+ }{\pageref{class_ability_system_1_1_ability_1_1_apply_buff}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_apply_status_effect}{Ability\+System.\+Ability.\+Apply\+Status\+Effect}} \\*\doxylink{class_ability_system_1_1_ability_1_1_effect}{Effect} that applies a {\bfseries{\doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data}}} to the target unit. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ \+\_\+status\+Data :\+}} The status effect to apply when activated. ~\newline
+ }{\pageref{class_ability_system_1_1_ability_1_1_apply_status_effect}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_buff_1_1_buff_data}{Ability\+System.\+Buff.\+Buff\+Data}} \\*Data asset for buffs, contains all the permenant data for buffs, and lives within the project\textquotesingle{}s files. ~\newline
+ Contains the list of modifier rules which determine how buffs interact with the stats of {\bfseries{IBuff}} references. ~\newline
+ ~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ id :\+}} A unique string identifier for referencing this buff, ~\newline
+ {\bfseries{-\/ description :\+}} A multiline description used for UI, debugging, or doccumentation, ~\newline
+ {\bfseries{-\/ duration :\+}} How many turns the buff remains active once applied, ~\newline
+ {\bfseries{-\/ modifiers :\+}} The array of {\bfseries{\doxylink{struct_ability_system_1_1_buff_1_1_stat_modifier}{Stat\+Modifier}}} rules that define how this buff affects stats. ~\newline
+ }{\pageref{class_ability_system_1_1_buff_1_1_buff_data}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_buff_1_1_buff_instance}{Ability\+System.\+Buff.\+Buff\+Instance}} \\*A runtime instance for buff data to be applied to buff managers, modifies the stats of {\bfseries{\doxylink{interface_ability_system_1_1_buff_1_1_i_buff_container}{IBuff\+Container}}} containers based on the data\textquotesingle{}s modifiers. ~\newline
+ Contains the inpermenant runtime data for active buffs /\+ de-\/buffs that are applied to a target /\+ buff-\/manager. ~\newline
+ ~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ Data :\+}} The permenant data asset file for the instance to read from, ~\newline
+ {\bfseries{-\/ Current\+Duration :\+}} How many turns the Instance has left before being removed. ~\newline
+ ~\newline
+ Responsible for:\+ ~\newline
+ {\bfseries{-\/ Triggering Modification :\+}} When a \doxylink{class_ability_system_1_1_buff_1_1_buff_instance}{Buff\+Instance} is applied it will trigger all the stat modifications in it\textquotesingle{}s data, ~\newline
+ {\bfseries{-\/ Expiring Modification :\+}} When a \doxylink{class_ability_system_1_1_buff_1_1_buff_instance}{Buff\+Instance}\textquotesingle{}s duration ends, it will trigger the inverse of stat modifications in it\textquotesingle{}s data, ~\newline
+ {\bfseries{-\/ Storing Current Duration :\+}} As each turn passes the API will reduce it\textquotesingle{}s duration and remove the Instance when it hits 0. ~\newline
+ }{\pageref{class_ability_system_1_1_buff_1_1_buff_instance}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_buff_1_1_buff_manager}{Ability\+System.\+Buff.\+Buff\+Manager}} \\*The \doxylink{namespace_ability_system_1_1_buff}{Buff} Manager is a composite runtime container that manages all active {\bfseries{\doxylink{class_ability_system_1_1_buff_1_1_buff_instance}{Buff\+Instance}}} objects applied to a target implementing {\bfseries{\doxylink{interface_ability_system_1_1_buff_1_1_i_buff_container}{IBuff\+Container}}}. ~\newline
+ This class is a the \doxylink{namespace_ability_system_1_1_buff}{Buff} Functionality mirror to {\bfseries{\doxylink{namespace_ability_system_1_1_status}{Status} Manager.}} ~\newline
+~\newline
+ Responsible for:\+ ~\newline
+ {\bfseries{-\/ Adding Buffs :\+}} Creates new runtime instances and applies their stat modifiers, ~\newline
+ {\bfseries{-\/ Removing Buffs :\+}} Expires instances and reverses their stat modifiers, ~\newline
+ {\bfseries{-\/ Tracking Active Buffs :\+}} Maintains a list of all currently applied Buff\+Instances. ~\newline
+ }{\pageref{class_ability_system_1_1_buff_1_1_buff_manager}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_buff_status_data}{Ability\+System.\+Status.\+Buff\+Status\+Data}} \\*\doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} wrapper for applying a {\bfseries{\doxylink{class_ability_system_1_1_buff_1_1_buff_data}{Buff\+Data}}} asset as a status effect. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ data :\+}} The \doxylink{class_ability_system_1_1_buff_1_1_buff_data}{Buff\+Data} asset to apply when this status activates. ~\newline
+ }{\pageref{class_ability_system_1_1_status_1_1_buff_status_data}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_buff_status_instance}{Ability\+System.\+Status.\+Buff\+Status\+Instance}} \\*Runtime instance for {\bfseries{\doxylink{class_ability_system_1_1_status_1_1_buff_status_data}{Buff\+Status\+Data}}}. Applies and removes a \doxylink{class_ability_system_1_1_buff_1_1_buff_data}{Buff\+Data} from any target implementing {\bfseries{\doxylink{interface_ability_system_1_1_buff_1_1_i_buff_container}{IBuff\+Container}}}. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ \+\_\+buff\+Status\+Data :\+}} Cached reference to the \doxylink{class_ability_system_1_1_status_1_1_buff_status_data}{Buff\+Status\+Data} asset. ~\newline
+ }{\pageref{class_ability_system_1_1_status_1_1_buff_status_instance}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_call_event}{Ability\+System.\+Ability.\+Call\+Event}} \\*\doxylink{class_ability_system_1_1_ability_1_1_effect}{Effect} that raises a {\bfseries{Game\+Event}} when activated. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ \+\_\+game\+Event :\+}} The event to raise on activation. ~\newline
+ }{\pageref{class_ability_system_1_1_ability_1_1_call_event}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_composite_status_data}{Ability\+System.\+Status.\+Composite\+Status\+Data}} \\*\doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} representing a composite effect made up of multiple sub‑effects. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ sub\+Effects :\+}} An array of \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} assets that will activate together. ~\newline
+ }{\pageref{class_ability_system_1_1_status_1_1_composite_status_data}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_composite_status_instance}{Ability\+System.\+Status.\+Composite\+Status\+Instance}} \\*Runtime instance for {\bfseries{\doxylink{class_ability_system_1_1_status_1_1_composite_status_data}{Composite\+Status\+Data}}}. Manages and forwards activation events to all sub‑effect instances. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ \+\_\+composite\+Data :\+}} Cached reference to the composite data asset, ~\newline
+ {\bfseries{-\/ \+\_\+instances :\+}} Runtime instances created from each sub‑effect. ~\newline
+ }{\pageref{class_ability_system_1_1_status_1_1_composite_status_instance}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_damage_over_time_status_data}{Ability\+System.\+Status.\+Damage\+Over\+Time\+Status\+Data}} \\*\doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} representing a damage‑over‑time effect. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ damage\+Per\+Turn :\+}} The amount of damage applied at the end of each turn. ~\newline
+ }{\pageref{class_ability_system_1_1_status_1_1_damage_over_time_status_data}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_damage_over_time_status_instance}{Ability\+System.\+Status.\+Damage\+Over\+Time\+Status\+Instance}} \\*Runtime instance for {\bfseries{\doxylink{class_ability_system_1_1_status_1_1_damage_over_time_status_data}{Damage\+Over\+Time\+Status\+Data}}}. Applies damage to the target at the end of each turn. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ \+\_\+dot\+Data :\+}} Cached reference to the DOT data asset. ~\newline
+ }{\pageref{class_ability_system_1_1_status_1_1_damage_over_time_status_instance}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_effect}{Ability\+System.\+Ability.\+Effect}} \\*Base class for all ability effects. Effects define a single action performed when an ability activates. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ Activate :\+}} Executes the effect using the parent and target units. ~\newline
+ }{\pageref{class_ability_system_1_1_ability_1_1_effect}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_extendable_ability_category}{Ability\+System.\+Ability.\+Extendable\+Ability\+Category}} \\*Extendable enum asset for {\bfseries{\doxylink{namespace_ability_system_1_1_ability_a9f71bffef370480022c5fbc45907bed2}{Ability\+Category}}}. Allows designers to create modular, data‑driven enum entries that can be referenced throughout the \doxylink{namespace_ability_system_1_1_ability}{Ability} System. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ value :\+}} The selected \doxylink{namespace_ability_system_1_1_ability_a9f71bffef370480022c5fbc45907bed2}{Ability\+Category} value stored in this asset. ~\newline
+ }{\pageref{class_ability_system_1_1_ability_1_1_extendable_ability_category}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_extendable_damage_type}{Ability\+System.\+Ability.\+Extendable\+Damage\+Type}} \\*Extendable enum asset for {\bfseries{\doxylink{namespace_ability_system_1_1_ability_a04e93bd629369376e7f264f946bb438a}{Damage\+Type}}}. Allows designers to define modular, data‑driven damage types that can be referenced throughout the \doxylink{namespace_ability_system_1_1_ability}{Ability} System. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ value :\+}} The selected \doxylink{namespace_ability_system_1_1_ability_a04e93bd629369376e7f264f946bb438a}{Damage\+Type} value stored in this asset. ~\newline
+ }{\pageref{class_ability_system_1_1_ability_1_1_extendable_damage_type}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_heal_effect}{Ability\+System.\+Ability.\+Heal\+Effect}} \\*\doxylink{class_ability_system_1_1_ability_1_1_effect}{Effect} that restores health to the target unit. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ \+\_\+heal\+Amount :\+}} The amount of health restored when activated. ~\newline
+ }{\pageref{class_ability_system_1_1_ability_1_1_heal_effect}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{interface_ability_system_1_1_buff_1_1_i_buff_container}{Ability\+System.\+Buff.\+IBuff\+Container}} \\*Interface for any object capable of receiving and managing buffs. ~\newline
+~\newline
+ Implementers must provide:\+ ~\newline
+ {\bfseries{-\/ buff\+Manager :\+}} A \doxylink{class_ability_system_1_1_buff_1_1_buff_manager}{Buff\+Manager} instance responsible for handling Buff\+Instances, ~\newline
+ {\bfseries{-\/ Get\+Stat :\+}} Retrieves a stat value (float) by its string identifier, ~\newline
+ {\bfseries{-\/ Modify\+Stat :\+}} Applies additive or multiplicative changes to a stat. ~\newline
+~\newline
+ }{\pageref{interface_ability_system_1_1_buff_1_1_i_buff_container}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{interface_ability_system_1_1_status_1_1_i_status_container}{Ability\+System.\+Status.\+IStatus\+Container}} \\*Primary interface for any object capable of receiving and interacting with status effects. ~\newline
+ This is the core contract used by the \doxylink{namespace_ability_system_1_1_status}{Status} System. ~\newline
+~\newline
+ }{\pageref{interface_ability_system_1_1_status_1_1_i_status_container}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{interface_ability_system_1_1_i_unit}{Ability\+System.\+IUnit}} \\*Composite interface representing a fully functional gameplay unit. ~\newline
+ Combines grid movement, health management, status effects, and buff functionality. ~\newline
+~\newline
+ }{\pageref{interface_ability_system_1_1_i_unit}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_mix_rule}{Ability\+System.\+Status.\+Mix\+Rule}} \\*Defines a mixing rule between two status effects. If {\bfseries{effectA}} and {\bfseries{effectB}} are present, they combine into {\bfseries{result}}. Also generates flattened component lists for the resulting effect. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ effectA :\+}} The first effect in the mix pair, ~\newline
+ {\bfseries{-\/ effectB :\+}} The second effect in the mix pair, ~\newline
+ {\bfseries{-\/ result :\+}} The resulting combined \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data}. ~\newline
+ }{\pageref{class_ability_system_1_1_status_1_1_mix_rule}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_print_effect}{Ability\+System.\+Ability.\+Print\+Effect}} \\*\doxylink{class_ability_system_1_1_ability_1_1_effect}{Effect} that prints a message to the console when activated. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ \+\_\+message :\+}} The message printed on activation. ~\newline
+ }{\pageref{class_ability_system_1_1_ability_1_1_print_effect}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_push_effect}{Ability\+System.\+Ability.\+Push\+Effect}} \\*\doxylink{class_ability_system_1_1_ability_1_1_effect}{Effect} that pushes the target unit by a specified grid offset. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ \+\_\+push\+Force :\+}} The grid direction and distance to push the target. ~\newline
+ }{\pageref{class_ability_system_1_1_ability_1_1_push_effect}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_regeneration_status_data}{Ability\+System.\+Status.\+Regeneration\+Status\+Data}} \\*\doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} representing a regeneration effect. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ health\+Per\+Turn :\+}} The amount of health restored at the start of each turn. ~\newline
+ }{\pageref{class_ability_system_1_1_status_1_1_regeneration_status_data}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_regeneration_status_instance}{Ability\+System.\+Status.\+Regeneration\+Status\+Instance}} \\*Runtime instance for {\bfseries{\doxylink{class_ability_system_1_1_status_1_1_regeneration_status_data}{Regeneration\+Status\+Data}}}. Restores health to the target at the start of each turn. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ \+\_\+regen\+Data :\+}} Cached reference to the regeneration data asset. ~\newline
+ }{\pageref{class_ability_system_1_1_status_1_1_regeneration_status_instance}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_editor_1_1_script_templates}{Ability\+System.\+Editor.\+Script\+Templates}} }{\pageref{class_ability_system_1_1_editor_1_1_script_templates}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_ability_1_1_spawn_object_effect}{Ability\+System.\+Ability.\+Spawn\+Object\+Effect}} \\*\doxylink{class_ability_system_1_1_ability_1_1_effect}{Effect} that spawns a prefab at the target\textquotesingle{}s position with an optional offset. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ \+\_\+object\+Prefab :\+}} The object to spawn, ~\newline
+ {\bfseries{-\/ \+\_\+offset :\+}} The positional offset from the target\textquotesingle{}s location. ~\newline
+ }{\pageref{class_ability_system_1_1_ability_1_1_spawn_object_effect}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{struct_ability_system_1_1_buff_1_1_stat_modifier}{Ability\+System.\+Buff.\+Stat\+Modifier}} \\*Stat Modifier is a small struct that contains the rules and values for changing and how to change a stat ~\newline
+ ~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ target\+Stat\+ID :\+}} The string identifier /\+ name of that stat to be modified, ~\newline
+ {\bfseries{-\/ modifier\+Value :\+}} The float value that will be used to change the target\+Stat relative to the modifier\+Type, ~\newline
+ {\bfseries{-\/cmodifier\+Type :\+}} Small enum which determines how the modifier\+Value will affect the target\+Stat }{\pageref{struct_ability_system_1_1_buff_1_1_stat_modifier}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data}{Ability\+System.\+Status.\+Status\+Data}} \\*Base data asset for all status effects. Stores permanent configuration for a status, including its identifier, description, and duration.~\newline
+~\newline
+ Contains:\+ ~\newline
+ {\bfseries{-\/ id :\+}} A unique string identifier for referencing this status, ~\newline
+ {\bfseries{-\/ description :\+}} A multiline description used for UI, debugging, or documentation, ~\newline
+ {\bfseries{-\/ duration :\+}} How many turns the status remains active once applied, ~\newline
+ {\bfseries{-\/ components :\+}} A list of \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} objects that represent sub‑effects used in mixing logic. ~\newline
+~\newline
+ }{\pageref{class_ability_system_1_1_status_1_1_status_data}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_effect_mixer}{Ability\+System.\+Status.\+Status\+Effect\+Mixer}} \\*Static singleton accessor for the {\bfseries{\doxylink{class_ability_system_1_1_status_1_1_status_effect_mixing_database}{Status\+Effect\+Mixing\+Database}}}. ~\newline
+ Loads the database from project resources and exposes it globally for mixing logic. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ instance :\+}} A lazily loaded reference to the mixing database asset. ~\newline
+~\newline
+ Responsible for :\+ ~\newline
+ {\bfseries{-\/ Database Access :\+}} Ensures the mixing database is loaded and available at runtime. ~\newline
+ }{\pageref{class_ability_system_1_1_status_1_1_status_effect_mixer}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_effect_mixing_database}{Ability\+System.\+Status.\+Status\+Effect\+Mixing\+Database}} \\*Database asset containing all {\bfseries{\doxylink{class_ability_system_1_1_status_1_1_mix_rule}{Mix\+Rule}}} definitions for the status system. ~\newline
+ Used by {\bfseries{\doxylink{class_ability_system_1_1_status_1_1_status_effect_mixer}{Status\+Effect\+Mixer}}} to determine how effects combine. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ mix\+Rules :\+}} A list of all defined effect mixing rules. ~\newline
+~\newline
+ Responsible for :\+ ~\newline
+ {\bfseries{-\/ Mixing Logic :\+}} Provides lookup functionality for determining combined effects, ~\newline
+ {\bfseries{-\/ Component Generation :\+}} Builds component lists for all mix results. ~\newline
+ }{\pageref{class_ability_system_1_1_status_1_1_status_effect_mixing_database}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_editor_1_1_status_effect_mixing_database_editor}{Ability\+System.\+Editor.\+Status\+Effect\+Mixing\+Database\+Editor}} }{\pageref{class_ability_system_1_1_editor_1_1_status_effect_mixing_database_editor}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance}{Ability\+System.\+Status.\+Status\+Instance}} \\*Runtime instance of a \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} asset. Stores temporary state such as remaining duration and provides activation hooks for turn‑based status behavior. ~\newline
+~\newline
+ Contains:\+ ~\newline
+ {\bfseries{-\/ data :\+}} The permanent \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} asset this instance is based on, ~\newline
+ {\bfseries{-\/ current\+Duration :\+}} How many turns remain before the status expires. ~\newline
+~\newline
+ Responsible for:\+ ~\newline
+ {\bfseries{-\/ Turn Events :\+}} Provides virtual callbacks for turn start and end, ~\newline
+ {\bfseries{-\/ Application :\+}} Executes logic when applied to an IStatus target, ~\newline
+ {\bfseries{-\/ Removal :\+}} Executes cleanup logic when removed from an IStatus target. ~\newline
+ }{\pageref{class_ability_system_1_1_status_1_1_status_instance}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_manager}{Ability\+System.\+Status.\+Status\+Manager}} \\*Runtime manager responsible for handling all active {\bfseries{\doxylink{class_ability_system_1_1_status_1_1_status_instance}{Status\+Instance}}} effects applied to a unit. ~\newline
+ Supports applying, removing, mixing, and tracking status effects during gameplay. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ active\+Effects :\+}} A list of all currently active Status\+Instances, ~\newline
+ {\bfseries{-\/ \+\_\+owner :\+}} The Mono\+Behaviour implementing {\bfseries{IStatus}} that owns this manager, ~\newline
+ {\bfseries{-\/ unit\+Owner :\+}} A cached reference to the owning IStatus interface. ~\newline
+~\newline
+ Responsible for :\+ ~\newline
+ {\bfseries{-\/ Applying Effects :\+}} Creates instances, handles mixing logic, and triggers On\+Apply, ~\newline
+ {\bfseries{-\/ Removing Effects :\+}} Removes instances and triggers On\+Remove, ~\newline
+ {\bfseries{-\/ Mixing Logic :\+}} Uses {\bfseries{\doxylink{class_ability_system_1_1_status_1_1_status_effect_mixer}{Status\+Effect\+Mixer}}} to combine compatible effects, ~\newline
+ {\bfseries{-\/ Component Validation :\+}} Prevents adding effects that are components of active combined effects. ~\newline
+ }{\pageref{class_ability_system_1_1_status_1_1_status_manager}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{class_ability_system_1_1_supplies_1_1_supply}{Ability\+System.\+Supplies.\+Supply}} \\*Represents a resource requirement for activating an ability. ~\newline
+ Used by abilities to check whether the user has enough resources and to deduct them on activation. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ id :\+}} A unique identifier for this supply requirement, ~\newline
+ {\bfseries{-\/ description :\+}} A multiline description used for UI or debugging, ~\newline
+ {\bfseries{-\/ \+\_\+resource :\+}} A reference to the current amount of the required resource, ~\newline
+ {\bfseries{-\/ \+\_\+cost :\+}} A reference to the amount of resource consumed when used. ~\newline
+~\newline
+ }{\pageref{class_ability_system_1_1_supplies_1_1_supply}}{}
+\end{DoxyCompactList}

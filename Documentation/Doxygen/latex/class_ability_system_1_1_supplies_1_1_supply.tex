@@ -1,0 +1,121 @@
+\doxysection{Ability\+System.\+Supplies.\+Supply Class Reference}
+\hypertarget{class_ability_system_1_1_supplies_1_1_supply}{}\label{class_ability_system_1_1_supplies_1_1_supply}\index{AbilitySystem.Supplies.Supply@{AbilitySystem.Supplies.Supply}}
+
+
+Represents a resource requirement for activating an ability. ~\newline
+ Used by abilities to check whether the user has enough resources and to deduct them on activation. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ id :\+}} A unique identifier for this supply requirement, ~\newline
+ {\bfseries{-\/ description :\+}} A multiline description used for UI or debugging, ~\newline
+ {\bfseries{-\/ \+\_\+resource :\+}} A reference to the current amount of the required resource, ~\newline
+ {\bfseries{-\/ \+\_\+cost :\+}} A reference to the amount of resource consumed when used. ~\newline
+~\newline
+.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{class_ability_system_1_1_supplies_1_1_supply_a295cfe4434c3a1830d95bcbf06350fe0}{Evaluate}} ()
+\begin{DoxyCompactList}\small\item\em Evaluates whether the required resource amount is available. ~\newline
+~\newline
+. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_ability_system_1_1_supplies_1_1_supply_a67fae6723c5df2c1363f2cdff14dca61}{Use}} ()
+\begin{DoxyCompactList}\small\item\em Deducts the cost from the resource value. ~\newline
+ Should only be called after {\bfseries{Evaluate}} returns true. ~\newline
+~\newline
+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \doxymbox{\hyperlink{class_ability_system_1_1_supplies_1_1_supply_a41af1e8a16fe4ef39a5cff75d7899827}{id}}
+\item 
+string \doxymbox{\hyperlink{class_ability_system_1_1_supplies_1_1_supply_a55305fbf5b9421dab8c47086e4d372a7}{description}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Data\+Reference$<$ float $>$ \doxymbox{\hyperlink{class_ability_system_1_1_supplies_1_1_supply_ac9d7951274b898b4f79d9d40c3a8c89a}{\+\_\+resource}}
+\item 
+Data\+Reference$<$ float $>$ \doxymbox{\hyperlink{class_ability_system_1_1_supplies_1_1_supply_a1cdab35b7afaa38056cf3d7b9318737f}{\+\_\+cost}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a resource requirement for activating an ability. ~\newline
+ Used by abilities to check whether the user has enough resources and to deduct them on activation. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ id :\+}} A unique identifier for this supply requirement, ~\newline
+ {\bfseries{-\/ description :\+}} A multiline description used for UI or debugging, ~\newline
+ {\bfseries{-\/ \+\_\+resource :\+}} A reference to the current amount of the required resource, ~\newline
+ {\bfseries{-\/ \+\_\+cost :\+}} A reference to the amount of resource consumed when used. ~\newline
+~\newline
+. 
+
+\label{doc-func-members}
+\Hypertarget{class_ability_system_1_1_supplies_1_1_supply_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ability_system_1_1_supplies_1_1_supply_a295cfe4434c3a1830d95bcbf06350fe0}\index{AbilitySystem.Supplies.Supply@{AbilitySystem.Supplies.Supply}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!AbilitySystem.Supplies.Supply@{AbilitySystem.Supplies.Supply}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_supplies_1_1_supply_a295cfe4434c3a1830d95bcbf06350fe0} 
+bool Ability\+System.\+Supplies.\+Supply.\+Evaluate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Evaluates whether the required resource amount is available. ~\newline
+~\newline
+. 
+
+\begin{DoxyReturn}{Returns}
+True if the resource value is greater than or equal to the cost.
+\end{DoxyReturn}
+\Hypertarget{class_ability_system_1_1_supplies_1_1_supply_a67fae6723c5df2c1363f2cdff14dca61}\index{AbilitySystem.Supplies.Supply@{AbilitySystem.Supplies.Supply}!Use@{Use}}
+\index{Use@{Use}!AbilitySystem.Supplies.Supply@{AbilitySystem.Supplies.Supply}}
+\doxysubsubsection{\texorpdfstring{Use()}{Use()}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_supplies_1_1_supply_a67fae6723c5df2c1363f2cdff14dca61} 
+void Ability\+System.\+Supplies.\+Supply.\+Use (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Deducts the cost from the resource value. ~\newline
+ Should only be called after {\bfseries{Evaluate}} returns true. ~\newline
+~\newline
+. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_ability_system_1_1_supplies_1_1_supply_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ability_system_1_1_supplies_1_1_supply_a1cdab35b7afaa38056cf3d7b9318737f}\index{AbilitySystem.Supplies.Supply@{AbilitySystem.Supplies.Supply}!\_cost@{\_cost}}
+\index{\_cost@{\_cost}!AbilitySystem.Supplies.Supply@{AbilitySystem.Supplies.Supply}}
+\doxysubsubsection{\texorpdfstring{\_cost}{\_cost}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_supplies_1_1_supply_a1cdab35b7afaa38056cf3d7b9318737f} 
+Data\+Reference$<$float$>$ Ability\+System.\+Supplies.\+Supply.\+\_\+cost\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ability_system_1_1_supplies_1_1_supply_ac9d7951274b898b4f79d9d40c3a8c89a}\index{AbilitySystem.Supplies.Supply@{AbilitySystem.Supplies.Supply}!\_resource@{\_resource}}
+\index{\_resource@{\_resource}!AbilitySystem.Supplies.Supply@{AbilitySystem.Supplies.Supply}}
+\doxysubsubsection{\texorpdfstring{\_resource}{\_resource}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_supplies_1_1_supply_ac9d7951274b898b4f79d9d40c3a8c89a} 
+Data\+Reference$<$float$>$ Ability\+System.\+Supplies.\+Supply.\+\_\+resource\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ability_system_1_1_supplies_1_1_supply_a55305fbf5b9421dab8c47086e4d372a7}\index{AbilitySystem.Supplies.Supply@{AbilitySystem.Supplies.Supply}!description@{description}}
+\index{description@{description}!AbilitySystem.Supplies.Supply@{AbilitySystem.Supplies.Supply}}
+\doxysubsubsection{\texorpdfstring{description}{description}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_supplies_1_1_supply_a55305fbf5b9421dab8c47086e4d372a7} 
+string Ability\+System.\+Supplies.\+Supply.\+description}
+
+\Hypertarget{class_ability_system_1_1_supplies_1_1_supply_a41af1e8a16fe4ef39a5cff75d7899827}\index{AbilitySystem.Supplies.Supply@{AbilitySystem.Supplies.Supply}!id@{id}}
+\index{id@{id}!AbilitySystem.Supplies.Supply@{AbilitySystem.Supplies.Supply}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_supplies_1_1_supply_a41af1e8a16fe4ef39a5cff75d7899827} 
+string Ability\+System.\+Supplies.\+Supply.\+id}
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Runtime/\+\+Supplies/\+Supply.\+cs\end{DoxyCompactItemize}

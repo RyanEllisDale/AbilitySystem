@@ -1,0 +1,84 @@
+\doxysection{Ability\+System.\+Status.\+Buff\+Status\+Data Class Reference}
+\hypertarget{class_ability_system_1_1_status_1_1_buff_status_data}{}\label{class_ability_system_1_1_status_1_1_buff_status_data}\index{AbilitySystem.Status.BuffStatusData@{AbilitySystem.Status.BuffStatusData}}
+
+
+\doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} wrapper for applying a {\bfseries{\doxylink{class_ability_system_1_1_buff_1_1_buff_data}{Buff\+Data}}} asset as a status effect. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ data :\+}} The \doxylink{class_ability_system_1_1_buff_1_1_buff_data}{Buff\+Data} asset to apply when this status activates. ~\newline
+.  
+
+
+Inheritance diagram for Ability\+System.\+Status.\+Buff\+Status\+Data:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_ability_system_1_1_status_1_1_buff_status_data}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance}{Status\+Instance}} \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_buff_status_data_a5e61fa45ca9a3db9c66dcf5ff71a6c6c}{Create\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Creates a runtime instance of this buff status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data}{Ability\+System.\+Status.\+Status\+Data}}}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance}{Status\+Instance}} \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data_a680b84696d6d3f2097d8d7664d948f0e}{Create\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Creates a runtime instance of this status effect. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_ability_system_1_1_buff_1_1_buff_data}{Buff\+Data}} \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_buff_status_data_a3b12194400b2f1aa56a5268cafc3da94}{data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data}{Ability\+System.\+Status.\+Status\+Data}}}
+\begin{DoxyCompactItemize}
+\item 
+string \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data_a1e87b42f1b9fb438d989f9a067031ec9}{id}}
+\item 
+string \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data_a8e1133b175443d9a505cf50dc3bc7aaf}{description}}
+\item 
+int \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data_ab7f95c7ddf2d75a7bdf96faa45d3332e}{duration}} = 1
+\item 
+List$<$ \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data}} $>$ \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data_a1eef5e48ceb1cc8f271595fcfb443ca2}{components}} = new List$<$\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data}}$>$()
+\begin{DoxyCompactList}\small\item\em Component effects used for mixing and combination logic. Flatened list of \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} that is used to check if this status is the restulf of a combination. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} wrapper for applying a {\bfseries{\doxylink{class_ability_system_1_1_buff_1_1_buff_data}{Buff\+Data}}} asset as a status effect. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ data :\+}} The \doxylink{class_ability_system_1_1_buff_1_1_buff_data}{Buff\+Data} asset to apply when this status activates. ~\newline
+. 
+
+\label{doc-func-members}
+\Hypertarget{class_ability_system_1_1_status_1_1_buff_status_data_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ability_system_1_1_status_1_1_buff_status_data_a5e61fa45ca9a3db9c66dcf5ff71a6c6c}\index{AbilitySystem.Status.BuffStatusData@{AbilitySystem.Status.BuffStatusData}!CreateInstance@{CreateInstance}}
+\index{CreateInstance@{CreateInstance}!AbilitySystem.Status.BuffStatusData@{AbilitySystem.Status.BuffStatusData}}
+\doxysubsubsection{\texorpdfstring{CreateInstance()}{CreateInstance()}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_status_1_1_buff_status_data_a5e61fa45ca9a3db9c66dcf5ff71a6c6c} 
+override \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance}{Status\+Instance}} Ability\+System.\+Status.\+Buff\+Status\+Data.\+Create\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a runtime instance of this buff status. 
+
+\begin{DoxyReturn}{Returns}
+A new \doxylink{class_ability_system_1_1_status_1_1_buff_status_instance}{Buff\+Status\+Instance}.
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_ability_system_1_1_status_1_1_buff_status_data_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ability_system_1_1_status_1_1_buff_status_data_a3b12194400b2f1aa56a5268cafc3da94}\index{AbilitySystem.Status.BuffStatusData@{AbilitySystem.Status.BuffStatusData}!data@{data}}
+\index{data@{data}!AbilitySystem.Status.BuffStatusData@{AbilitySystem.Status.BuffStatusData}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_status_1_1_buff_status_data_a3b12194400b2f1aa56a5268cafc3da94} 
+\doxymbox{\hyperlink{class_ability_system_1_1_buff_1_1_buff_data}{Buff\+Data}} Ability\+System.\+Status.\+Buff\+Status\+Data.\+data}
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Runtime/\+\+Status/\+\+Status Types/\+Buff\+Status.\+cs\end{DoxyCompactItemize}

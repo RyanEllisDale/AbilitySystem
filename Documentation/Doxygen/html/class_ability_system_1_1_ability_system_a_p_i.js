@@ -1,0 +1,24 @@
+var class_ability_system_1_1_ability_system_a_p_i =
+[
+    [ "ApplyBuff", "class_ability_system_1_1_ability_system_a_p_i.html#ab301a1ccfb11cf0af07f5298e0d300e5", null ],
+    [ "ApplyStatus", "class_ability_system_1_1_ability_system_a_p_i.html#a85d4e9cb3d231e71c67091cbace23062", null ],
+    [ "ExecuteAbility", "class_ability_system_1_1_ability_system_a_p_i.html#a907e04a20104fd0fa2be514cffd9f55f", null ],
+    [ "IsActivatable", "class_ability_system_1_1_ability_system_a_p_i.html#ae500c351b3e72b01d205be90d4be26f2", null ],
+    [ "OnTurnEnd", "class_ability_system_1_1_ability_system_a_p_i.html#af7a68731379ead9356eeb38cf58cb6e8", null ],
+    [ "OnTurnStart", "class_ability_system_1_1_ability_system_a_p_i.html#a2cb133aacb0804ad6911778885f3e176", null ],
+    [ "OnTurnStart", "class_ability_system_1_1_ability_system_a_p_i.html#a22c12a4716a08515b0ae937b5e029fc4", null ],
+    [ "OnTurnStart", "class_ability_system_1_1_ability_system_a_p_i.html#a1ca068c180ca6ccc4c59d39b5201dbc4", null ],
+    [ "RemoveBuff", "class_ability_system_1_1_ability_system_a_p_i.html#a8ee66605dbd1ac6bc31bdc8d4a51da73", null ],
+    [ "RemoveBuff", "class_ability_system_1_1_ability_system_a_p_i.html#ac2e73a6a5ef4fc3e794b227c00556c17", null ],
+    [ "RemoveStatus", "class_ability_system_1_1_ability_system_a_p_i.html#ada82755955384d042d565c9131d68578", null ],
+    [ "RemoveStatus", "class_ability_system_1_1_ability_system_a_p_i.html#ad3144963933a57fc56d1f8bdf5671ce1", null ],
+    [ "_underlyingInstance", "class_ability_system_1_1_ability_system_a_p_i.html#ab73237cd1b78083c5169b88e77f8c21c", null ],
+    [ "Instance", "class_ability_system_1_1_ability_system_a_p_i.html#a6f8d89ca847f9ae4f24e38a4877493dd", null ],
+    [ "AbilityCooldownReduced", "class_ability_system_1_1_ability_system_a_p_i.html#ad0c69a7025ad57fbaf35356ada458389", null ],
+    [ "AbilityExecuted", "class_ability_system_1_1_ability_system_a_p_i.html#a3f4712e1843447cf343209c7b1ed0b66", null ],
+    [ "BuffApplied", "class_ability_system_1_1_ability_system_a_p_i.html#ab689b9ec35e6db44ea5708befc8b699d", null ],
+    [ "BuffRemoved", "class_ability_system_1_1_ability_system_a_p_i.html#aa1b2fed7247a5b624cdf3de11ffddcbb", null ],
+    [ "StatusActivated", "class_ability_system_1_1_ability_system_a_p_i.html#a4aecefd38069fb55cf8251a2b2be84ef", null ],
+    [ "StatusApplied", "class_ability_system_1_1_ability_system_a_p_i.html#a77b35cc2fc0bc86dedcbe21f7c30d0b9", null ],
+    [ "StatusRemoved", "class_ability_system_1_1_ability_system_a_p_i.html#af7a9fd6d3b9aa01b9bff5bb2e1de8108", null ]
+];

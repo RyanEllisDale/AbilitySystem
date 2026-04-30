@@ -1,0 +1,18 @@
+\doxysection{Modular\+Architecture.\+Events Namespace Reference}
+\hypertarget{namespace_modular_architecture_1_1_events}{}\label{namespace_modular_architecture_1_1_events}\index{ModularArchitecture.Events@{ModularArchitecture.Events}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_modular_architecture_1_1_events_1_1_game_event}{Game\+Event}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_modular_architecture_1_1_events_1_1_game_event}{Game\+Event} object, when raised it will trigger responses from all listeners, ~\newline
+ Is a scriptable object asset file and thus works on its own without scene dependancy. ~\newline
+ Can only contain unique listeners, duplicate listeners will be ignored for performance and scale-\/ability. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_modular_architecture_1_1_events_1_1_game_event_listener}{Game\+Event\+Listener}}
+\begin{DoxyCompactList}\small\item\em Serialized Event Listener for scripts and classes to reference and activate for event responses ~\newline
+ Subscribes to a \doxylink{class_modular_architecture_1_1_events_1_1_game_event}{Game\+Event} Asset and when that event is raised it will invoke it\textquotesingle{}s given \doxylink{class_modular_architecture_1_1_events_1_1_game_event_listener_a170d8a901a619a91543c250f06124f9a}{response(s)} ~\newline
+ Contains a Constructor so it can reference \doxylink{class_modular_architecture_1_1_events_1_1_game_event}{Game\+Event} data assets in the Unity Resources Folder ~\newline
+ Used as the listener for \doxylink{class_modular_architecture_1_1_events_1_1_game_event_listener_script}{Game\+Event\+Listener\+Script} ~\newline
+. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_modular_architecture_1_1_events_1_1_game_event_listener_script}{Game\+Event\+Listener\+Script}}
+\begin{DoxyCompactList}\small\item\em Mono\+Behaviour script class for serialized \doxylink{class_modular_architecture_1_1_events_1_1_game_event_listener}{Game\+Event\+Listener} ~\newline
+ Allows for component-\/based use of \doxylink{class_modular_architecture_1_1_events_1_1_game_event_listener}{Game\+Event\+Listener} within scene, so \doxylink{class_modular_architecture_1_1_events_1_1_game_event_listener}{Game\+Event\+Listener} works in assets and scenes. \end{DoxyCompactList}\end{DoxyCompactItemize}

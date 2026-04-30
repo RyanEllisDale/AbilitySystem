@@ -1,0 +1,40 @@
+\doxysection{Modular\+Architecture.\+Data Namespace Reference}
+\hypertarget{namespace_modular_architecture_1_1_data}{}\label{namespace_modular_architecture_1_1_data}\index{ModularArchitecture.Data@{ModularArchitecture.Data}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_container-1-g}{Data\+Container$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em A Asset File containing a value of any given type ~\newline
+ Used for modular /\+ data-\/driven design, and referenced in Data\+Reference. ~\newline
+ Data\+Container is an abstract class because Unity cannot make generic Scriptable Objects ~\newline
+ Any Child of Data\+Container ( different types ) should be made wrapper children. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference-1-g}{Data\+Reference$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Data\+Reference contains either a constant value or points to a data container asset in the project ~\newline
+ It is used in place of default types to reference variable objects and allow for implicit comparisons. ~\newline
+ It contains types that are comparable ( consist of IComperable ), so that custom types can be made ~\newline
+. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_float_reference}{Float\+Reference}}
+\item 
+class \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_string_reference}{String\+Reference}}
+\item 
+class \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_int_reference}{Int\+Reference}}
+\item 
+class \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_bool_reference}{Bool\+Reference}}
+\item 
+class \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_condition_reference}{Condition\+Reference}}
+\item 
+class \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Data\+Reference\+Base}}
+\begin{DoxyCompactList}\small\item\em Data\+Refernce\+Base is the base class used to draw, overload, and compare for Data\+Refence ~\newline
+ Data\+Reference is a generic templated type and thus cannot be the target of property drawers or comparisons so \doxylink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Data\+Reference\+Base} is used instead ~\newline
+ \doxylink{class_modular_architecture_1_1_data_1_1_data_reference_base}{Data\+Reference\+Base} contains the base == equality overloads that Data\+Reference needs to overwrite so it\textquotesingle{}s values can be compared to other References ~\newline
+. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_bool_variable}{Bool\+Variable}}
+\item 
+class \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_condition_variable}{Condition\+Variable}}
+\item 
+class \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_float_variable}{Float\+Variable}}
+\item 
+class \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_int_variable}{Int\+Variable}}
+\item 
+class \doxymbox{\hyperlink{class_modular_architecture_1_1_data_1_1_string_variable}{String\+Variable}}
+\end{DoxyCompactItemize}

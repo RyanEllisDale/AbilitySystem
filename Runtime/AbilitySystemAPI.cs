@@ -127,6 +127,30 @@ namespace AbilitySystem
         }
 
 
+        public static void OnTurnEnd(IStatusContainer aCurrentStatusContainer)
+        {
+            StatusManager UnitStatusManager = aCurrentStatusContainer.StatusManager;
+            if (UnitStatusManager == null) return;
+
+            List<StatusInstance> Instances = new List<StatusInstance>(UnitStatusManager.activeEffects);
+
+            foreach (StatusInstance CurrentInstance in Instances)
+            {
+                bool activated = CurrentInstance.OnTurnEnd(aCurrentStatusContainer);
+                if (activated == true)
+                {
+                    StatusActivated?.Invoke(aCurrentStatusContainer, CurrentInstance);
+                }
+
+                CurrentInstance.currentDuration = CurrentInstance.currentDuration - 1;
+
+                if (CurrentInstance.currentDuration <= 0)
+                {
+                    RemoveStatus(aCurrentStatusContainer, CurrentInstance);
+                }
+            }
+        }
+
         /// <summary>
         /// Processes turn‑end logic for a full unit. <br/>
         /// Handles status ticking, status expiration, ability cooldown reduction, and dispatches <b>StatusActivated</b> and <b>AbilityCooldownReduced</b> events as needed. <br/>
@@ -135,26 +159,7 @@ namespace AbilitySystem
         /// <param name="aCurrentUnit">The unit whose turn‑end logic should be processed.</param>
         public static void OnTurnEnd(IUnit aCurrentUnit)
         {
-            StatusManager UnitStatusManager = aCurrentUnit.StatusManager;
-            if (UnitStatusManager == null) return;
-
-            List<StatusInstance> Instances = new List<StatusInstance>(UnitStatusManager.activeEffects);
-
-            foreach (StatusInstance CurrentInstance in Instances)
-            {
-                bool activated = CurrentInstance.OnTurnEnd(aCurrentUnit);
-                if (activated == true)
-                {
-                    StatusActivated?.Invoke(aCurrentUnit, CurrentInstance);
-                }
-
-                CurrentInstance.currentDuration = CurrentInstance.currentDuration - 1;
-
-                if (CurrentInstance.currentDuration <= 0)
-                {
-                    RemoveStatus(aCurrentUnit, CurrentInstance);
-                }
-            }
+            OnTurnEnd((IStatusContainer)aCurrentUnit);
 
             // Cooldowns : 
             foreach (AbilityInstance CurrentInstance in aCurrentUnit.abilityInstances)
@@ -312,7 +317,6 @@ namespace AbilitySystem
         }
 
         #endregion Data Methods - Status
-
         #region Data Methods - Buffs
 
         /// <summary>

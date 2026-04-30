@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['magical_0',['Magical',['../namespace_ability_system_1_1_ability.html#a04e93bd629369376e7f264f946bb438aaf855e17eab2bd1a0b8f6c70a1635226a',1,'AbilitySystem::Ability']]],
+  ['majorversion_20minorversion_20patchversion_20year_20month_20day_1',['[MajorVersion.MinorVersion.PatchVersion] - Year-Month-Day',['../md__c_h_a_n_g_e_l_o_g.html#autotoc_md4',1,'']]],
+  ['manager_2',['Package Manager',['../_installation.html#autotoc_md30',1,'']]],
+  ['manager_20—_20git_3',['Package Manager — Git',['../_installation.html#autotoc_md32',1,'']]],
+  ['manager_20disk_4',['Package Manager Disk',['../_installation.html#autotoc_md31',1,'']]],
+  ['manual_20install_5',['Manual Install',['../_installation.html#autotoc_md33',1,'']]],
+  ['minorversion_20patchversion_20year_20month_20day_6',['[MajorVersion.MinorVersion.PatchVersion] - Year-Month-Day',['../md__c_h_a_n_g_e_l_o_g.html#autotoc_md4',1,'']]],
+  ['mixrule_7',['MixRule',['../class_ability_system_1_1_status_1_1_mix_rule.html',1,'AbilitySystem::Status']]],
+  ['mixrules_8',['mixRules',['../class_ability_system_1_1_status_1_1_status_effect_mixing_database.html#a4a5cc65c2f85851f9bf78000c3758423',1,'AbilitySystem::Status::StatusEffectMixingDatabase']]],
+  ['modifiers_9',['modifiers',['../class_ability_system_1_1_buff_1_1_buff_data.html#a7bb04061e58ce5e0e1a7840c583a8b81',1,'AbilitySystem::Buff::BuffData']]],
+  ['modifiertype_10',['modifierType',['../struct_ability_system_1_1_buff_1_1_stat_modifier.html#a5ef0e7227c165dd66a80acaf998c31ff',1,'AbilitySystem::Buff::StatModifier']]],
+  ['modifiervalue_11',['modifierValue',['../struct_ability_system_1_1_buff_1_1_stat_modifier.html#a90ea5a3397fb36367da9dbb66848a23b',1,'AbilitySystem::Buff::StatModifier']]],
+  ['modifystat_12',['ModifyStat',['../interface_ability_system_1_1_buff_1_1_i_buff_container.html#a7797d788a30aa142cc0436398774f49f',1,'AbilitySystem::Buff::IBuffContainer']]],
+  ['modular_20architecture_20home_13',['Modular Architecture - Home',['../index.html',1,'']]],
+  ['modularity_20in_20unity_14',['The Benefits to Modularity In Unity',['../index.html#autotoc_md24',1,'']]],
+  ['month_20day_15',['[MajorVersion.MinorVersion.PatchVersion] - Year-Month-Day',['../md__c_h_a_n_g_e_l_o_g.html#autotoc_md4',1,'']]],
+  ['moveunit_16',['MoveUnit',['../interface_ability_system_1_1_i_unit.html#acaf76f871f03b79607527b6b31fb9dbb',1,'AbilitySystem::IUnit']]],
+  ['multiply_17',['Multiply',['../namespace_ability_system_1_1_buff.html#ad34d78be7a21eb408125193ce681dd6eae257376d913f3b53cbb4a9b19d770648',1,'AbilitySystem::Buff']]]
+];

@@ -1,0 +1,125 @@
+\doxysection{Ability\+System.\+Status Namespace Reference}
+\hypertarget{namespace_ability_system_1_1_status}{}\label{namespace_ability_system_1_1_status}\index{AbilitySystem.Status@{AbilitySystem.Status}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+interface \doxymbox{\hyperlink{interface_ability_system_1_1_status_1_1_i_status_container}{IStatus\+Container}}
+\begin{DoxyCompactList}\small\item\em Primary interface for any object capable of receiving and interacting with status effects. ~\newline
+ This is the core contract used by the \doxylink{namespace_ability_system_1_1_status}{Status} System. ~\newline
+~\newline
+. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_effect_mixer}{Status\+Effect\+Mixer}}
+\begin{DoxyCompactList}\small\item\em Static singleton accessor for the {\bfseries{\doxylink{class_ability_system_1_1_status_1_1_status_effect_mixing_database}{Status\+Effect\+Mixing\+Database}}}. ~\newline
+ Loads the database from project resources and exposes it globally for mixing logic. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ instance :\+}} A lazily loaded reference to the mixing database asset. ~\newline
+~\newline
+ Responsible for :\+ ~\newline
+ {\bfseries{-\/ Database Access :\+}} Ensures the mixing database is loaded and available at runtime. ~\newline
+. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_mix_rule}{Mix\+Rule}}
+\begin{DoxyCompactList}\small\item\em Defines a mixing rule between two status effects. If {\bfseries{effectA}} and {\bfseries{effectB}} are present, they combine into {\bfseries{result}}. Also generates flattened component lists for the resulting effect. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ effectA :\+}} The first effect in the mix pair, ~\newline
+ {\bfseries{-\/ effectB :\+}} The second effect in the mix pair, ~\newline
+ {\bfseries{-\/ result :\+}} The resulting combined \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data}. ~\newline
+. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_effect_mixing_database}{Status\+Effect\+Mixing\+Database}}
+\begin{DoxyCompactList}\small\item\em Database asset containing all {\bfseries{\doxylink{class_ability_system_1_1_status_1_1_mix_rule}{Mix\+Rule}}} definitions for the status system. ~\newline
+ Used by {\bfseries{\doxylink{class_ability_system_1_1_status_1_1_status_effect_mixer}{Status\+Effect\+Mixer}}} to determine how effects combine. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ mix\+Rules :\+}} A list of all defined effect mixing rules. ~\newline
+~\newline
+ Responsible for :\+ ~\newline
+ {\bfseries{-\/ Mixing Logic :\+}} Provides lookup functionality for determining combined effects, ~\newline
+ {\bfseries{-\/ Component Generation :\+}} Builds component lists for all mix results. ~\newline
+. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_buff_status_data}{Buff\+Status\+Data}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} wrapper for applying a {\bfseries{\doxylink{class_ability_system_1_1_buff_1_1_buff_data}{Buff\+Data}}} asset as a status effect. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ data :\+}} The \doxylink{class_ability_system_1_1_buff_1_1_buff_data}{Buff\+Data} asset to apply when this status activates. ~\newline
+. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_buff_status_instance}{Buff\+Status\+Instance}}
+\begin{DoxyCompactList}\small\item\em Runtime instance for {\bfseries{\doxylink{class_ability_system_1_1_status_1_1_buff_status_data}{Buff\+Status\+Data}}}. Applies and removes a \doxylink{class_ability_system_1_1_buff_1_1_buff_data}{Buff\+Data} from any target implementing {\bfseries{\doxylink{interface_ability_system_1_1_buff_1_1_i_buff_container}{IBuff\+Container}}}. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ \+\_\+buff\+Status\+Data :\+}} Cached reference to the \doxylink{class_ability_system_1_1_status_1_1_buff_status_data}{Buff\+Status\+Data} asset. ~\newline
+. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_composite_status_data}{Composite\+Status\+Data}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} representing a composite effect made up of multiple sub‑effects. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ sub\+Effects :\+}} An array of \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} assets that will activate together. ~\newline
+. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_composite_status_instance}{Composite\+Status\+Instance}}
+\begin{DoxyCompactList}\small\item\em Runtime instance for {\bfseries{\doxylink{class_ability_system_1_1_status_1_1_composite_status_data}{Composite\+Status\+Data}}}. Manages and forwards activation events to all sub‑effect instances. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ \+\_\+composite\+Data :\+}} Cached reference to the composite data asset, ~\newline
+ {\bfseries{-\/ \+\_\+instances :\+}} Runtime instances created from each sub‑effect. ~\newline
+. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_damage_over_time_status_data}{Damage\+Over\+Time\+Status\+Data}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} representing a damage‑over‑time effect. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ damage\+Per\+Turn :\+}} The amount of damage applied at the end of each turn. ~\newline
+. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_damage_over_time_status_instance}{Damage\+Over\+Time\+Status\+Instance}}
+\begin{DoxyCompactList}\small\item\em Runtime instance for {\bfseries{\doxylink{class_ability_system_1_1_status_1_1_damage_over_time_status_data}{Damage\+Over\+Time\+Status\+Data}}}. Applies damage to the target at the end of each turn. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ \+\_\+dot\+Data :\+}} Cached reference to the DOT data asset. ~\newline
+. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_regeneration_status_data}{Regeneration\+Status\+Data}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} representing a regeneration effect. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ health\+Per\+Turn :\+}} The amount of health restored at the start of each turn. ~\newline
+. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_regeneration_status_instance}{Regeneration\+Status\+Instance}}
+\begin{DoxyCompactList}\small\item\em Runtime instance for {\bfseries{\doxylink{class_ability_system_1_1_status_1_1_regeneration_status_data}{Regeneration\+Status\+Data}}}. Restores health to the target at the start of each turn. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ \+\_\+regen\+Data :\+}} Cached reference to the regeneration data asset. ~\newline
+. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data}}
+\begin{DoxyCompactList}\small\item\em Base data asset for all status effects. Stores permanent configuration for a status, including its identifier, description, and duration.~\newline
+~\newline
+ Contains:\+ ~\newline
+ {\bfseries{-\/ id :\+}} A unique string identifier for referencing this status, ~\newline
+ {\bfseries{-\/ description :\+}} A multiline description used for UI, debugging, or documentation, ~\newline
+ {\bfseries{-\/ duration :\+}} How many turns the status remains active once applied, ~\newline
+ {\bfseries{-\/ components :\+}} A list of \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} objects that represent sub‑effects used in mixing logic. ~\newline
+~\newline
+. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance}{Status\+Instance}}
+\begin{DoxyCompactList}\small\item\em Runtime instance of a \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} asset. Stores temporary state such as remaining duration and provides activation hooks for turn‑based status behavior. ~\newline
+~\newline
+ Contains:\+ ~\newline
+ {\bfseries{-\/ data :\+}} The permanent \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} asset this instance is based on, ~\newline
+ {\bfseries{-\/ current\+Duration :\+}} How many turns remain before the status expires. ~\newline
+~\newline
+ Responsible for:\+ ~\newline
+ {\bfseries{-\/ Turn Events :\+}} Provides virtual callbacks for turn start and end, ~\newline
+ {\bfseries{-\/ Application :\+}} Executes logic when applied to an IStatus target, ~\newline
+ {\bfseries{-\/ Removal :\+}} Executes cleanup logic when removed from an IStatus target. ~\newline
+. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_manager}{Status\+Manager}}
+\begin{DoxyCompactList}\small\item\em Runtime manager responsible for handling all active {\bfseries{\doxylink{class_ability_system_1_1_status_1_1_status_instance}{Status\+Instance}}} effects applied to a unit. ~\newline
+ Supports applying, removing, mixing, and tracking status effects during gameplay. ~\newline
+~\newline
+ Contains :\+ ~\newline
+ {\bfseries{-\/ active\+Effects :\+}} A list of all currently active Status\+Instances, ~\newline
+ {\bfseries{-\/ \+\_\+owner :\+}} The Mono\+Behaviour implementing {\bfseries{IStatus}} that owns this manager, ~\newline
+ {\bfseries{-\/ unit\+Owner :\+}} A cached reference to the owning IStatus interface. ~\newline
+~\newline
+ Responsible for :\+ ~\newline
+ {\bfseries{-\/ Applying Effects :\+}} Creates instances, handles mixing logic, and triggers On\+Apply, ~\newline
+ {\bfseries{-\/ Removing Effects :\+}} Removes instances and triggers On\+Remove, ~\newline
+ {\bfseries{-\/ Mixing Logic :\+}} Uses {\bfseries{\doxylink{class_ability_system_1_1_status_1_1_status_effect_mixer}{Status\+Effect\+Mixer}}} to combine compatible effects, ~\newline
+ {\bfseries{-\/ Component Validation :\+}} Prevents adding effects that are components of active combined effects. ~\newline
+. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,104 @@
+\doxysection{Ability\+System.\+Status.\+Status\+Data Class Reference}
+\hypertarget{class_ability_system_1_1_status_1_1_status_data}{}\label{class_ability_system_1_1_status_1_1_status_data}\index{AbilitySystem.Status.StatusData@{AbilitySystem.Status.StatusData}}
+
+
+Base data asset for all status effects. Stores permanent configuration for a status, including its identifier, description, and duration.~\newline
+~\newline
+ Contains:\+ ~\newline
+ {\bfseries{-\/ id :\+}} A unique string identifier for referencing this status, ~\newline
+ {\bfseries{-\/ description :\+}} A multiline description used for UI, debugging, or documentation, ~\newline
+ {\bfseries{-\/ duration :\+}} How many turns the status remains active once applied, ~\newline
+ {\bfseries{-\/ components :\+}} A list of \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} objects that represent sub‑effects used in mixing logic. ~\newline
+~\newline
+.  
+
+
+Inheritance diagram for Ability\+System.\+Status.\+Status\+Data:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.409396cm]{class_ability_system_1_1_status_1_1_status_data}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance}{Status\+Instance}} \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data_a680b84696d6d3f2097d8d7664d948f0e}{Create\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Creates a runtime instance of this status effect. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data_a1e87b42f1b9fb438d989f9a067031ec9}{id}}
+\item 
+string \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data_a8e1133b175443d9a505cf50dc3bc7aaf}{description}}
+\item 
+int \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data_ab7f95c7ddf2d75a7bdf96faa45d3332e}{duration}} = 1
+\item 
+List$<$ \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data}} $>$ \doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data_a1eef5e48ceb1cc8f271595fcfb443ca2}{components}} = new List$<$\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data}}$>$()
+\begin{DoxyCompactList}\small\item\em Component effects used for mixing and combination logic. Flatened list of \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} that is used to check if this status is the restulf of a combination. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base data asset for all status effects. Stores permanent configuration for a status, including its identifier, description, and duration.~\newline
+~\newline
+ Contains:\+ ~\newline
+ {\bfseries{-\/ id :\+}} A unique string identifier for referencing this status, ~\newline
+ {\bfseries{-\/ description :\+}} A multiline description used for UI, debugging, or documentation, ~\newline
+ {\bfseries{-\/ duration :\+}} How many turns the status remains active once applied, ~\newline
+ {\bfseries{-\/ components :\+}} A list of \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} objects that represent sub‑effects used in mixing logic. ~\newline
+~\newline
+. 
+
+\label{doc-func-members}
+\Hypertarget{class_ability_system_1_1_status_1_1_status_data_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ability_system_1_1_status_1_1_status_data_a680b84696d6d3f2097d8d7664d948f0e}\index{AbilitySystem.Status.StatusData@{AbilitySystem.Status.StatusData}!CreateInstance@{CreateInstance}}
+\index{CreateInstance@{CreateInstance}!AbilitySystem.Status.StatusData@{AbilitySystem.Status.StatusData}}
+\doxysubsubsection{\texorpdfstring{CreateInstance()}{CreateInstance()}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_status_1_1_status_data_a680b84696d6d3f2097d8d7664d948f0e} 
+\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_instance}{Status\+Instance}} Ability\+System.\+Status.\+Status\+Data.\+Create\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Creates a runtime instance of this status effect. 
+
+\begin{DoxyReturn}{Returns}
+A new \doxylink{class_ability_system_1_1_status_1_1_status_instance}{Status\+Instance} based on this data.
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_ability_system_1_1_status_1_1_status_data_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ability_system_1_1_status_1_1_status_data_a1eef5e48ceb1cc8f271595fcfb443ca2}\index{AbilitySystem.Status.StatusData@{AbilitySystem.Status.StatusData}!components@{components}}
+\index{components@{components}!AbilitySystem.Status.StatusData@{AbilitySystem.Status.StatusData}}
+\doxysubsubsection{\texorpdfstring{components}{components}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_status_1_1_status_data_a1eef5e48ceb1cc8f271595fcfb443ca2} 
+List$<$\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data}}$>$ Ability\+System.\+Status.\+Status\+Data.\+components = new List$<$\doxymbox{\hyperlink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data}}$>$()}
+
+
+
+Component effects used for mixing and combination logic. Flatened list of \doxylink{class_ability_system_1_1_status_1_1_status_data}{Status\+Data} that is used to check if this status is the restulf of a combination. 
+
+\Hypertarget{class_ability_system_1_1_status_1_1_status_data_a8e1133b175443d9a505cf50dc3bc7aaf}\index{AbilitySystem.Status.StatusData@{AbilitySystem.Status.StatusData}!description@{description}}
+\index{description@{description}!AbilitySystem.Status.StatusData@{AbilitySystem.Status.StatusData}}
+\doxysubsubsection{\texorpdfstring{description}{description}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_status_1_1_status_data_a8e1133b175443d9a505cf50dc3bc7aaf} 
+string Ability\+System.\+Status.\+Status\+Data.\+description}
+
+\Hypertarget{class_ability_system_1_1_status_1_1_status_data_ab7f95c7ddf2d75a7bdf96faa45d3332e}\index{AbilitySystem.Status.StatusData@{AbilitySystem.Status.StatusData}!duration@{duration}}
+\index{duration@{duration}!AbilitySystem.Status.StatusData@{AbilitySystem.Status.StatusData}}
+\doxysubsubsection{\texorpdfstring{duration}{duration}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_status_1_1_status_data_ab7f95c7ddf2d75a7bdf96faa45d3332e} 
+int Ability\+System.\+Status.\+Status\+Data.\+duration = 1}
+
+\Hypertarget{class_ability_system_1_1_status_1_1_status_data_a1e87b42f1b9fb438d989f9a067031ec9}\index{AbilitySystem.Status.StatusData@{AbilitySystem.Status.StatusData}!id@{id}}
+\index{id@{id}!AbilitySystem.Status.StatusData@{AbilitySystem.Status.StatusData}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_status_1_1_status_data_a1e87b42f1b9fb438d989f9a067031ec9} 
+string Ability\+System.\+Status.\+Status\+Data.\+id}
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Runtime/\+\+Status/\+Status\+Data.\+cs\end{DoxyCompactItemize}
