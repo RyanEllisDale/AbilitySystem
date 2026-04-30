@@ -208,7 +208,7 @@ Supplies in the Tactics Ability System Package are:
 They provide a clean, modular way to enforce ability costs without embedding resource logic into abilities themselves.
 
 ### `Suggested Readings`
-@ref Installation "How to install the package"
+[How-To-Install](https://ryanellisdale.github.io/AbilitySystem/installation.html)
 
 [Credits](https://ryanellisdale.github.io/ModularArchitecture/md__documentation_2_credits.html)
 

@@ -379,7 +379,7 @@ Buffs in the Tactics Ability System Package are:
 ## Thank You For Reading 
 
 ### `Suggested Readings`
-@ref Installation "How to install the package"
+[How-To-Install](https://ryanellisdale.github.io/AbilitySystem/installation.html)
 
 [Credits](https://ryanellisdale.github.io/ModularArchitecture/md__documentation_2_credits.html)
 

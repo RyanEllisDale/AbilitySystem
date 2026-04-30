@@ -58,9 +58,9 @@ The documentation for this package is generated using Doxygen, styled with the d
 ## Thank You For Reading 
 
 ### `Suggested Readings`
-@ref Installation "How to install the package"
+@ref installation "How to install the package"
 
-@ref How-To-Use "How to use the package"
+[How-To-Use](https://ryanellisdale.github.io/AbilitySystem/md__documentation_2_how-_to-_use.html)
 
 [Credits](https://ryanellisdale.github.io/ModularArchitecture/md__documentation_2_credits.html)
 
@@ -165,7 +165,7 @@ After installing both, you should be able to find both `Modular Architecture` an
 
 ### `Suggested Readings`
 
-@ref How-To-Use "How to use the package"
+[How-To-Use](https://ryanellisdale.github.io/AbilitySystem/md__documentation_2_how-_to-_use.html)
 
 [Credits](https://ryanellisdale.github.io/ModularArchitecture/md__documentation_2_credits.html)
 
