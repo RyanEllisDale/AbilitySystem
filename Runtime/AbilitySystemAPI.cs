@@ -1,3 +1,4 @@
+// Dependancies : 
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -5,31 +6,66 @@ using ModularArchitecture;
 
 namespace AbilitySystem
 {
+    /// <summary>
+    /// Central API for executing abilities, applying statuses, applying buffs, and managing turn‑based
+    /// progression within the Ability System. Provides a unified interface for gameplay code to interact
+    /// with abilities, buffs, and statuses. <br/>
+    /// This class acts as the main integration layer between units, abilities, buffs, and statuses. <br/><br/>
+    ///
+    /// Contains : <br/>
+    /// <b>- AbilityExecuted :</b> Event invoked when an ability successfully activates, <br/>
+    /// <b>- AbilityCooldownReduced :</b> Event invoked when an ability's cooldown decreases, <br/>
+    /// <b>- StatusApplied / StatusActivated / StatusRemoved :</b> Events for status lifecycle, <br/>
+    /// <b>- BuffApplied / BuffRemoved :</b> Events for buff lifecycle, <br/>
+    /// <b>- OnTurnStart / OnTurnEnd :</b> Turn‑based progression handlers, <br/>
+    /// <b>- ExecuteAbility :</b> Executes an ability and applies all effects, <br/>
+    /// <b>- ApplyStatus / RemoveStatus :</b> Status management helpers, <br/>
+    /// <b>- ApplyBuff / RemoveBuff :</b> Buff management helpers. <br/><br/>
+    ///
+    /// Responsible for : <br/>
+    /// <b>- Turn Processing :</b> Reducing cooldowns, ticking statuses, and removing expired effects, <br/>
+    /// <b>- Ability Execution :</b> Checking conditions, consuming supplies, and activating effects, <br/>
+    /// <b>- Event Dispatch :</b> Broadcasting ability, status, and buff events to listeners, <br/>
+    /// <b>- Centralized Access :</b> Providing a single entry point for all ability‑related operations. <br/><br/>
+    /// </summary>
     public sealed class AbilitySystemAPI
     {
-        // Events : 
+        // Data Members : 
+
+        private static readonly Lazy<AbilitySystemAPI> _underlyingInstance = new Lazy<AbilitySystemAPI>(() => new AbilitySystemAPI());
+
+        /// <summary>
+        /// Singleton instance of the AbilitySystemAPI.
+        /// </summary>
+        public static AbilitySystemAPI Instance => _underlyingInstance.Value;
+
+        #region Data Members - Events
+
         public static event Action<IUnit, AbilityInstance> AbilityExecuted;
         public static event Action<IUnit, AbilityInstance> AbilityCooldownReduced;
 
-        public static event Action<IStatus, StatusInstance> StatusApplied;
-        public static event Action<IStatus, StatusInstance> StatusActivated;
-        public static event Action<IStatus, StatusInstance> StatusRemoved;
+        public static event Action<IStatusContainer, StatusInstance> StatusApplied;
+        public static event Action<IStatusContainer, StatusInstance> StatusActivated;
+        public static event Action<IStatusContainer, StatusInstance> StatusRemoved;
 
-        public static event Action<IStats, BuffInstance> BuffApplied;
-        public static event Action<IStats, BuffInstance> BuffRemoved;
+        public static event Action<IBuffContainer, BuffInstance> BuffApplied;
+        public static event Action<IBuffContainer, BuffInstance> BuffRemoved;
 
-        // Instance : 
-        private static readonly Lazy<AbilitySystemAPI> UnderlyingInstance = new Lazy<AbilitySystemAPI>(() => new AbilitySystemAPI());
-        public static AbilitySystemAPI Instance => UnderlyingInstance.Value;
+        #endregion
 
         // Turn Control : 
-        #region Turn Control
+        #region Data Methods - Turn Control
 
-        public static void OnTurnStart(IStatus aCurrentStatusContainer)
+        /// <summary>
+        /// Processes turn‑start logic for all active statuses on the given status container. <br/>
+        /// Calls <b>OnTurnStart</b> on each StatusInstance and dispatches <b>StatusActivated</b> events
+        /// for any statuses that report activation. <br/>
+        /// Used to trigger effects such as regeneration, cleansing, or other start‑of‑turn behaviors.
+        /// </summary>
+        /// <param name="aCurrentStatusContainer">The status container whose statuses should be processed.</param>
+        public static void OnTurnStart(IStatusContainer aCurrentStatusContainer)
         {
-            Debug.Log("On Turn Start - Status");
-
-            StatusEffectManager StatusManager = aCurrentStatusContainer.StatusManager;
+            StatusManager StatusManager = aCurrentStatusContainer.StatusManager;
             if (StatusManager == null) return;
 
             foreach (StatusInstance currentInstance in StatusManager.activeEffects)
@@ -42,23 +78,29 @@ namespace AbilitySystem
             }
         }
 
-        public static void OnTurnStart(IStats aCurrentStatsContainer)
+        /// <summary>
+        /// Processes turn‑start logic for all active buffs on the given buff container. <br/>
+        /// Reduces buff durations, removes expired buffs, and dispatches <b>BuffRemoved</b> events through the buff manager. <br/>
+        /// Used to handle timed buffs such as temporary stat boosts or short‑duration effects.
+        /// </summary>
+        /// <param name="aCurrentStatsContainer">The buff container whose buffs should be processed.</param>
+        public static void OnTurnStart(IBuffContainer aCurrentStatsContainer)
         {
              Debug.Log("On Turn Start - Stats");
 
-            List<BuffInstance> Instances = new List<BuffInstance>(aCurrentStatsContainer.buffManager.activeBuffs);
+            List<BuffInstance> Instances = new List<BuffInstance>(aCurrentStatsContainer.buffManager.buffInstances);
 
             Debug.Log("Pre Loop");
-            Debug.Log(aCurrentStatsContainer.buffManager.activeBuffs.Count);
+            Debug.Log(aCurrentStatsContainer.buffManager.buffInstances.Count);
 
             foreach (BuffInstance CurrentInstance in Instances)
             {
                 Debug.Log("INstance cooldown Reduced");
                
-                CurrentInstance.Duration = CurrentInstance.Duration - 1;
-                Debug.Log(CurrentInstance.Duration);
+                CurrentInstance.currentDuration = CurrentInstance.currentDuration - 1;
+                Debug.Log(CurrentInstance.currentDuration);
 
-                if (CurrentInstance.Duration <= 0)
+                if (CurrentInstance.currentDuration <= 0)
                 {
                     Debug.Log("Removing Buff");
                     RemoveBuff(aCurrentStatsContainer, CurrentInstance);
@@ -66,18 +108,29 @@ namespace AbilitySystem
             }
         }
 
+
+        /// <summary>
+        /// Processes turn‑start logic for a full unit. <br/>
+        /// Executes both status turn‑start logic and buff turn‑start logic in sequence. <br/>
+        /// Equivalent to calling <b>OnTurnStart(IStatusContainer)</b> and <b>OnTurnStart(IBuffContainer)</b> on the same unit.
+        /// </summary>
+        /// <param name="aCurrentUnit">The unit whose turn‑start logic should be processed.</param>
         public static void OnTurnStart(IUnit aCurrentUnit)
         {
-            Debug.Log("On Turn Start - Unit");
+            OnTurnStart((IStatusContainer)aCurrentUnit);
+            OnTurnStart((IBuffContainer)aCurrentUnit);
+        }
 
-            OnTurnStart((IStatus)aCurrentUnit);
-            OnTurnStart((IStats)aCurrentUnit);
-        } 
-        
 
+        /// <summary>
+        /// Processes turn‑end logic for a full unit. <br/>
+        /// Handles status ticking, status expiration, ability cooldown reduction, and dispatches <b>StatusActivated</b> and <b>AbilityCooldownReduced</b> events as needed. <br/>
+        /// Used to finalize all end‑of‑turn effects such as damage‑over‑time, healing‑over‑time, and ability cooldown progression.
+        /// </summary>
+        /// <param name="aCurrentUnit">The unit whose turn‑end logic should be processed.</param>
         public static void OnTurnEnd(IUnit aCurrentUnit)
         {
-            StatusEffectManager UnitStatusManager = aCurrentUnit.StatusManager;
+            StatusManager UnitStatusManager = aCurrentUnit.StatusManager;
             if (UnitStatusManager == null) return;
 
             List<StatusInstance> Instances = new List<StatusInstance>(UnitStatusManager.activeEffects);
@@ -112,7 +165,18 @@ namespace AbilitySystem
 
         }
 
-        #endregion Turn Control
+        #endregion Data Methods - Turn Control
+        #region Data Methods - Abilities
+
+        /// <summary>
+        /// Determines whether an ability instance can currently be activated. <br/>
+        /// Checks cooldowns, conditions, and supply requirements. <br/><br/>
+        /// Returns <b>false</b> if: <br/>
+        /// - The ability is on cooldown, <br/>
+        /// - Any condition evaluates to false, <br/>
+        /// - Any supply requirement is not met. <br/><br/>
+        /// </summary>
+        /// <param name="Instance">The ability instance being evaluated for activation.</param>
 
         public static bool IsActivatable(AbilityInstance Instance)
         {
@@ -142,6 +206,16 @@ namespace AbilitySystem
 
             return true;
         }
+
+        /// <summary>
+        /// Executes an ability on a target unit. <br/>
+        /// Consumes supplies, activates all effects, sets cooldowns, and dispatches <b>AbilityExecuted</b>. <br/>
+        /// This method assumes the ability is valid for activation and will not execute
+        /// if <b>IsActivatable</b> returns false.
+        /// </summary>
+        /// <param name="aUser">The unit activating the ability.</param>
+        /// <param name="aTarget">The unit receiving the ability's effects.</param>
+        /// <param name="aInstance">The runtime ability instance being executed.</param>
         public static void ExecuteAbility(IUnit aUser, IUnit aTarget, AbilityInstance aInstance)
         {
             Debug.Log("Instance Activation Called");
@@ -171,9 +245,18 @@ namespace AbilitySystem
             AbilityExecuted?.Invoke(aTarget, aInstance);
         }
 
-        #region Stauts
+        #endregion Data Methods - Abilities
+        #region Data Methods - Stauts
 
-        public static void ApplyStatus(IStatus aTargetUnit, StatusData data)
+        /// <summary>
+        /// Applies a status effect to the target unit. <br/>
+        /// Creates a new <b>StatusInstance</b> through the target's StatusManager and dispatches
+        /// a <b>StatusApplied</b> event if the application succeeds. <br/>
+        /// Used when abilities or effects need to apply a new status to a unit.
+        /// </summary>
+        /// <param name="aTargetUnit">The unit receiving the status effect.</param>
+        /// <param name="data">The StatusData asset defining the effect to apply.</param>
+        public static void ApplyStatus(IStatusContainer aTargetUnit, StatusData data)
         {
             if (aTargetUnit?.StatusManager == null) return;
 
@@ -184,7 +267,14 @@ namespace AbilitySystem
             }
         }
 
-        public static void RemoveStatus(IStatus aTargetUnit, StatusData data)
+        /// <summary>
+        /// Removes a status effect from the target unit using its <b>StatusData</b> reference. <br/>
+        /// If the status is found and removed, a <b>StatusRemoved</b> event is dispatched. <br/>
+        /// Useful when removing a status by type rather than by instance.
+        /// </summary>
+        /// <param name="aTargetUnit">The unit whose status should be removed.</param>
+        /// <param name="data">The StatusData asset identifying which status to remove.</param>
+        public static void RemoveStatus(IStatusContainer aTargetUnit, StatusData data)
         {
             if (aTargetUnit?.StatusManager == null) return;
 
@@ -196,7 +286,14 @@ namespace AbilitySystem
             }
         }
 
-        public static void RemoveStatus(IStatus aTargetUnit, StatusInstance aTargetInstance)
+        /// <summary>
+        /// Removes a specific <b>StatusInstance</b> from the target unit. <br/>
+        /// If the instance is successfully removed, a <b>StatusRemoved</b> event is dispatched. <br/>
+        /// Useful when you already have a direct reference to the runtime status instance.
+        /// </summary>
+        /// <param name="aTargetUnit">The unit whose status instance should be removed.</param>
+        /// <param name="aTargetInstance">The specific StatusInstance to remove.</param>
+        public static void RemoveStatus(IStatusContainer aTargetUnit, StatusInstance aTargetInstance)
         {
             if (aTargetUnit?.StatusManager == null) return;
 
@@ -208,11 +305,19 @@ namespace AbilitySystem
             }
         }
 
-        #endregion Status
+        #endregion Data Methods - Status
 
-        #region Buffs
+        #region Data Methods - Buffs
 
-        public static void ApplyBuff(IStats aTargetUnit, BuffData aBuffInstance)
+        /// <summary>
+        /// Applies a buff to the target unit. <br/>
+        /// Creates a new <b>BuffInstance</b> through the target's buff manager and dispatches
+        /// a <b>BuffApplied</b> event when successful. <br/>
+        /// Used when abilities or effects need to apply a new buff to a unit.
+        /// </summary>
+        /// <param name="aTargetUnit">The unit receiving the buff.</param>
+        /// <param name="aBuffInstance">The BuffData asset defining the buff to apply.</param>
+        public static void ApplyBuff(IBuffContainer aTargetUnit, BuffData aBuffInstance)
         {
             if (aTargetUnit?.buffManager == null) return;
 
@@ -221,7 +326,14 @@ namespace AbilitySystem
             BuffApplied?.Invoke(aTargetUnit, AppliedInstance);
         }
 
-        public static void RemoveBuff(IStats aTargetUnit, BuffInstance buffInstance)
+        /// <summary>
+        /// Removes a specific <b>BuffInstance</b> from the target unit. <br/>
+        /// If the instance is successfully removed, a <b>BuffRemoved</b> event is dispatched. <br/>
+        /// Useful when you already have a direct reference to the runtime buff instance.
+        /// </summary>
+        /// <param name="aTargetUnit">The unit whose buff instance should be removed.</param>
+        /// <param name="buffInstance">The specific BuffInstance to remove.</param>
+        public static void RemoveBuff(IBuffContainer aTargetUnit, BuffInstance buffInstance)
         {
             if (aTargetUnit?.buffManager == null) return;
 
@@ -235,7 +347,14 @@ namespace AbilitySystem
             }
         }
 
-        public static void RemoveBuff(IStats aTargetUnit, BuffData buffInstance)
+        /// <summary>
+        /// Removes a buff from the target unit using its <b>BuffData</b> reference. <br/>
+        /// If the buff is found and removed, a <b>BuffRemoved</b> event is dispatched. <br/>
+        /// Useful when removing a buff by type rather than by instance.
+        /// </summary>
+        /// <param name="aTargetUnit">The unit whose buff should be removed.</param>
+        /// <param name="buffInstance">The BuffData asset identifying which buff to remove.</param>
+        public static void RemoveBuff(IBuffContainer aTargetUnit, BuffData buffInstance)
         {
             if (aTargetUnit?.buffManager == null) return;
 
@@ -249,7 +368,7 @@ namespace AbilitySystem
             }
         }
 
-        #endregion Buffs
+        #endregion Data Methods - Buffs
 
 
 

@@ -10,15 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7110b5b12c25ff548aa7f15c82e4a239, type: 3}
-  m_Name: Strength
+  m_Name: AttackUp
   m_EditorClassIdentifier: 
-  id: Attack
+  id: attack
   description: 
-  duration: 1
+  duration: 2
   _modifiers:
-  - targetStatID: 
-    modifierValue: 0
-    modifierType: 0
-  - targetStatID: 
-    modifierValue: 0
+  - targetStatID: Attack
+    modifierValue: 1
     modifierType: 0

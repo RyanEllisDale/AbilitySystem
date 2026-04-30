@@ -1,6 +1,8 @@
 // Dependancies :
 using UnityEngine;
+using AbilitySystem;
 #NOTRIM#
+// Namespace : 
 #ROOTNAMESPACEBEGIN#
     [CreateAssetMenu(fileName="#SCRIPTNAME#", menuName="Abilities/Status/Status : #SCRIPTNAME#", order = 2)]
     public class #SCRIPTNAME#StatusData : StatusData
@@ -27,24 +29,24 @@ using UnityEngine;
         }
         #NOTRIM#
         // Data Methods : 
-        public override bool OnTurnStart(IUnit target)
+        public override bool OnTurnStart(IStatus target)
         {
             base.OnTurnStart(target);
             return false; // Change to True When Effect Activates / Is Implemented
         }
         #NOTRIM#
-        public override bool OnTurnEnd(IUnit target)
+        public override bool OnTurnEnd(IStatus target)
         {
             base.OnTurnEnd(target);
             return false; // Change to True When Effect Activates / Is Implemented
         }
         #NOTRIM#
-        public override void OnApply(IUnit target)
+        public override void OnApply(IStatus target)
         {
             base.OnApply(target);
         }
         #NOTRIM#
-        public override void OnRemove(IUnit target)
+        public override void OnRemove(IStatus target)
         {
             base.OnRemove(target);
         }
