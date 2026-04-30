@@ -12,6 +12,7 @@ var searchData=
   ['removestatus_9',['RemoveStatus',['../class_ability_system_1_1_ability_system_a_p_i.html#ada82755955384d042d565c9131d68578',1,'AbilitySystem.AbilitySystemAPI.RemoveStatus(IStatusContainer aTargetUnit, StatusData data)'],['../class_ability_system_1_1_ability_system_a_p_i.html#ad3144963933a57fc56d1f8bdf5671ce1',1,'AbilitySystem.AbilitySystemAPI.RemoveStatus(IStatusContainer aTargetUnit, StatusInstance aTargetInstance)']]],
   ['removing_20buffs_20via_20the_20api_10',['8. Applying and Removing Buffs via the API',['../buff_page.html#autotoc_md57',1,'']]],
   ['requirements_20_3a_11',['Requirements :',['../_installation.html#autotoc_md37',1,'']]],
-  ['result_12',['result',['../class_ability_system_1_1_status_1_1_mix_rule.html#aea37803d3ce60fb45c72f0350c25a6f5',1,'AbilitySystem::Status::MixRule']]],
-  ['runtime_13',['A) Assign AbilityData in the inspector and create instances at runtime',['../ability_page.html#autotoc_md11',1,'']]]
+  ['resource_20system_12',['5. Connecting Supplies to Your Resource System',['../supply_page.html#autotoc_md99',1,'']]],
+  ['result_13',['result',['../class_ability_system_1_1_status_1_1_mix_rule.html#aea37803d3ce60fb45c72f0350c25a6f5',1,'AbilitySystem::Status::MixRule']]],
+  ['runtime_14',['A) Assign AbilityData in the inspector and create instances at runtime',['../ability_page.html#autotoc_md11',1,'']]]
 ];

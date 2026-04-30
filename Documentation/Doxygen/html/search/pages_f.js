@@ -8,8 +8,10 @@ var searchData=
   ['end_5',['Turn Start / Turn End',['../ability_page.html#autotoc_md20',1,'']]],
   ['entirely_20in_20code_6',['B) Create and assign abilities entirely in code',['../ability_page.html#autotoc_md12',1,'']]],
   ['example_7',['Basic Example',['../ability_page.html#autotoc_md16',1,'']]],
-  ['example_3a_20creating_20a_20simple_20ability_8',['7. Example: Creating a Simple Ability',['../ability_page.html#autotoc_md22',1,'']]],
-  ['execute_20it_9',['Step 4 — Execute It',['../ability_page.html#autotoc_md26',1,'']]],
-  ['executing_20an_20ability_10',['5. Executing an Ability',['../ability_page.html#autotoc_md15',1,'']]],
-  ['execution_11',['What Happens During Execution',['../ability_page.html#autotoc_md18',1,'']]]
+  ['example_3a_20ammo_20cost_8',['7. Example: Ammo Cost',['../supply_page.html#autotoc_md101',1,'']]],
+  ['example_3a_20creating_20a_20simple_20ability_9',['7. Example: Creating a Simple Ability',['../ability_page.html#autotoc_md22',1,'']]],
+  ['example_3a_20mana_20cost_10',['6. Example: Mana Cost',['../supply_page.html#autotoc_md100',1,'']]],
+  ['execute_20it_11',['Step 4 — Execute It',['../ability_page.html#autotoc_md26',1,'']]],
+  ['executing_20an_20ability_12',['5. Executing an Ability',['../ability_page.html#autotoc_md15',1,'']]],
+  ['execution_13',['What Happens During Execution',['../ability_page.html#autotoc_md18',1,'']]]
 ];

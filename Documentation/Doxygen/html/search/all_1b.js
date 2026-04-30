@@ -29,11 +29,16 @@ var searchData=
   ['structure_26',['Package Structure',['../index.html#autotoc_md33',1,'']]],
   ['subeffects_27',['subEffects',['../class_ability_system_1_1_status_1_1_composite_status_data.html#a27ceace14a95bff2c8e0a0927d5f7db5',1,'AbilitySystem::Status::CompositeStatusData']]],
   ['suggested_20readings_28',['Suggested Readings',['../ability_page.html#autotoc_md30',1,'&lt;span class=&quot;tt&quot;&gt;Suggested Readings&lt;/span&gt;'],['../index.html#autotoc_md36',1,'&lt;span class=&quot;tt&quot;&gt;Suggested Readings&lt;/span&gt;'],['../_installation.html#autotoc_md48',1,'&lt;span class=&quot;tt&quot;&gt;Suggested Readings&lt;/span&gt;'],['../buff_page.html#autotoc_md63',1,'&lt;span class=&quot;tt&quot;&gt;Suggested Readings&lt;/span&gt;'],['../effect_page.html#autotoc_md78',1,'&lt;span class=&quot;tt&quot;&gt;Suggested Readings&lt;/span&gt;'],['../md__documentation_2_how-_to-_use.html#autotoc_md80',1,'&lt;span class=&quot;tt&quot;&gt;Suggested Readings&lt;/span&gt;'],['../status_page.html#autotoc_md93',1,'&lt;span class=&quot;tt&quot;&gt;Suggested Readings&lt;/span&gt;']]],
-  ['summary_29',['Summary',['../status_page.html#autotoc_md91',1,'10. Summary'],['../buff_page.html#autotoc_md61',1,'12. Summary'],['../ability_page.html#autotoc_md28',1,'9. Summary'],['../effect_page.html#autotoc_md76',1,'9. Summary']]],
-  ['supplies_30',['supplies',['../class_ability_system_1_1_ability_1_1_ability_data.html#aabfaa426d876e75d93e1cc33f41f8305',1,'AbilitySystem::Ability::AbilityData']]],
-  ['supply_31',['Supply',['../class_ability_system_1_1_supplies_1_1_supply.html',1,'AbilitySystem::Supplies']]],
-  ['supply_20system_32',['Supply System',['../supply_page.html',1,'md__documentation_2_how-_to-_use']]],
-  ['support_33',['Support',['../namespace_ability_system_1_1_ability.html#a9f71bffef370480022c5fbc45907bed2adb5eb84117d06047c97c9a0191b5fffe',1,'AbilitySystem::Ability']]],
-  ['system_34',['System',['../ability_page.html',1,'Ability System'],['../_a_p_i_page.html',1,'API System'],['../buff_page.html',1,'Buff System'],['../effect_page.html',1,'Effect System'],['../status_page.html',1,'Status System'],['../supply_page.html',1,'Supply System'],['../index.html',1,'Tactics Ability System']]],
-  ['system_20package_20_3a_35',['Installing the Tactics Ability System Package :',['../_installation.html#autotoc_md41',1,'']]]
+  ['summary_29',['Summary',['../status_page.html#autotoc_md91',1,'10. Summary'],['../buff_page.html#autotoc_md61',1,'12. Summary'],['../ability_page.html#autotoc_md28',1,'9. Summary'],['../effect_page.html#autotoc_md76',1,'9. Summary'],['../supply_page.html#autotoc_md103',1,'9. Summary']]],
+  ['supplies_30',['Supplies',['../supply_page.html#autotoc_md95',1,'1. Understanding Supplies'],['../supply_page.html#autotoc_md94',1,'How‑To: Supplies']]],
+  ['supplies_31',['supplies',['../class_ability_system_1_1_ability_1_1_ability_data.html#aabfaa426d876e75d93e1cc33f41f8305',1,'AbilitySystem::Ability::AbilityData']]],
+  ['supplies_20in_20the_20inspector_32',['4. Creating Supplies in the Inspector',['../supply_page.html#autotoc_md98',1,'']]],
+  ['supplies_20to_20your_20resource_20system_33',['5. Connecting Supplies to Your Resource System',['../supply_page.html#autotoc_md99',1,'']]],
+  ['supplies_20with_20abilities_34',['3. Integrating Supplies With Abilities',['../supply_page.html#autotoc_md97',1,'']]],
+  ['supply_35',['Supply',['../class_ability_system_1_1_supplies_1_1_supply.html',1,'AbilitySystem::Supplies']]],
+  ['supply_20class_36',['2. Supply Class',['../supply_page.html#autotoc_md96',1,'']]],
+  ['supply_20system_37',['Supply System',['../supply_page.html',1,'md__documentation_2_how-_to-_use']]],
+  ['support_38',['Support',['../namespace_ability_system_1_1_ability.html#a9f71bffef370480022c5fbc45907bed2adb5eb84117d06047c97c9a0191b5fffe',1,'AbilitySystem::Ability']]],
+  ['system_39',['System',['../supply_page.html#autotoc_md99',1,'5. Connecting Supplies to Your Resource System'],['../ability_page.html',1,'Ability System'],['../_a_p_i_page.html',1,'API System'],['../buff_page.html',1,'Buff System'],['../effect_page.html',1,'Effect System'],['../status_page.html',1,'Status System'],['../supply_page.html',1,'Supply System'],['../index.html',1,'Tactics Ability System']]],
+  ['system_20package_20_3a_40',['Installing the Tactics Ability System Package :',['../_installation.html#autotoc_md41',1,'']]]
 ];

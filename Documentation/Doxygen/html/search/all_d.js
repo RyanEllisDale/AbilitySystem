@@ -5,7 +5,7 @@ var searchData=
   ['base_2',['Modular Architecture ( Dependency / Base )',['../_installation.html#autotoc_md38',1,'']]],
   ['basic_20example_3',['Basic Example',['../ability_page.html#autotoc_md16',1,'']]],
   ['be_20used_4',['Checking if an Ability Can Be Used',['../ability_page.html#autotoc_md17',1,'']]],
-  ['best_20practices_5',['Best Practices',['../buff_page.html#autotoc_md60',1,'11. Best Practices'],['../ability_page.html#autotoc_md27',1,'8. Best Practices'],['../effect_page.html#autotoc_md75',1,'8. Best Practices'],['../status_page.html#autotoc_md90',1,'9. Best Practices']]],
+  ['best_20practices_5',['Best Practices',['../buff_page.html#autotoc_md60',1,'11. Best Practices'],['../ability_page.html#autotoc_md27',1,'8. Best Practices'],['../effect_page.html#autotoc_md75',1,'8. Best Practices'],['../supply_page.html#autotoc_md102',1,'8. Best Practices'],['../status_page.html#autotoc_md90',1,'9. Best Practices']]],
   ['both_20approaches_6',['C) Mix both approaches',['../ability_page.html#autotoc_md13',1,'']]],
   ['buff_20system_7',['Buff System',['../buff_page.html',1,'md__documentation_2_how-_to-_use']]],
   ['buff_20ticking_8',['7. Turn‑Based Buff Ticking',['../buff_page.html#autotoc_md56',1,'']]],

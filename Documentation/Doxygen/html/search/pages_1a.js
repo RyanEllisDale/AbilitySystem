@@ -18,8 +18,13 @@ var searchData=
   ['storing_20abilities_20on_20units_15',['4. Storing Abilities on Units',['../ability_page.html#autotoc_md14',1,'']]],
   ['structure_16',['Package Structure',['../index.html#autotoc_md33',1,'']]],
   ['suggested_20readings_17',['Suggested Readings',['../ability_page.html#autotoc_md30',1,'&lt;span class=&quot;tt&quot;&gt;Suggested Readings&lt;/span&gt;'],['../index.html#autotoc_md36',1,'&lt;span class=&quot;tt&quot;&gt;Suggested Readings&lt;/span&gt;'],['../_installation.html#autotoc_md48',1,'&lt;span class=&quot;tt&quot;&gt;Suggested Readings&lt;/span&gt;'],['../buff_page.html#autotoc_md63',1,'&lt;span class=&quot;tt&quot;&gt;Suggested Readings&lt;/span&gt;'],['../effect_page.html#autotoc_md78',1,'&lt;span class=&quot;tt&quot;&gt;Suggested Readings&lt;/span&gt;'],['../md__documentation_2_how-_to-_use.html#autotoc_md80',1,'&lt;span class=&quot;tt&quot;&gt;Suggested Readings&lt;/span&gt;'],['../status_page.html#autotoc_md93',1,'&lt;span class=&quot;tt&quot;&gt;Suggested Readings&lt;/span&gt;']]],
-  ['summary_18',['Summary',['../status_page.html#autotoc_md91',1,'10. Summary'],['../buff_page.html#autotoc_md61',1,'12. Summary'],['../ability_page.html#autotoc_md28',1,'9. Summary'],['../effect_page.html#autotoc_md76',1,'9. Summary']]],
-  ['supply_20system_19',['Supply System',['../supply_page.html',1,'md__documentation_2_how-_to-_use']]],
-  ['system_20',['System',['../ability_page.html',1,'Ability System'],['../_a_p_i_page.html',1,'API System'],['../buff_page.html',1,'Buff System'],['../effect_page.html',1,'Effect System'],['../status_page.html',1,'Status System'],['../supply_page.html',1,'Supply System'],['../index.html',1,'Tactics Ability System']]],
-  ['system_20package_20_3a_21',['Installing the Tactics Ability System Package :',['../_installation.html#autotoc_md41',1,'']]]
+  ['summary_18',['Summary',['../status_page.html#autotoc_md91',1,'10. Summary'],['../buff_page.html#autotoc_md61',1,'12. Summary'],['../ability_page.html#autotoc_md28',1,'9. Summary'],['../effect_page.html#autotoc_md76',1,'9. Summary'],['../supply_page.html#autotoc_md103',1,'9. Summary']]],
+  ['supplies_19',['Supplies',['../supply_page.html#autotoc_md95',1,'1. Understanding Supplies'],['../supply_page.html#autotoc_md94',1,'How‑To: Supplies']]],
+  ['supplies_20in_20the_20inspector_20',['4. Creating Supplies in the Inspector',['../supply_page.html#autotoc_md98',1,'']]],
+  ['supplies_20to_20your_20resource_20system_21',['5. Connecting Supplies to Your Resource System',['../supply_page.html#autotoc_md99',1,'']]],
+  ['supplies_20with_20abilities_22',['3. Integrating Supplies With Abilities',['../supply_page.html#autotoc_md97',1,'']]],
+  ['supply_20class_23',['2. Supply Class',['../supply_page.html#autotoc_md96',1,'']]],
+  ['supply_20system_24',['Supply System',['../supply_page.html',1,'md__documentation_2_how-_to-_use']]],
+  ['system_25',['System',['../supply_page.html#autotoc_md99',1,'5. Connecting Supplies to Your Resource System'],['../ability_page.html',1,'Ability System'],['../_a_p_i_page.html',1,'API System'],['../buff_page.html',1,'Buff System'],['../effect_page.html',1,'Effect System'],['../status_page.html',1,'Status System'],['../supply_page.html',1,'Supply System'],['../index.html',1,'Tactics Ability System']]],
+  ['system_20package_20_3a_26',['Installing the Tactics Ability System Package :',['../_installation.html#autotoc_md41',1,'']]]
 ];

@@ -91,6 +91,18 @@ var md__documentation_2_how__to__use =
         ] ]
       ] ]
     ] ],
-    [ "Supply System", "supply_page.html", null ],
+    [ "Supply System", "supply_page.html", [
+      [ "How‑To: Supplies", "supply_page.html#autotoc_md94", [
+        [ "1. Understanding Supplies", "supply_page.html#autotoc_md95", null ],
+        [ "2. Supply Class", "supply_page.html#autotoc_md96", null ],
+        [ "3. Integrating Supplies With Abilities", "supply_page.html#autotoc_md97", null ],
+        [ "4. Creating Supplies in the Inspector", "supply_page.html#autotoc_md98", null ],
+        [ "5. Connecting Supplies to Your Resource System", "supply_page.html#autotoc_md99", null ],
+        [ "6. Example: Mana Cost", "supply_page.html#autotoc_md100", null ],
+        [ "7. Example: Ammo Cost", "supply_page.html#autotoc_md101", null ],
+        [ "8. Best Practices", "supply_page.html#autotoc_md102", null ],
+        [ "9. Summary", "supply_page.html#autotoc_md103", null ]
+      ] ]
+    ] ],
     [ "API System", "_a_p_i_page.html", null ]
 ];

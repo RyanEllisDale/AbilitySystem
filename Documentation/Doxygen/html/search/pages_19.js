@@ -6,5 +6,6 @@ var searchData=
   ['release_3',['[1.0.0] - Initial Release',['../md__c_h_a_n_g_e_l_o_g.html#autotoc_md3',1,'']]],
   ['removing_20buffs_20via_20the_20api_4',['8. Applying and Removing Buffs via the API',['../buff_page.html#autotoc_md57',1,'']]],
   ['requirements_20_3a_5',['Requirements :',['../_installation.html#autotoc_md37',1,'']]],
-  ['runtime_6',['A) Assign AbilityData in the inspector and create instances at runtime',['../ability_page.html#autotoc_md11',1,'']]]
+  ['resource_20system_6',['5. Connecting Supplies to Your Resource System',['../supply_page.html#autotoc_md99',1,'']]],
+  ['runtime_7',['A) Assign AbilityData in the inspector and create instances at runtime',['../ability_page.html#autotoc_md11',1,'']]]
 ];

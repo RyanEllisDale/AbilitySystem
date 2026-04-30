@@ -57,8 +57,8 @@ var NAVTREE =
     [ "How-To-Use", "md__documentation_2_how-_to-_use.html", "md__documentation_2_how-_to-_use" ],
     [ "LICENSE", "md__l_i_c_e_n_s_e.html", null ],
     [ "Third Party Notices", "md__third_01_party_01_notices.html", [
-      [ "Doxygen Awesome CSS", "md__third_01_party_01_notices.html#autotoc_md95", null ],
-      [ "Modular Architecture", "md__third_01_party_01_notices.html#autotoc_md96", null ]
+      [ "Doxygen Awesome CSS", "md__third_01_party_01_notices.html#autotoc_md105", null ],
+      [ "Modular Architecture", "md__third_01_party_01_notices.html#autotoc_md106", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]

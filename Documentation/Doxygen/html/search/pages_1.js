@@ -6,8 +6,9 @@ var searchData=
   ['1_20understanding_20buffs_3',['1. Understanding Buffs',['../buff_page.html#autotoc_md50',1,'']]],
   ['1_20understanding_20effects_4',['1. Understanding Effects',['../effect_page.html#autotoc_md68',1,'']]],
   ['1_20understanding_20statuses_5',['1. Understanding Statuses',['../status_page.html#autotoc_md82',1,'']]],
-  ['10_20creating_20custom_20buffs_6',['10. Creating Custom Buffs',['../buff_page.html#autotoc_md59',1,'']]],
-  ['10_20summary_7',['10. Summary',['../status_page.html#autotoc_md91',1,'']]],
-  ['11_20best_20practices_8',['11. Best Practices',['../buff_page.html#autotoc_md60',1,'']]],
-  ['12_20summary_9',['12. Summary',['../buff_page.html#autotoc_md61',1,'']]]
+  ['1_20understanding_20supplies_6',['1. Understanding Supplies',['../supply_page.html#autotoc_md95',1,'']]],
+  ['10_20creating_20custom_20buffs_7',['10. Creating Custom Buffs',['../buff_page.html#autotoc_md59',1,'']]],
+  ['10_20summary_8',['10. Summary',['../status_page.html#autotoc_md91',1,'']]],
+  ['11_20best_20practices_9',['11. Best Practices',['../buff_page.html#autotoc_md60',1,'']]],
+  ['12_20summary_10',['12. Summary',['../buff_page.html#autotoc_md61',1,'']]]
 ];
