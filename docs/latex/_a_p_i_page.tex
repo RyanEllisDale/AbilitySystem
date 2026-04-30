@@ -1,0 +1,263 @@
+\doxysection{API System }
+\hypertarget{_a_p_i_page}{}\label{_a_p_i_page}\index{API System@{API System}}
+\label{_a_p_i_page_md__documentation_2_a_p_i_page}%
+\Hypertarget{_a_p_i_page_md__documentation_2_a_p_i_page}%
+\hypertarget{_a_p_i_page_autotoc_md49}{}\doxysubsection{\texorpdfstring{How‑\+To:\+ Using the Ability System API}{How‑\+To:\+ Using the Ability System API}}\label{_a_p_i_page_autotoc_md49}
+The Ability\+System\+API is the central access point for interacting with the Tactics Ability System at runtime. It provides a clean, unified interface for:\+ \begin{DoxyVerb}- Activating abilities
+- Checking resource requirements
+- Applying and removing statuses
+- Applying and removing buffs
+- Processing turn‑based logic
+- Dispatching global events
+\end{DoxyVerb}
+
+
+This chapter explains:\+ \begin{DoxyVerb}- What the API does
+- How abilities are executed
+- How supplies are evaluated
+- How statuses and buffs are applied
+- How turn start / turn end logic works
+- All available events
+- Best practices
+\end{DoxyVerb}
+\hypertarget{_a_p_i_page_autotoc_md50}{}\doxysubsubsection{\texorpdfstring{1. Understanding the Ability\+System\+API}{1. Understanding the Ability\+System\+API}}\label{_a_p_i_page_autotoc_md50}
+The API is a static class that exposes all high‑level operations. It is designed to be:\+ \begin{DoxyVerb}- Simple — one‑line calls for common actions
+- Consistent — same pattern for buffs, statuses, and abilities
+- Decoupled — units only need to implement IUnit, IStatusContainer, and/or IBuffContainer
+- Event‑driven — UI and VFX should subscribe to API events
+\end{DoxyVerb}
+
+
+The API does not store state. It orchestrates the systems that do. \hypertarget{_a_p_i_page_autotoc_md51}{}\doxysubsubsection{\texorpdfstring{2. Ability Activation}{2. Ability Activation}}\label{_a_p_i_page_autotoc_md51}
+Checking if an ability can activate 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}\ canActivate\ =\ AbilitySystemAPI.IsActivatable(abilityInstance);}
+
+\end{DoxyCode}
+ This checks:\+ \begin{DoxyVerb}- All supplies (resource costs)
+- Ability cooldown
+- Any custom conditions you add
+\end{DoxyVerb}
+
+
+Executing an ability 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AbilitySystemAPI.ExecuteAbility(user,\ target,\ abilityInstance);}
+
+\end{DoxyCode}
+ Execution performs:\+ \begin{DoxyVerb}- Supply consumption
+- Effect activation
+- Cooldown assignment
+- Event dispatch
+\end{DoxyVerb}
+
+
+Execution Flow 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{foreach}\ (Supply\ currentSupplies\ \textcolor{keywordflow}{in}\ aInstance.ability.supplies)}
+\DoxyCodeLine{\ \ \ \ currentSupplies.Use();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{foreach}\ (Effect\ currentEffect\ \textcolor{keywordflow}{in}\ aInstance.ability.plugInEffects)}
+\DoxyCodeLine{\ \ \ \ currentEffect.Activate(aUser,\ aTarget);}
+\DoxyCodeLine{}
+\DoxyCodeLine{aInstance.currentCooldown\ =\ aInstance.ability.turnCooldown;}
+\DoxyCodeLine{}
+\DoxyCodeLine{AbilityExecuted?.Invoke(aTarget,\ aInstance);}
+
+\end{DoxyCode}
+ \hypertarget{_a_p_i_page_autotoc_md52}{}\doxysubsubsection{\texorpdfstring{3. Status API}{3. Status API}}\label{_a_p_i_page_autotoc_md52}
+Statuses are applied and removed through the API. Apply a Status 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AbilitySystemAPI.ApplyStatus(target,\ statusData);}
+
+\end{DoxyCode}
+ Remove a Status by Instance 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AbilitySystemAPI.RemoveStatus(target,\ statusInstance);}
+
+\end{DoxyCode}
+ Remove a Status by Data 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AbilitySystemAPI.RemoveStatus(target,\ statusData);}
+
+\end{DoxyCode}
+ Status Events \begin{DoxyVerb}- StatusApplied(IStatusContainer, StatusInstance)
+- StatusRemoved(IStatusContainer, StatusInstance)
+- StatusActivated(IStatusContainer, StatusInstance)
+\end{DoxyVerb}
+
+
+Use these for:\+ \begin{DoxyVerb}- UI icons
+- VFX
+- Audio
+- Combat logs
+\end{DoxyVerb}
+\hypertarget{_a_p_i_page_autotoc_md53}{}\doxysubsubsection{\texorpdfstring{4. Buff API}{4. Buff API}}\label{_a_p_i_page_autotoc_md53}
+Buffs are also applied and removed through the API. Apply a Buff 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AbilitySystemAPI.ApplyBuff(target,\ buffData);}
+
+\end{DoxyCode}
+ Remove a Buff by Instance 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AbilitySystemAPI.RemoveBuff(target,\ buffInstance);}
+
+\end{DoxyCode}
+ Remove a Buff by Data 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AbilitySystemAPI.RemoveBuff(target,\ buffData);}
+
+\end{DoxyCode}
+ Buff Events \begin{DoxyVerb}- BuffApplied(IBuffContainer, BuffInstance)
+- BuffRemoved(IBuffContainer, BuffInstance)
+\end{DoxyVerb}
+
+
+Use these for:\+ \begin{DoxyVerb}- Stat UI updates
+- Buff icons
+- Audio cues
+\end{DoxyVerb}
+\hypertarget{_a_p_i_page_autotoc_md54}{}\doxysubsubsection{\texorpdfstring{5. Turn Control}{5. Turn Control}}\label{_a_p_i_page_autotoc_md54}
+Turn control is one of the most important parts of the API. It processes:\+ \begin{DoxyVerb}- Status activation
+- Status expiration
+- Buff expiration
+- Ability cooldown reduction
+\end{DoxyVerb}
+
+
+Turn Start (Statuses) 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AbilitySystemAPI.OnTurnStart(IStatusContainer\ container);}
+
+\end{DoxyCode}
+ This:\+ \begin{DoxyVerb}- Calls OnTurnStart on each StatusInstance
+- Dispatches StatusActivated events
+\end{DoxyVerb}
+
+
+Turn Start (Buffs) 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AbilitySystemAPI.OnTurnStart(IBuffContainer\ container);}
+
+\end{DoxyCode}
+ This:\+ \begin{DoxyVerb}- Reduces Buff durations
+- Removes expired buffs
+- Dispatches BuffRemoved events
+\end{DoxyVerb}
+
+
+Turn Start (Full Unit) 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AbilitySystemAPI.OnTurnStart(IUnit\ unit);}
+
+\end{DoxyCode}
+ This calls both:\+ \begin{DoxyVerb}- OnTurnStart(IStatusContainer)
+- OnTurnStart(IBuffContainer)
+\end{DoxyVerb}
+\hypertarget{_a_p_i_page_autotoc_md55}{}\doxysubsubsection{\texorpdfstring{6. Turn End}{6. Turn End}}\label{_a_p_i_page_autotoc_md55}
+Turn End (Statuses) 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AbilitySystemAPI.OnTurnEnd(IStatusContainer\ container);}
+
+\end{DoxyCode}
+ This:\+ \begin{DoxyVerb}- Calls OnTurnEnd on each StatusInstance
+- Dispatches StatusActivated events
+- Reduces status durations
+- Removes expired statuses
+\end{DoxyVerb}
+
+
+Turn End (Full Unit) 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AbilitySystemAPI.OnTurnEnd(IUnit\ unit);}
+
+\end{DoxyCode}
+ This:\+ \begin{DoxyVerb}- Processes status end‑of‑turn logic
+- Reduces ability cooldowns
+- Dispatches AbilityCooldownReduced events
+\end{DoxyVerb}
+\hypertarget{_a_p_i_page_autotoc_md56}{}\doxysubsubsection{\texorpdfstring{7. Ability Cooldown API}{7. Ability Cooldown API}}\label{_a_p_i_page_autotoc_md56}
+Cooldowns are reduced automatically during:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AbilitySystemAPI.OnTurnEnd(IUnit\ unit);}
+
+\end{DoxyCode}
+ When a cooldown decreases:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AbilityCooldownReduced?.Invoke(unit,\ abilityInstance);}
+
+\end{DoxyCode}
+ Use this to:\+ \begin{DoxyVerb}- Update ability UI
+- Play ready‑sound effects
+- Trigger animations
+\end{DoxyVerb}
+\hypertarget{_a_p_i_page_autotoc_md57}{}\doxysubsubsection{\texorpdfstring{8. API Events (Full List)}{8. API Events (Full List)}}\label{_a_p_i_page_autotoc_md57}
+Ability Events 
+\begin{DoxyTable}{2}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Event  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Description  \\
+{\bfseries{Ability\+Executed(\+IUnit target, Ability\+Instance instance)}}  &Fired when an ability finishes executing  \\
+{\bfseries{Ability\+Cooldown\+Reduced(\+IUnit unit, Ability\+Instance instance)}}  &Fired when a cooldown decreases  \\
+\end{DoxyTable}
+Status Events 
+\begin{DoxyTable}{2}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Event  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Description  \\
+{\bfseries{Status\+Applied(\+IStatus\+Container, Status\+Instance)}}  &Fired when a status is applied  \\
+{\bfseries{Status\+Removed(\+IStatus\+Container, Status\+Instance)}}  &Fired when a status expires or is removed  \\
+{\bfseries{Status\+Activated(\+IStatus\+Container, Status\+Instance)}}  &Fired when a status activates on turn start/\+end  \\
+\end{DoxyTable}
+Buff Events 
+\begin{DoxyTable}{2}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Event  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Description  \\
+{\bfseries{Buff\+Applied(\+IBuff\+Container, Buff\+Instance)}}  &Fired when a buff is applied  \\
+{\bfseries{Buff\+Removed(\+IBuff\+Container, Buff\+Instance)}}  &Fired when a buff expires or is removed  \\
+\end{DoxyTable}
+\hypertarget{_a_p_i_page_autotoc_md58}{}\doxysubsubsection{\texorpdfstring{9. Integrating the API With Your Game}{9. Integrating the API With Your Game}}\label{_a_p_i_page_autotoc_md58}
+Turn‑\+Based Games
+
+Call:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AbilitySystemAPI.OnTurnStart(unit);}
+\DoxyCodeLine{AbilitySystemAPI.OnTurnEnd(unit);}
+
+\end{DoxyCode}
+ every time a unit begins or ends its turn. Real‑\+Time Games
+
+You can:\+ \begin{DoxyVerb}- Call turn events on a timer
+- Call turn events on ability use
+- Call turn events on animation events
+\end{DoxyVerb}
+
+
+The system is flexible. UI Integration
+
+Subscribe to events:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AbilitySystemAPI.StatusApplied\ +=\ OnStatusApplied;}
+\DoxyCodeLine{AbilitySystemAPI.BuffRemoved\ +=\ OnBuffRemoved;}
+\DoxyCodeLine{AbilitySystemAPI.AbilityCooldownReduced\ +=\ OnCooldownTick;}
+
+\end{DoxyCode}
+ VFX /\+ Audio Integration
+
+Use the same events to:\+ \begin{DoxyVerb}- Spawn particles
+- Play sounds
+- Trigger animations
+\end{DoxyVerb}
+\hypertarget{_a_p_i_page_autotoc_md59}{}\doxysubsubsection{\texorpdfstring{10. Best Practices}{10. Best Practices}}\label{_a_p_i_page_autotoc_md59}
+\begin{DoxyVerb}- Use the API for all ability, buff, and status interactions
+- Never modify BuffManager or StatusManager directly
+- Use events for UI and VFX
+- Keep turn logic centralized
+- Keep abilities stateless; let the API handle execution
+- Keep buffs and statuses backend‑only
+- Use DataReferences for dynamic resource values
+\end{DoxyVerb}
+\hypertarget{_a_p_i_page_autotoc_md60}{}\doxysubsubsection{\texorpdfstring{Thank You For Reading}{Thank You For Reading}}\label{_a_p_i_page_autotoc_md60}
+\hypertarget{_a_p_i_page_autotoc_md61}{}\doxysubsubsubsection{\texorpdfstring{{\ttfamily Suggested Readings}}{{\ttfamily Suggested Readings}}}\label{_a_p_i_page_autotoc_md61}
+\doxysectlink{_installation}{How to install the package}{0}
+
+\href{https://ryanellisdale.github.io/ModularArchitecture/md__documentation_2_credits.html}{\texttt{Credits}}
+
+\href{https://ryanellisdale.github.io/ModularArchitecture/md__third_01_party_01_notices.html}{\texttt{Third Party Notices}}
+
+\href{https://ryanellisdale.github.io/ModularArchitecture/md__l_i_c_e_n_s_e.html}{\texttt{Licensing}} 

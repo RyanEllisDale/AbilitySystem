@@ -1,0 +1,298 @@
+\doxysection{Effect System }
+\hypertarget{effect_page}{}\label{effect_page}\index{Effect System@{Effect System}}
+\label{effect_page_md__documentation_2_effect_page}%
+\Hypertarget{effect_page_md__documentation_2_effect_page}%
+\hypertarget{effect_page_autotoc_md80}{}\doxysubsection{\texorpdfstring{How‑\+To:\+ Effects}{How‑\+To:\+ Effects}}\label{effect_page_autotoc_md80}
+Effects are the fundamental action units of the Tactics Ability System Package. Each Effect represents one atomic gameplay action performed when an ability activates — such as healing, applying a status, pushing a unit, or raising an event.
+
+This chapter explains:\+ \begin{DoxyVerb}- What an Effect is
+- How Effects integrate with abilities
+- How to create new Effects
+- How to use parent/target references
+- How to chain multiple Effects
+- Built‑in Effects included in the package
+- How to create custom Effects
+- How to integrate Effects with your own UI, VFX, and audio
+- Best practices
+\end{DoxyVerb}
+\hypertarget{effect_page_autotoc_md81}{}\doxysubsubsection{\texorpdfstring{1. Understanding Effects}{1. Understanding Effects}}\label{effect_page_autotoc_md81}
+Effects are Scriptable\+Objects that define a single action performed when an ability is executed.
+
+Every Effect inherits from the base class:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{abstract}\ \textcolor{keyword}{class\ }Effect\ :\ ScriptableObject}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{abstract}\ \textcolor{keywordtype}{void}\ Activate(IUnit\ parent,\ IUnit\ target);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Key Concepts \begin{DoxyVerb}- parent — the unit activating the ability
+- target — the unit receiving the effect
+- Effects are single‑target by design
+- Effects are backend‑only (no UI, VFX, or audio)
+- Effects are executed in order as listed in the ability’s plugInEffects list
+\end{DoxyVerb}
+
+
+Effects do not handle visuals or presentation. Developers are encouraged to use Ability\+System\+API events to trigger UI, animations, VFX, and audio.\hypertarget{effect_page_autotoc_md82}{}\doxysubsubsection{\texorpdfstring{2. Creating an Effect}{2. Creating an Effect}}\label{effect_page_autotoc_md82}
+Create a new Effect via:\+ Code
+
+Right‑click → Create → Abilities → Effects → Effect :\+ $<$\+Type$>$
+
+This generates a Scriptable\+Object that can be added to any Ability\+Data. Parent and Target
+
+Every Effect receives:\+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Activate(IUnit\ parent,\ IUnit\ target)}
+
+\end{DoxyCode}
+ \begin{DoxyVerb}- parent is the caster
+- target is the chosen target
+- Both are provided automatically by the ability execution pipeline
+\end{DoxyVerb}
+\hypertarget{effect_page_autotoc_md83}{}\doxysubsubsection{\texorpdfstring{3. How Effects Integrate With Abilities}{3. How Effects Integrate With Abilities}}\label{effect_page_autotoc_md83}
+Effects are executed inside:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{foreach}\ (Effect\ currentEffect\ \textcolor{keywordflow}{in}\ aInstance.ability.plugInEffects)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ currentEffect.Activate(aUser,\ aTarget);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+This means:\+ \begin{DoxyVerb}- Effects run in sequence
+- Each Effect is independent
+- Effects can be chained to create complex behaviors
+- Effects do not need to know about each other
+\end{DoxyVerb}
+
+
+Example chain:\+ \begin{DoxyVerb}- DamageEffect
+- ApplyStatusEffect
+- PushEffect
+- CallEvent
+\end{DoxyVerb}
+\hypertarget{effect_page_autotoc_md84}{}\doxysubsubsection{\texorpdfstring{4. Built‑\+In Effects}{4. Built‑\+In Effects}}\label{effect_page_autotoc_md84}
+
+\begin{DoxyTable}{2}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Effect Name  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Description  \\
+{\bfseries{Apply\+Status\+Effect}}  &Applies a Status\+Data to the target  \\
+{\bfseries{Apply\+Buff}}  &Applies a Buff\+Data to the target  \\
+{\bfseries{Heal\+Effect}}  &Restores health to the target  \\
+{\bfseries{Push\+Effect}}  &Moves the target by a grid offset  \\
+{\bfseries{Print\+Effect}}  &Logs a message to the console  \\
+{\bfseries{Call\+Event}}  &Raises a Modular Architecture Game\+Event  \\
+\end{DoxyTable}
+
+
+Below are the full details for each. Apply\+Status\+Effect 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }ApplyStatusEffect\ :\ Effect}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ StatusData\ \_statusData;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Activate(IUnit\ parent,\ IUnit\ target)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ AbilitySystemAPI.ApplyStatus(target,\ \_statusData);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Applies a Status\+Data to the target unit. Apply\+Buff 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }ApplyBuff\ :\ Effect}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ BuffData\ \_buffData;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Activate(IUnit\ parent,\ IUnit\ target)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ AbilitySystemAPI.ApplyBuff(target,\ \_buffData);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Applies a Buff\+Data to the target unit. Heal\+Effect 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }HealEffect\ :\ Effect}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ DataReference<float>\ \_healAmount;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Activate(IUnit\ parent,\ IUnit\ target)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ target.UpdateHealth(\_healAmount);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Restores health to the target. Push\+Effect 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }PushEffect\ :\ Effect}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ Vector2Int\ \_pushForce;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Activate(IUnit\ parent,\ IUnit\ target)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ target.MoveUnit(\_pushForce);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Attempts to move the target by a grid offset. Print\+Effect 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }PrintEffect\ :\ Effect}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ \_message;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Activate(IUnit\ parent,\ IUnit\ target)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Debug.Log(\_message);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Prints a message to the console. Call\+Event 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }CallEvent\ :\ Effect}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ GameEvent\ \_gameEvent;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Activate(IUnit\ parent,\ IUnit\ target)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_gameEvent?.Raise();}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Raises a Modular Architecture Game\+Event. \hypertarget{effect_page_autotoc_md85}{}\doxysubsubsection{\texorpdfstring{5. Creating Custom Effects}{5. Creating Custom Effects}}\label{effect_page_autotoc_md85}
+Effects are intentionally simple and easy to extend.
+
+Example:\+ Damage Effect
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[CreateAssetMenu(menuName=\textcolor{stringliteral}{"{}Abilities/Effects/Damage"{}})]}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }DamageEffect\ :\ Effect}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ amount;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Activate(IUnit\ parent,\ IUnit\ target)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ target.UpdateHealth(-\/amount);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Example:\+ Conditional Effect 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }ConditionalEffect\ :\ Effect}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ ConditionReference\ \_condition;}
+\DoxyCodeLine{\ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ Effect\ \_effect;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Activate(IUnit\ parent,\ IUnit\ target)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_condition.value.Evaluate())}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_effect.Activate(parent,\ target);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Example:\+ Multi‑\+Step Effect 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }MultiEffect\ :\ Effect}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ List<Effect>\ \_effects;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Activate(IUnit\ parent,\ IUnit\ target)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ effect\ \textcolor{keywordflow}{in}\ \_effects)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ effect.Activate(parent,\ target);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{effect_page_autotoc_md86}{}\doxysubsubsection{\texorpdfstring{6. Chaining Effects}{6. Chaining Effects}}\label{effect_page_autotoc_md86}
+Effects are naturally chainable because:\+ \begin{DoxyVerb}- Abilities execute Effects in order
+- Effects do not depend on each other
+- Effects can modify the game state for later Effects
+\end{DoxyVerb}
+
+
+Example chain:\+ \begin{DoxyVerb}- DamageEffect
+- ApplyStatusEffect
+- PushEffect
+- CallEvent
+\end{DoxyVerb}
+
+
+This allows for complex ability behaviors without writing monolithic code. \hypertarget{effect_page_autotoc_md87}{}\doxysubsubsection{\texorpdfstring{7. Integrating Effects With UI, VFX, and Audio}{7. Integrating Effects With UI, VFX, and Audio}}\label{effect_page_autotoc_md87}
+Effects do not trigger visuals, animations, or UI.
+
+This is intentional.
+
+Developers should use Ability\+System\+API events:\+ \begin{DoxyVerb}- AbilityExecuted
+- StatusApplied
+- BuffApplied
+- StatusActivated
+- BuffRemoved
+\end{DoxyVerb}
+
+
+These events allow you to:\+ \begin{DoxyVerb}- Play animations
+- Spawn VFX
+- Play audio
+- Update UI
+- Trigger camera shakes
+- Drive AI reactions
+\end{DoxyVerb}
+
+
+This keeps the Effect system clean, backend‑only, and presentation‑agnostic. \hypertarget{effect_page_autotoc_md88}{}\doxysubsubsection{\texorpdfstring{8. Best Practices}{8. Best Practices}}\label{effect_page_autotoc_md88}
+\begin{DoxyVerb}- Keep Effects small and focused
+- Use multiple Effects instead of one large one
+- Use DataReferences for dynamic values
+- Use API events for presentation logic
+- Avoid hard‑coding visuals or UI inside Effects
+- Use chaining to build complex behaviors
+- Keep Effects stateless whenever possible
+\end{DoxyVerb}
+\hypertarget{effect_page_autotoc_md89}{}\doxysubsubsection{\texorpdfstring{9. Summary}{9. Summary}}\label{effect_page_autotoc_md89}
+Effects in the Tactics Ability System Package are:\+ \begin{DoxyVerb}- Modular
+- Composable
+- Easy to extend
+- Backend‑only
+- Executed in sequence
+- Single‑target (for now)
+\end{DoxyVerb}
+
+
+They form the foundation of ability behavior and allow developers to build complex gameplay actions through simple, reusable components.\hypertarget{effect_page_autotoc_md90}{}\doxysubsubsection{\texorpdfstring{Thank You For Reading}{Thank You For Reading}}\label{effect_page_autotoc_md90}
+\hypertarget{effect_page_autotoc_md91}{}\doxysubsubsubsection{\texorpdfstring{{\ttfamily Suggested Readings}}{{\ttfamily Suggested Readings}}}\label{effect_page_autotoc_md91}
+\doxysectlink{_installation}{How to install the package}{0}
+
+\href{https://ryanellisdale.github.io/ModularArchitecture/md__documentation_2_credits.html}{\texttt{Credits}}
+
+\href{https://ryanellisdale.github.io/ModularArchitecture/md__third_01_party_01_notices.html}{\texttt{Third Party Notices}}
+
+\href{https://ryanellisdale.github.io/ModularArchitecture/md__l_i_c_e_n_s_e.html}{\texttt{Licensing}} 
