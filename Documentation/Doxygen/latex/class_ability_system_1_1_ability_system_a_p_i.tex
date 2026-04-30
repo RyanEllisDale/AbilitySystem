@@ -23,6 +23,8 @@ static void \doxymbox{\hyperlink{class_ability_system_1_1_ability_system_a_p_i_a
 \begin{DoxyCompactList}\small\item\em Processes turn‑start logic for a full unit. ~\newline
  Executes both status turn‑start logic and buff turn‑start logic in sequence. ~\newline
  Equivalent to calling {\bfseries{\doxylink{class_ability_system_1_1_ability_system_a_p_i_a22c12a4716a08515b0ae937b5e029fc4}{On\+Turn\+Start(\+IStatus\+Container)}}} and {\bfseries{\doxylink{class_ability_system_1_1_ability_system_a_p_i_a2cb133aacb0804ad6911778885f3e176}{On\+Turn\+Start(\+IBuff\+Container)}}} on the same unit. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{class_ability_system_1_1_ability_system_a_p_i_a69d4d351dd237dd1c39c5588b06345d7}{On\+Turn\+End}} (\doxymbox{\hyperlink{interface_ability_system_1_1_status_1_1_i_status_container}{IStatus\+Container}} a\+Current\+Status\+Container)
+\item 
 static void \doxymbox{\hyperlink{class_ability_system_1_1_ability_system_a_p_i_af7a68731379ead9356eeb38cf58cb6e8}{On\+Turn\+End}} (\doxymbox{\hyperlink{interface_ability_system_1_1_i_unit}{IUnit}} a\+Current\+Unit)
 \begin{DoxyCompactList}\small\item\em Processes turn‑end logic for a full unit. ~\newline
  Handles status ticking, status expiration, ability cooldown reduction, and dispatches {\bfseries{Status\+Activated}} and {\bfseries{Ability\+Cooldown\+Reduced}} events as needed. ~\newline
@@ -208,9 +210,15 @@ Determines whether an ability instance can currently be activated. ~\newline
 {\em Instance} & The ability instance being evaluated for activation.\\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_ability_system_1_1_ability_system_a_p_i_a69d4d351dd237dd1c39c5588b06345d7}\index{AbilitySystem.AbilitySystemAPI@{AbilitySystem.AbilitySystemAPI}!OnTurnEnd@{OnTurnEnd}}
+\index{OnTurnEnd@{OnTurnEnd}!AbilitySystem.AbilitySystemAPI@{AbilitySystem.AbilitySystemAPI}}
+\doxysubsubsection{\texorpdfstring{OnTurnEnd()}{OnTurnEnd()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ability_system_1_1_ability_system_a_p_i_a69d4d351dd237dd1c39c5588b06345d7} 
+void Ability\+System.\+Ability\+System\+API.\+On\+Turn\+End (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_ability_system_1_1_status_1_1_i_status_container}{IStatus\+Container}}}]{a\+Current\+Status\+Container}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
 \Hypertarget{class_ability_system_1_1_ability_system_a_p_i_af7a68731379ead9356eeb38cf58cb6e8}\index{AbilitySystem.AbilitySystemAPI@{AbilitySystem.AbilitySystemAPI}!OnTurnEnd@{OnTurnEnd}}
 \index{OnTurnEnd@{OnTurnEnd}!AbilitySystem.AbilitySystemAPI@{AbilitySystem.AbilitySystemAPI}}
-\doxysubsubsection{\texorpdfstring{OnTurnEnd()}{OnTurnEnd()}}
+\doxysubsubsection{\texorpdfstring{OnTurnEnd()}{OnTurnEnd()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{class_ability_system_1_1_ability_system_a_p_i_af7a68731379ead9356eeb38cf58cb6e8} 
 void Ability\+System.\+Ability\+System\+API.\+On\+Turn\+End (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_ability_system_1_1_i_unit}{IUnit}}}]{a\+Current\+Unit}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 

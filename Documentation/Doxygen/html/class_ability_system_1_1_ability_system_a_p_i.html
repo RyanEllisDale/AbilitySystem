@@ -116,6 +116,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1ca068c180ca6ccc4c59d39b5201dbc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes turn‑start logic for a full unit. <br  />
  Executes both status turn‑start logic and buff turn‑start logic in sequence. <br  />
  Equivalent to calling <b><a class="el" href="#a22c12a4716a08515b0ae937b5e029fc4" title="Processes turn‑start logic for all active statuses on the given status container.   Calls OnTurnStart...">OnTurnStart(IStatusContainer)</a></b> and <b><a class="el" href="#a2cb133aacb0804ad6911778885f3e176" title="Processes turn‑start logic for all active buffs on the given buff container.   Reduces buff durations...">OnTurnStart(IBuffContainer)</a></b> on the same unit.  <br /></td></tr>
+<tr class="memitem:a69d4d351dd237dd1c39c5588b06345d7" id="r_a69d4d351dd237dd1c39c5588b06345d7"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a69d4d351dd237dd1c39c5588b06345d7">OnTurnEnd</a> (<a class="el" href="interface_ability_system_1_1_status_1_1_i_status_container.html">IStatusContainer</a> aCurrentStatusContainer)</td></tr>
 <tr class="memitem:af7a68731379ead9356eeb38cf58cb6e8" id="r_af7a68731379ead9356eeb38cf58cb6e8"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#af7a68731379ead9356eeb38cf58cb6e8">OnTurnEnd</a> (<a class="el" href="interface_ability_system_1_1_i_unit.html">IUnit</a> aCurrentUnit)</td></tr>
 <tr class="memdesc:af7a68731379ead9356eeb38cf58cb6e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes turn‑end logic for a full unit. <br  />
  Handles status ticking, status expiration, ability cooldown reduction, and dispatches <b>StatusActivated</b> and <b>AbilityCooldownReduced</b> events as needed. <br  />
@@ -370,8 +371,33 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a69d4d351dd237dd1c39c5588b06345d7" name="a69d4d351dd237dd1c39c5588b06345d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69d4d351dd237dd1c39c5588b06345d7">&#9670;&#160;</a></span>OnTurnEnd() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AbilitySystem.AbilitySystemAPI.OnTurnEnd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_ability_system_1_1_status_1_1_i_status_container.html">IStatusContainer</a></td>          <td class="paramname"><span class="paramname"><em>aCurrentStatusContainer</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="af7a68731379ead9356eeb38cf58cb6e8" name="af7a68731379ead9356eeb38cf58cb6e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7a68731379ead9356eeb38cf58cb6e8">&#9670;&#160;</a></span>OnTurnEnd()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af7a68731379ead9356eeb38cf58cb6e8">&#9670;&#160;</a></span>OnTurnEnd() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

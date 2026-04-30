@@ -4,6 +4,7 @@ var class_ability_system_1_1_ability_system_a_p_i =
     [ "ApplyStatus", "class_ability_system_1_1_ability_system_a_p_i.html#a85d4e9cb3d231e71c67091cbace23062", null ],
     [ "ExecuteAbility", "class_ability_system_1_1_ability_system_a_p_i.html#a907e04a20104fd0fa2be514cffd9f55f", null ],
     [ "IsActivatable", "class_ability_system_1_1_ability_system_a_p_i.html#ae500c351b3e72b01d205be90d4be26f2", null ],
+    [ "OnTurnEnd", "class_ability_system_1_1_ability_system_a_p_i.html#a69d4d351dd237dd1c39c5588b06345d7", null ],
     [ "OnTurnEnd", "class_ability_system_1_1_ability_system_a_p_i.html#af7a68731379ead9356eeb38cf58cb6e8", null ],
     [ "OnTurnStart", "class_ability_system_1_1_ability_system_a_p_i.html#a2cb133aacb0804ad6911778885f3e176", null ],
     [ "OnTurnStart", "class_ability_system_1_1_ability_system_a_p_i.html#a22c12a4716a08515b0ae937b5e029fc4", null ],

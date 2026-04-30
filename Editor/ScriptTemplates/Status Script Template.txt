@@ -1,6 +1,6 @@
 // Dependancies :
 using UnityEngine;
-using AbilitySystem;
+using AbilitySystem.Status;
 #NOTRIM#
 // Namespace : 
 #ROOTNAMESPACEBEGIN#
@@ -29,24 +29,24 @@ using AbilitySystem;
         }
         #NOTRIM#
         // Data Methods : 
-        public override bool OnTurnStart(IStatus target)
+        public override bool OnTurnStart(IStatusContainer target)
         {
             base.OnTurnStart(target);
             return false; // Change to True When Effect Activates / Is Implemented
         }
         #NOTRIM#
-        public override bool OnTurnEnd(IStatus target)
+        public override bool OnTurnEnd(IStatusContainer target)
         {
             base.OnTurnEnd(target);
             return false; // Change to True When Effect Activates / Is Implemented
         }
         #NOTRIM#
-        public override void OnApply(IStatus target)
+        public override void OnApply(IStatusContainer target)
         {
             base.OnApply(target);
         }
         #NOTRIM#
-        public override void OnRemove(IStatus target)
+        public override void OnRemove(IStatusContainer target)
         {
             base.OnRemove(target);
         }

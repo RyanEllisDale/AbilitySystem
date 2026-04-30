@@ -1,5 +1,6 @@
 // Dependancies :
 using UnityEngine;
+using AbilitySystem.Ability;
 using AbilitySystem;
 #NOTRIM#
 // Namespace : 

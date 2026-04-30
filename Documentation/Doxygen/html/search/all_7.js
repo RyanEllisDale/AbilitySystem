@@ -15,5 +15,7 @@ var searchData=
   ['direct_12',['Direct',['../namespace_ability_system_1_1_ability.html#a04e93bd629369376e7f264f946bb438aafd1dd0c603be8170f9eae0be9f2f6afb',1,'AbilitySystem::Ability']]],
   ['disk_13',['Package Manager Disk',['../_installation.html#autotoc_md31',1,'']]],
   ['documentation_14',['Documentation',['../index.html#autotoc_md27',1,'']]],
-  ['duration_15',['duration',['../class_ability_system_1_1_buff_1_1_buff_data.html#ab49b96ae70848a8afabd42aaaf7fc24e',1,'AbilitySystem.Buff.BuffData.duration'],['../class_ability_system_1_1_status_1_1_status_data.html#ab7f95c7ddf2d75a7bdf96faa45d3332e',1,'AbilitySystem.Status.StatusData.duration']]]
+  ['doxygen_15',['Doxygen',['../md__documentation_2_credits.html#autotoc_md63',1,'']]],
+  ['doxygen_20awesome_20css_16',['Doxygen Awesome CSS',['../md__documentation_2_credits.html#autotoc_md64',1,'Doxygen Awesome CSS'],['../md__third_01_party_01_notices.html#autotoc_md66',1,'Doxygen Awesome CSS']]],
+  ['duration_17',['duration',['../class_ability_system_1_1_buff_1_1_buff_data.html#ab49b96ae70848a8afabd42aaaf7fc24e',1,'AbilitySystem.Buff.BuffData.duration'],['../class_ability_system_1_1_status_1_1_status_data.html#ab7f95c7ddf2d75a7bdf96faa45d3332e',1,'AbilitySystem.Status.StatusData.duration']]]
 ];

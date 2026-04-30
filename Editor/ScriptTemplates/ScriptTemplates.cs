@@ -8,7 +8,7 @@ namespace AbilitySystem.Editor
         public static void CreateEffectScript()
         {
             ProjectWindowUtil.CreateScriptAssetFromTemplateFile(
-                "Packages/AbilitySystem/Editor/ScriptTemplates/Effect Script Template.txt",
+                "Packages/com.ryanellisdale.ability-system/Editor/ScriptTemplates/Effect Script Template.txt",
                 "New Effect.cs"
             );
         }
@@ -17,7 +17,7 @@ namespace AbilitySystem.Editor
         public static void CreatStatusScript()
         {
             ProjectWindowUtil.CreateScriptAssetFromTemplateFile(
-                "Packages/AbilitySystem/Editor/ScriptTemplates/Status Script Template.txt",
+                "Packages/com.ryanellisdale.ability-system/Editor/ScriptTemplates/Status Script Template.txt",
                 "New Status.cs"
             );
         }

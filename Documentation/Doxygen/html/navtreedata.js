@@ -53,8 +53,15 @@ var NAVTREE =
     ] ],
     [ "Installation", "_installation.html", null ],
     [ "How-To-Use", "_how-_to-_use.html", null ],
+    [ "Credits", "md__documentation_2_credits.html", [
+      [ "Doxygen", "md__documentation_2_credits.html#autotoc_md63", null ],
+      [ "Doxygen Awesome CSS", "md__documentation_2_credits.html#autotoc_md64", null ]
+    ] ],
     [ "LICENSE", "md__l_i_c_e_n_s_e.html", null ],
-    [ "Third Party Notices", "md__third_01_party_01_notices.html", null ],
+    [ "Third Party Notices", "md__third_01_party_01_notices.html", [
+      [ "Doxygen Awesome CSS", "md__third_01_party_01_notices.html#autotoc_md66", null ],
+      [ "Modular Architecture", "md__third_01_party_01_notices.html#autotoc_md67", null ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]
     ] ],
@@ -76,7 +83,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_how-_to-_use.html",
-"class_ability_system_1_1_status_1_1_regeneration_status_data.html#afcfdf001ac5fb502fa7bf52c5e178c8e"
+"class_ability_system_1_1_status_1_1_regeneration_status_data.html#acfc3012585be9f4c471b1e8f12ffb191"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
