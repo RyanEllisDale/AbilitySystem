@@ -96,7 +96,7 @@ $(function(){initNavTree('effect_page.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__documentation_2_effect_page"></a></p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md67"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md80"></a>
 How‑To: Effects</h1>
 <p>Effects are the fundamental action units of the Tactics Ability System Package. Each Effect represents one atomic gameplay action performed when an ability activates — such as healing, applying a status, pushing a unit, or raising an event.</p>
 <p>This chapter explains: </p><pre class="fragment">- What an Effect is
@@ -108,7 +108,7 @@ How‑To: Effects</h1>
 - How to create custom Effects
 - How to integrate Effects with your own UI, VFX, and audio
 - Best practices
-</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md81"></a>
 1. Understanding Effects</h2>
 <p>Effects are ScriptableObjects that define a single action performed when an ability is executed.</p>
 <p>Every Effect inherits from the base class: </p><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span>Effect : ScriptableObject</div>
@@ -121,7 +121,7 @@ How‑To: Effects</h1>
 - Effects are backend‑only (no UI, VFX, or audio)
 - Effects are executed in order as listed in the ability’s plugInEffects list
 </pre><p>Effects do not handle visuals or presentation. Developers are encouraged to use AbilitySystemAPI events to trigger UI, animations, VFX, and audio.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md69"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md82"></a>
 2. Creating an Effect</h2>
 <p>Create a new Effect via: Code</p>
 <p>Right‑click → Create → Abilities → Effects → Effect : &lt;Type&gt;</p>
@@ -131,7 +131,7 @@ How‑To: Effects</h1>
 </div><!-- fragment --> <pre class="fragment">- parent is the caster
 - target is the chosen target
 - Both are provided automatically by the ability execution pipeline
-</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md83"></a>
 3. How Effects Integrate With Abilities</h2>
 <p>Effects are executed inside: </p><div class="fragment"><div class="line"><span class="keywordflow">foreach</span> (Effect currentEffect <span class="keywordflow">in</span> aInstance.ability.plugInEffects)</div>
 <div class="line">{</div>
@@ -145,7 +145,7 @@ How‑To: Effects</h1>
 - ApplyStatusEffect
 - PushEffect
 - CallEvent
-</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md71"></a>
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md84"></a>
 4. Built‑In Effects</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -218,7 +218,7 @@ How‑To: Effects</h1>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>Raises a Modular Architecture GameEvent. </p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md72"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md85"></a>
 5. Creating Custom Effects</h2>
 <p>Effects are intentionally simple and easy to extend.</p>
 <p>Example: Damage Effect</p>
@@ -253,7 +253,7 @@ How‑To: Effects</h1>
 <div class="line">            effect.Activate(parent, target);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md73"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md86"></a>
 6. Chaining Effects</h2>
 <p>Effects are naturally chainable because: </p><pre class="fragment">- Abilities execute Effects in order
 - Effects do not depend on each other
@@ -263,7 +263,7 @@ How‑To: Effects</h1>
 - PushEffect
 - CallEvent
 </pre><p>This allows for complex ability behaviors without writing monolithic code. </p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md74"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md87"></a>
 7. Integrating Effects With UI, VFX, and Audio</h2>
 <p>Effects do not trigger visuals, animations, or UI.</p>
 <p>This is intentional.</p>
@@ -279,7 +279,7 @@ How‑To: Effects</h1>
 - Trigger camera shakes
 - Drive AI reactions
 </pre><p>This keeps the Effect system clean, backend‑only, and presentation‑agnostic. </p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md75"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md88"></a>
 8. Best Practices</h2>
 <pre class="fragment">- Keep Effects small and focused
 - Use multiple Effects instead of one large one
@@ -288,7 +288,7 @@ How‑To: Effects</h1>
 - Avoid hard‑coding visuals or UI inside Effects
 - Use chaining to build complex behaviors
 - Keep Effects stateless whenever possible
-</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md76"></a>
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md89"></a>
 9. Summary</h2>
 <p>Effects in the Tactics Ability System Package are: </p><pre class="fragment">- Modular
 - Composable
@@ -297,9 +297,9 @@ How‑To: Effects</h1>
 - Executed in sequence
 - Single‑target (for now)
 </pre><p>They form the foundation of ability behavior and allow developers to build complex gameplay actions through simple, reusable components.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md77"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md90"></a>
 Thank You For Reading</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md78"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md91"></a>
 <span class="tt">Suggested Readings</span></h3>
 <p><a class="el" href="_installation.html" title="Installation">How to install the package</a></p>
 <p><a href="https://ryanellisdale.github.io/ModularArchitecture/md__documentation_2_credits.html">Credits</a></p>

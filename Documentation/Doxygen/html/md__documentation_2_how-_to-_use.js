@@ -1,8 +1,8 @@
 var md__documentation_2_how__to__use =
 [
     [ "Ability System", "ability_page.html", [
-      [ "Thank You For Reading", "md__documentation_2_how-_to-_use.html#autotoc_md79", [
-        [ "<span class=\"tt\">Suggested Readings</span>", "md__documentation_2_how-_to-_use.html#autotoc_md80", null ]
+      [ "Thank You For Reading", "md__documentation_2_how-_to-_use.html#autotoc_md92", [
+        [ "<span class=\"tt\">Suggested Readings</span>", "md__documentation_2_how-_to-_use.html#autotoc_md93", null ]
       ] ],
       [ "How‑To: Abilities", "ability_page.html#autotoc_md5", [
         [ "1. Understanding Abilities", "ability_page.html#autotoc_md6", null ],
@@ -40,69 +40,87 @@ var md__documentation_2_how__to__use =
       ] ]
     ] ],
     [ "Effect System", "effect_page.html", [
-      [ "How‑To: Effects", "effect_page.html#autotoc_md67", [
-        [ "1. Understanding Effects", "effect_page.html#autotoc_md68", null ],
-        [ "2. Creating an Effect", "effect_page.html#autotoc_md69", null ],
-        [ "3. How Effects Integrate With Abilities", "effect_page.html#autotoc_md70", null ],
-        [ "4. Built‑In Effects", "effect_page.html#autotoc_md71", null ],
-        [ "5. Creating Custom Effects", "effect_page.html#autotoc_md72", null ],
-        [ "6. Chaining Effects", "effect_page.html#autotoc_md73", null ],
-        [ "7. Integrating Effects With UI, VFX, and Audio", "effect_page.html#autotoc_md74", null ],
-        [ "8. Best Practices", "effect_page.html#autotoc_md75", null ],
-        [ "9. Summary", "effect_page.html#autotoc_md76", null ],
-        [ "Thank You For Reading", "effect_page.html#autotoc_md77", [
-          [ "<span class=\"tt\">Suggested Readings</span>", "effect_page.html#autotoc_md78", null ]
+      [ "How‑To: Effects", "effect_page.html#autotoc_md80", [
+        [ "1. Understanding Effects", "effect_page.html#autotoc_md81", null ],
+        [ "2. Creating an Effect", "effect_page.html#autotoc_md82", null ],
+        [ "3. How Effects Integrate With Abilities", "effect_page.html#autotoc_md83", null ],
+        [ "4. Built‑In Effects", "effect_page.html#autotoc_md84", null ],
+        [ "5. Creating Custom Effects", "effect_page.html#autotoc_md85", null ],
+        [ "6. Chaining Effects", "effect_page.html#autotoc_md86", null ],
+        [ "7. Integrating Effects With UI, VFX, and Audio", "effect_page.html#autotoc_md87", null ],
+        [ "8. Best Practices", "effect_page.html#autotoc_md88", null ],
+        [ "9. Summary", "effect_page.html#autotoc_md89", null ],
+        [ "Thank You For Reading", "effect_page.html#autotoc_md90", [
+          [ "<span class=\"tt\">Suggested Readings</span>", "effect_page.html#autotoc_md91", null ]
         ] ]
       ] ]
     ] ],
     [ "Status System", "status_page.html", [
-      [ "How‑To: Status Effects", "status_page.html#autotoc_md81", [
-        [ "1. Understanding Statuses", "status_page.html#autotoc_md82", null ],
-        [ "2. StatusData", "status_page.html#autotoc_md83", null ],
-        [ "3. StatusInstance", "status_page.html#autotoc_md84", null ],
-        [ "4. StatusManager", "status_page.html#autotoc_md85", null ],
-        [ "5. Status Mixing", "status_page.html#autotoc_md86", null ],
-        [ "6. Built‑In Statuses", "status_page.html#autotoc_md87", null ],
-        [ "7. Creating Custom Statuses", "status_page.html#autotoc_md88", null ],
-        [ "8. Integrating Statuses Into Gameplay", "status_page.html#autotoc_md89", null ],
-        [ "9. Best Practices", "status_page.html#autotoc_md90", null ],
-        [ "10. Summary", "status_page.html#autotoc_md91", null ],
-        [ "Thank You For Reading", "status_page.html#autotoc_md92", [
-          [ "<span class=\"tt\">Suggested Readings</span>", "status_page.html#autotoc_md93", null ]
+      [ "How‑To: Status Effects", "status_page.html#autotoc_md94", [
+        [ "1. Understanding Statuses", "status_page.html#autotoc_md95", null ],
+        [ "2. StatusData", "status_page.html#autotoc_md96", null ],
+        [ "3. StatusInstance", "status_page.html#autotoc_md97", null ],
+        [ "4. StatusManager", "status_page.html#autotoc_md98", null ],
+        [ "5. Status Mixing", "status_page.html#autotoc_md99", null ],
+        [ "6. Built‑In Statuses", "status_page.html#autotoc_md100", null ],
+        [ "7. Creating Custom Statuses", "status_page.html#autotoc_md101", null ],
+        [ "8. Integrating Statuses Into Gameplay", "status_page.html#autotoc_md102", null ],
+        [ "9. Best Practices", "status_page.html#autotoc_md103", null ],
+        [ "10. Summary", "status_page.html#autotoc_md104", null ],
+        [ "Thank You For Reading", "status_page.html#autotoc_md105", [
+          [ "<span class=\"tt\">Suggested Readings</span>", "status_page.html#autotoc_md106", null ]
         ] ]
       ] ]
     ] ],
     [ "Buff System", "buff_page.html", [
-      [ "How‑To: Buffs", "buff_page.html#autotoc_md49", [
-        [ "1. Understanding Buffs", "buff_page.html#autotoc_md50", null ],
-        [ "2. BuffData", "buff_page.html#autotoc_md51", null ],
-        [ "3. Stat Modifiers", "buff_page.html#autotoc_md52", null ],
-        [ "4. BuffInstance", "buff_page.html#autotoc_md53", null ],
-        [ "5. IBuffContainer", "buff_page.html#autotoc_md54", null ],
-        [ "6. BuffManager", "buff_page.html#autotoc_md55", null ],
-        [ "7. Turn‑Based Buff Ticking", "buff_page.html#autotoc_md56", null ],
-        [ "8. Applying and Removing Buffs via the API", "buff_page.html#autotoc_md57", null ],
-        [ "9. Integrating Buffs With Units", "buff_page.html#autotoc_md58", null ],
-        [ "10. Creating Custom Buffs", "buff_page.html#autotoc_md59", null ],
-        [ "11. Best Practices", "buff_page.html#autotoc_md60", null ],
-        [ "12. Summary", "buff_page.html#autotoc_md61", null ],
-        [ "Thank You For Reading", "buff_page.html#autotoc_md62", [
-          [ "<span class=\"tt\">Suggested Readings</span>", "buff_page.html#autotoc_md63", null ]
+      [ "How‑To: Buffs", "buff_page.html#autotoc_md62", [
+        [ "1. Understanding Buffs", "buff_page.html#autotoc_md63", null ],
+        [ "2. BuffData", "buff_page.html#autotoc_md64", null ],
+        [ "3. Stat Modifiers", "buff_page.html#autotoc_md65", null ],
+        [ "4. BuffInstance", "buff_page.html#autotoc_md66", null ],
+        [ "5. IBuffContainer", "buff_page.html#autotoc_md67", null ],
+        [ "6. BuffManager", "buff_page.html#autotoc_md68", null ],
+        [ "7. Turn‑Based Buff Ticking", "buff_page.html#autotoc_md69", null ],
+        [ "8. Applying and Removing Buffs via the API", "buff_page.html#autotoc_md70", null ],
+        [ "9. Integrating Buffs With Units", "buff_page.html#autotoc_md71", null ],
+        [ "10. Creating Custom Buffs", "buff_page.html#autotoc_md72", null ],
+        [ "11. Best Practices", "buff_page.html#autotoc_md73", null ],
+        [ "12. Summary", "buff_page.html#autotoc_md74", null ],
+        [ "Thank You For Reading", "buff_page.html#autotoc_md75", [
+          [ "<span class=\"tt\">Suggested Readings</span>", "buff_page.html#autotoc_md76", null ]
         ] ]
       ] ]
     ] ],
     [ "Supply System", "supply_page.html", [
-      [ "How‑To: Supplies", "supply_page.html#autotoc_md94", [
-        [ "1. Understanding Supplies", "supply_page.html#autotoc_md95", null ],
-        [ "2. Supply Class", "supply_page.html#autotoc_md96", null ],
-        [ "3. Integrating Supplies With Abilities", "supply_page.html#autotoc_md97", null ],
-        [ "4. Creating Supplies in the Inspector", "supply_page.html#autotoc_md98", null ],
-        [ "5. Connecting Supplies to Your Resource System", "supply_page.html#autotoc_md99", null ],
-        [ "6. Example: Mana Cost", "supply_page.html#autotoc_md100", null ],
-        [ "7. Example: Ammo Cost", "supply_page.html#autotoc_md101", null ],
-        [ "8. Best Practices", "supply_page.html#autotoc_md102", null ],
-        [ "9. Summary", "supply_page.html#autotoc_md103", null ]
+      [ "How‑To: Supplies", "supply_page.html#autotoc_md107", [
+        [ "1. Understanding Supplies", "supply_page.html#autotoc_md108", null ],
+        [ "2. Supply Class", "supply_page.html#autotoc_md109", null ],
+        [ "3. Integrating Supplies With Abilities", "supply_page.html#autotoc_md110", null ],
+        [ "4. Creating Supplies in the Inspector", "supply_page.html#autotoc_md111", null ],
+        [ "5. Connecting Supplies to Your Resource System", "supply_page.html#autotoc_md112", null ],
+        [ "6. Example: Mana Cost", "supply_page.html#autotoc_md113", null ],
+        [ "7. Example: Ammo Cost", "supply_page.html#autotoc_md114", null ],
+        [ "8. Best Practices", "supply_page.html#autotoc_md115", null ],
+        [ "9. Summary", "supply_page.html#autotoc_md116", [
+          [ "<span class=\"tt\">Suggested Readings</span>", "supply_page.html#autotoc_md117", null ]
+        ] ]
       ] ]
     ] ],
-    [ "API System", "_a_p_i_page.html", null ]
+    [ "API System", "_a_p_i_page.html", [
+      [ "How‑To: Using the Ability System API", "_a_p_i_page.html#autotoc_md49", [
+        [ "1. Understanding the AbilitySystemAPI", "_a_p_i_page.html#autotoc_md50", null ],
+        [ "2. Ability Activation", "_a_p_i_page.html#autotoc_md51", null ],
+        [ "3. Status API", "_a_p_i_page.html#autotoc_md52", null ],
+        [ "4. Buff API", "_a_p_i_page.html#autotoc_md53", null ],
+        [ "5. Turn Control", "_a_p_i_page.html#autotoc_md54", null ],
+        [ "6. Turn End", "_a_p_i_page.html#autotoc_md55", null ],
+        [ "7. Ability Cooldown API", "_a_p_i_page.html#autotoc_md56", null ],
+        [ "8. API Events (Full List)", "_a_p_i_page.html#autotoc_md57", null ],
+        [ "9. Integrating the API With Your Game", "_a_p_i_page.html#autotoc_md58", null ],
+        [ "10. Best Practices", "_a_p_i_page.html#autotoc_md59", null ],
+        [ "Thank You For Reading", "_a_p_i_page.html#autotoc_md60", [
+          [ "<span class=\"tt\">Suggested Readings</span>", "_a_p_i_page.html#autotoc_md61", null ]
+        ] ]
+      ] ]
+    ] ]
 ];

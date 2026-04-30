@@ -2,7 +2,7 @@
 \hypertarget{status_page}{}\label{status_page}\index{Status System@{Status System}}
 \label{status_page_md__documentation_2_status_page}%
 \Hypertarget{status_page_md__documentation_2_status_page}%
-\hypertarget{status_page_autotoc_md81}{}\doxysubsection{\texorpdfstring{How‑\+To:\+ Status Effects}{How‑\+To:\+ Status Effects}}\label{status_page_autotoc_md81}
+\hypertarget{status_page_autotoc_md94}{}\doxysubsection{\texorpdfstring{How‑\+To:\+ Status Effects}{How‑\+To:\+ Status Effects}}\label{status_page_autotoc_md94}
 Statuses are long‑lasting effects applied to units during gameplay. They can heal over time, deal damage over time, apply buffs, combine into new effects, or trigger logic at the start or end of each turn.
 
 This chapter explains:\+ \begin{DoxyVerb}- What a StatusData is
@@ -16,7 +16,7 @@ This chapter explains:\+ \begin{DoxyVerb}- What a StatusData is
 - How to connect statuses to UI, VFX, and audio
 - Best practices
 \end{DoxyVerb}
-\hypertarget{status_page_autotoc_md82}{}\doxysubsubsection{\texorpdfstring{1. Understanding Statuses}{1. Understanding Statuses}}\label{status_page_autotoc_md82}
+\hypertarget{status_page_autotoc_md95}{}\doxysubsubsection{\texorpdfstring{1. Understanding Statuses}{1. Understanding Statuses}}\label{status_page_autotoc_md95}
 Statuses in this system are split into two layers:\+ Status\+Data (Permanent Data)
 
 A Scriptable\+Object that defines:\+ \begin{DoxyVerb}- id
@@ -49,7 +49,7 @@ Each unit holds a list of Status\+Instances through its Status\+Manager. Key Con
 \end{DoxyVerb}
 
 
-Statuses do not handle UI, VFX, or audio. Developers should use Ability\+System\+API events to connect statuses to presentation. \hypertarget{status_page_autotoc_md83}{}\doxysubsubsection{\texorpdfstring{2. Status\+Data}{2. Status\+Data}}\label{status_page_autotoc_md83}
+Statuses do not handle UI, VFX, or audio. Developers should use Ability\+System\+API events to connect statuses to presentation. \hypertarget{status_page_autotoc_md96}{}\doxysubsubsection{\texorpdfstring{2. Status\+Data}{2. Status\+Data}}\label{status_page_autotoc_md96}
 A Status\+Data defines the permanent configuration of a status. 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{abstract}\ \textcolor{keyword}{class\ }StatusData\ :\ ScriptableObject}
@@ -74,7 +74,7 @@ Fields \begin{DoxyVerb}- id  A unique identifier for referencing the status.
 
 Creating a Status\+Data :\+
 
-Assets → Create → Abilities → Status → Create New Status This produces a ready‑to‑edit Status\+Data + Status\+Instance pair.\hypertarget{status_page_autotoc_md84}{}\doxysubsubsection{\texorpdfstring{3. Status\+Instance}{3. Status\+Instance}}\label{status_page_autotoc_md84}
+Assets → Create → Abilities → Status → Create New Status This produces a ready‑to‑edit Status\+Data + Status\+Instance pair.\hypertarget{status_page_autotoc_md97}{}\doxysubsubsection{\texorpdfstring{3. Status\+Instance}{3. Status\+Instance}}\label{status_page_autotoc_md97}
 A Status\+Instance stores runtime state and implements turn‑based behavior. 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }StatusInstance\ :\ IEquatable<StatusInstance>}
@@ -96,7 +96,7 @@ A Status\+Instance stores runtime state and implements turn‑based behavior.
 \end{DoxyVerb}
 
 
-{\bfseries{IEquatable}} :\+ Two Status\+Instances are considered equal if they share the same Status\+Data.\hypertarget{status_page_autotoc_md85}{}\doxysubsubsection{\texorpdfstring{4. Status\+Manager}{4. Status\+Manager}}\label{status_page_autotoc_md85}
+{\bfseries{IEquatable}} :\+ Two Status\+Instances are considered equal if they share the same Status\+Data.\hypertarget{status_page_autotoc_md98}{}\doxysubsubsection{\texorpdfstring{4. Status\+Manager}{4. Status\+Manager}}\label{status_page_autotoc_md98}
 Each unit implementing IStatus\+Container owns a Status\+Manager. 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }StatusManager}
@@ -134,7 +134,7 @@ Removing a Status
 \DoxyCodeLine{RemoveEffect(StatusInstance\ instance)}
 
 \end{DoxyCode}
- Both remove the status and call On\+Remove. \hypertarget{status_page_autotoc_md86}{}\doxysubsubsection{\texorpdfstring{5. Status Mixing}{5. Status Mixing}}\label{status_page_autotoc_md86}
+ Both remove the status and call On\+Remove. \hypertarget{status_page_autotoc_md99}{}\doxysubsubsection{\texorpdfstring{5. Status Mixing}{5. Status Mixing}}\label{status_page_autotoc_md99}
 Statuses can combine into new statuses using Mix\+Rules. Mix\+Rule 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }MixRule}
@@ -168,7 +168,7 @@ Mix\+Rules automatically generate flattened component lists so the system knows:
 - Which statuses should not be re‑applied
 - How to prevent circular mixes
 \end{DoxyVerb}
-\hypertarget{status_page_autotoc_md87}{}\doxysubsubsection{\texorpdfstring{6. Built‑\+In Statuses}{6. Built‑\+In Statuses}}\label{status_page_autotoc_md87}
+\hypertarget{status_page_autotoc_md100}{}\doxysubsubsection{\texorpdfstring{6. Built‑\+In Statuses}{6. Built‑\+In Statuses}}\label{status_page_autotoc_md100}
 The package includes several ready‑to‑use statuses. Built‑\+In Status Summary 
 \begin{DoxyTable}{2}{}{}{1}
 \SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Status Name  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Description  \\
@@ -215,7 +215,7 @@ Applies a Buff\+Data as a status.
 \DoxyCodeLine{AbilitySystemAPI.ApplyBuff(statsContainer,\ \_buffStatusData.data);}
 
 \end{DoxyCode}
- \hypertarget{status_page_autotoc_md88}{}\doxysubsubsection{\texorpdfstring{7. Creating Custom Statuses}{7. Creating Custom Statuses}}\label{status_page_autotoc_md88}
+ \hypertarget{status_page_autotoc_md101}{}\doxysubsubsection{\texorpdfstring{7. Creating Custom Statuses}{7. Creating Custom Statuses}}\label{status_page_autotoc_md101}
 Use the script template:\+
 
 Assets → Create → Abilities → Status → Create New Status
@@ -251,7 +251,7 @@ Example:\+ Stun
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
- \hypertarget{status_page_autotoc_md89}{}\doxysubsubsection{\texorpdfstring{8. Integrating Statuses Into Gameplay}{8. Integrating Statuses Into Gameplay}}\label{status_page_autotoc_md89}
+ \hypertarget{status_page_autotoc_md102}{}\doxysubsubsection{\texorpdfstring{8. Integrating Statuses Into Gameplay}{8. Integrating Statuses Into Gameplay}}\label{status_page_autotoc_md102}
 Applying a Status 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{AbilitySystemAPI.ApplyStatus(unit,\ statusData);}
@@ -293,7 +293,7 @@ These allow you to:\+ \begin{DoxyVerb}- Show icons
 - Play audio
 - Update UI
 \end{DoxyVerb}
-\hypertarget{status_page_autotoc_md90}{}\doxysubsubsection{\texorpdfstring{9. Best Practices}{9. Best Practices}}\label{status_page_autotoc_md90}
+\hypertarget{status_page_autotoc_md103}{}\doxysubsubsection{\texorpdfstring{9. Best Practices}{9. Best Practices}}\label{status_page_autotoc_md103}
 \begin{DoxyVerb}- Keep statuses small and focused
 - Use mixing for emergent gameplay
 - Use Composite for multi‑effect statuses
@@ -303,7 +303,7 @@ These allow you to:\+ \begin{DoxyVerb}- Show icons
 - Use StatusInstance for runtime state only
 - Use components to prevent re‑applying ingredient statuses
 \end{DoxyVerb}
-\hypertarget{status_page_autotoc_md91}{}\doxysubsubsection{\texorpdfstring{10. Summary}{10. Summary}}\label{status_page_autotoc_md91}
+\hypertarget{status_page_autotoc_md104}{}\doxysubsubsection{\texorpdfstring{10. Summary}{10. Summary}}\label{status_page_autotoc_md104}
 Statuses in the Tactics Ability System Package are:\+ \begin{DoxyVerb}- Modular
 - Turn‑based
 - Extensible
@@ -311,8 +311,8 @@ Statuses in the Tactics Ability System Package are:\+ \begin{DoxyVerb}- Modular
 - Backend‑only
 - Designed for tactics games
 \end{DoxyVerb}
-\hypertarget{status_page_autotoc_md92}{}\doxysubsubsection{\texorpdfstring{Thank You For Reading}{Thank You For Reading}}\label{status_page_autotoc_md92}
-\hypertarget{status_page_autotoc_md93}{}\doxysubsubsubsection{\texorpdfstring{{\ttfamily Suggested Readings}}{{\ttfamily Suggested Readings}}}\label{status_page_autotoc_md93}
+\hypertarget{status_page_autotoc_md105}{}\doxysubsubsection{\texorpdfstring{Thank You For Reading}{Thank You For Reading}}\label{status_page_autotoc_md105}
+\hypertarget{status_page_autotoc_md106}{}\doxysubsubsubsection{\texorpdfstring{{\ttfamily Suggested Readings}}{{\ttfamily Suggested Readings}}}\label{status_page_autotoc_md106}
 \doxysectlink{_installation}{How to install the package}{0}
 
 \href{https://ryanellisdale.github.io/ModularArchitecture/md__documentation_2_credits.html}{\texttt{Credits}}

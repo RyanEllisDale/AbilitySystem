@@ -96,7 +96,7 @@ $(function(){initNavTree('supply_page.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__documentation_2_supply_page"></a></p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md94"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md107"></a>
 How‑To: Supplies</h1>
 <p>Supplies represent resource costs required to activate an ability. They allow abilities to consume mana, stamina, ammo, energy, or any custom resource your game defines.</p>
 <p>This chapter explains: </p><pre class="fragment">- What a Supply is
@@ -105,7 +105,7 @@ How‑To: Supplies</h1>
 - How to create supplies in the inspector
 - How to connect supplies to your resource system
 - Best practices
-</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md95"></a>
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md108"></a>
 1. Understanding Supplies</h2>
 <p>Supplies are simple data objects that define: </p><pre class="fragment">- Which resource an ability consumes
 - How much of that resource is required
@@ -113,7 +113,7 @@ How‑To: Supplies</h1>
 </pre><p>Supplies are evaluated automatically by: </p><div class="fragment"><div class="line">AbilitySystemAPI.IsActivatable(abilityInstance)</div>
 </div><!-- fragment --><p> And consumed automatically during: </p><div class="fragment"><div class="line">AbilitySystemAPI.ExecuteAbility(...)</div>
 </div><!-- fragment --><p> Supplies do not store runtime state. They simply reference external resource values through DataReference&lt;float&gt;. </p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md96"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md109"></a>
 2. Supply Class</h2>
 <div class="fragment"><div class="line">[System.Serializable]</div>
 <div class="line"><span class="keyword">public</span> <span class="keyword">class </span>Supply</div>
@@ -142,7 +142,7 @@ How‑To: Supplies</h1>
 <div class="line">    _resource.value -= _cost.value;</div>
 <div class="line">}</div>
 </div><!-- fragment --><p> Supplies assume that Evaluate() has already passed before Use() is called. </p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md97"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md110"></a>
 3. Integrating Supplies With Abilities</h2>
 <p>Supplies are added directly to an AbilityData asset.</p>
 <p>Example: </p><pre class="fragment">- Mana cost
@@ -157,7 +157,7 @@ How‑To: Supplies</h1>
 <div class="line">{</div>
 <div class="line">    currentSupplies.Use();</div>
 <div class="line">}</div>
-</div><!-- fragment --> <h2 class="doxsection"><a class="anchor" id="autotoc_md98"></a>
+</div><!-- fragment --> <h2 class="doxsection"><a class="anchor" id="autotoc_md111"></a>
 4. Creating Supplies in the Inspector</h2>
 <p>Supplies are configured inside an AbilityData asset.</p>
 <p>Each supply requires: </p><pre class="fragment">- A resource reference (DataReference&lt;float&gt;)
@@ -177,7 +177,7 @@ How‑To: Supplies</h1>
 <p>This allows: </p><pre class="fragment">- Designers to tune costs without touching code
 - Dynamic resource values (DataReference) to update at runtime
 - Abilities to share resource pools
-</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md99"></a>
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md112"></a>
 5. Connecting Supplies to Your Resource System</h2>
 <p>Supplies rely on DataReference&lt;float&gt;, which means: </p><pre class="fragment">- Resources can be stored anywhere
 - Resources can be shared between units
@@ -194,7 +194,7 @@ How‑To: Supplies</h1>
 </pre><p>Pattern C — Hybrid</p>
 <p>Some resources are local, others global.</p>
 <p>Supplies work with all patterns. </p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md100"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md113"></a>
 6. Example: Mana Cost</h2>
 <div class="fragment"><div class="line">[SerializeField] <span class="keyword">private</span> DataReference&lt;float&gt; mana;</div>
 <div class="line">[SerializeField] <span class="keyword">private</span> DataReference&lt;float&gt; manaCost;</div>
@@ -207,7 +207,7 @@ How‑To: Supplies</h1>
 <div class="line">    _cost = manaCost</div>
 <div class="line">};</div>
 </div><!-- fragment --><p> Add this supply to an AbilityData’s supplies list. </p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md101"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md114"></a>
 7. Example: Ammo Cost</h2>
 <div class="fragment"><div class="line">[SerializeField] <span class="keyword">private</span> DataReference&lt;float&gt; ammo;</div>
 <div class="line">[SerializeField] <span class="keyword">private</span> DataReference&lt;float&gt; ammoCost;</div>
@@ -219,7 +219,7 @@ How‑To: Supplies</h1>
 <div class="line">    _resource = ammo,</div>
 <div class="line">    _cost = ammoCost</div>
 <div class="line">};</div>
-</div><!-- fragment --> <h2 class="doxsection"><a class="anchor" id="autotoc_md102"></a>
+</div><!-- fragment --> <h2 class="doxsection"><a class="anchor" id="autotoc_md115"></a>
 8. Best Practices</h2>
 <pre class="fragment">- Keep supplies simple and focused
 - Use DataReferences for dynamic resource values
@@ -227,14 +227,20 @@ How‑To: Supplies</h1>
 - Use Evaluate() before Use()
 - Keep resource logic outside the ability system
 - Use supplies for numeric costs; use conditions for logical requirements
-</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md103"></a>
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md116"></a>
 9. Summary</h2>
 <p>Supplies in the Tactics Ability System Package are: </p><pre class="fragment">- Lightweight
 - Data‑driven
 - Easy to configure
 - Integrated with abilities
 - Designed for resource‑based gameplay
-</pre><p>They provide a clean, modular way to enforce ability costs without embedding resource logic into abilities themselves. </p>
+</pre><p>They provide a clean, modular way to enforce ability costs without embedding resource logic into abilities themselves.</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md117"></a>
+<span class="tt">Suggested Readings</span></h3>
+<p><a class="el" href="_installation.html" title="Installation">How to install the package</a></p>
+<p><a href="https://ryanellisdale.github.io/ModularArchitecture/md__documentation_2_credits.html">Credits</a></p>
+<p><a href="https://ryanellisdale.github.io/ModularArchitecture/md__third_01_party_01_notices.html">Third Party Notices</a></p>
+<p><a href="https://ryanellisdale.github.io/ModularArchitecture/md__l_i_c_e_n_s_e.html">Licensing</a> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

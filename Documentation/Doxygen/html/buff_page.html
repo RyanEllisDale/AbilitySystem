@@ -96,7 +96,7 @@ $(function(){initNavTree('buff_page.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__documentation_2_buff_page"></a></p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md49"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md62"></a>
 How‑To: Buffs</h1>
 <p>Buffs are temporary stat‑modifying effects applied to units. They increase or decrease numerical values such as attack, defense, speed, or any custom stat your game defines.</p>
 <p>This chapter explains: </p><pre class="fragment">- What a BuffData is
@@ -108,7 +108,7 @@ How‑To: Buffs</h1>
 - How to integrate buffs with units and stats
 - How to create custom buffs
 - Best practices
-</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md50"></a>
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md63"></a>
 1. Understanding Buffs</h2>
 <p>Buffs in this system are: </p><pre class="fragment">- Data‑driven — defined as ScriptableObjects
 - Runtime‑tracked — via BuffInstance
@@ -116,7 +116,7 @@ How‑To: Buffs</h1>
 - Turn‑based — they have a duration in turns
 - Backend‑only — they do not handle UI, VFX, or audio directly
 </pre><p>Buffs are the “stat layer” of the ability system. Statuses are the “effect layer”. Statuses can also apply buffs using BuffStatusData. </p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md51"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md64"></a>
 2. BuffData</h2>
 <p>BuffData defines the permanent configuration of a buff. Creating a Buff : Right‑click → Create → Abilities → Buffs → Create New Buff </p><div class="fragment"><div class="line">[CreateAssetMenu(fileName = <span class="stringliteral">&quot;New Buff&quot;</span>,  menuName =<span class="stringliteral">&quot;Abilities/Buffs/Create New Buff&quot;</span>, order = 0)]</div>
 <div class="line"><span class="keyword">public</span> <span class="keyword">class </span>BuffData : ScriptableObject</div>
@@ -136,7 +136,7 @@ How‑To: Buffs</h1>
 - description
 - duration
 - modifiers (stat ID, value, type)
-</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md52"></a>
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md65"></a>
 3. Stat Modifiers</h2>
 <p>Stat modifiers define how a buff changes stats on an IBuffContainer. </p><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">enum</span> StatModifierType : <span class="keywordtype">byte</span></div>
 <div class="line">{ </div>
@@ -153,7 +153,7 @@ How‑To: Buffs</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p> Modifier Types </p><pre class="fragment">- Add  Adds (or subtracts) a flat value to the stat.
 - Multiply  Multiplies (or divides) the stat by a value.
-</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md53"></a>
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md66"></a>
 4. BuffInstance</h2>
 <p>BuffInstance is the runtime representation of a BuffData. </p><div class="fragment"><div class="line">[System.Serializable]   </div>
 <div class="line"><span class="keyword">public</span> <span class="keyword">class </span>BuffInstance : IEquatable&lt;BuffInstance&gt;</div>
@@ -195,7 +195,7 @@ How‑To: Buffs</h1>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment --><p> BuffInstance uses the inverse of the original modification to restore stats when the buff expires. </p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md54"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md67"></a>
 5. IBuffContainer</h2>
 <p>Any object that wants to receive buffs must implement IBuffContainer. </p><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">interface </span>IBuffContainer</div>
 <div class="line">{</div>
@@ -210,7 +210,7 @@ How‑To: Buffs</h1>
 </pre><p>Typical usage: </p><pre class="fragment">- Store stats in fields or a dictionary
 - Map statID to the correct stat
 - Apply Add or Multiply logic in ModifyStat
-</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md55"></a>
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
 6. BuffManager</h2>
 <p>BuffManager manages all active BuffInstances on a single IBuffContainer. </p><div class="fragment"><div class="line">[System.Serializable]</div>
 <div class="line"><span class="keyword">public</span> <span class="keyword">class </span>BuffManager</div>
@@ -251,7 +251,7 @@ How‑To: Buffs</h1>
 <div class="line">    <span class="keywordflow">return</span> buffInstance;</div>
 <div class="line">}</div>
 </div><!-- fragment --><p> BuffManager does not tick durations — that is handled by the AbilitySystemAPI turn logic. </p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md56"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md69"></a>
 7. Turn‑Based Buff Ticking</h2>
 <p>Buff durations are reduced during OnTurnStart. </p><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> OnTurnStart(IBuffContainer aCurrentStatsContainer)</div>
 <div class="line">{</div>
@@ -273,7 +273,7 @@ How‑To: Buffs</h1>
     - Buff is removed
     - Stat modifiers are reversed
     - BuffRemoved event fires
-</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md57"></a>
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
 8. Applying and Removing Buffs via the API</h2>
 <p>Applying a Buff </p><div class="fragment"><div class="line">AbilitySystemAPI.ApplyBuff(target, buffData);</div>
 </div><!-- fragment --><p> Removing a Buff by Instance </p><div class="fragment"><div class="line">AbilitySystemAPI.RemoveBuff(target, buffInstance);</div>
@@ -283,7 +283,7 @@ How‑To: Buffs</h1>
 </div><!-- fragment --><p> Use these to: </p><pre class="fragment">- Update UI
 - Play VFX/SFX
 - Trigger animations
-</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md58"></a>
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md71"></a>
 9. Integrating Buffs With Units</h2>
 <p>A typical unit that supports buffs: </p><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>UnitScript : MonoBehaviour, IBuffContainer</div>
 <div class="line">{</div>
@@ -320,7 +320,7 @@ How‑To: Buffs</h1>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment --><p> You are free to implement stat storage however you like. </p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md59"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md72"></a>
 10. Creating Custom Buffs</h2>
 <p>Buffs are purely data‑driven. To create a new buff: </p><pre class="fragment">- Create a new BuffData asset
 - Set id, description, duration
@@ -335,7 +335,7 @@ How‑To: Buffs</h1>
 - modifierType: Multiply
 - modifierValue: 0.5
 </pre><p>Buff behavior is entirely defined by how your IBuffContainer interprets stat IDs.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md60"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md73"></a>
 11. Best Practices</h2>
 <pre class="fragment">- Keep buffs focused on stats only
 - Use clear, consistent stat IDs
@@ -345,7 +345,7 @@ How‑To: Buffs</h1>
 - Use BuffApplied and BuffRemoved events for presentation
 - Let the AbilitySystemAPI handle duration ticking
 - Use buffs for predictable, numeric changes; use statuses for more complex logic
-</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md61"></a>
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md74"></a>
 12. Summary</h2>
 <p>Buffs in the Tactics Ability System Package are: </p><pre class="fragment">- Data‑driven
 - Stat‑focused
@@ -353,9 +353,9 @@ How‑To: Buffs</h1>
 - Backend‑only
 - Integrated with the AbilitySystemAPI
 - Designed to work alongside statuses and abilities
-</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md62"></a>
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md75"></a>
 Thank You For Reading</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md63"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md76"></a>
 <span class="tt">Suggested Readings</span></h3>
 <p><a class="el" href="_installation.html" title="Installation">How to install the package</a></p>
 <p><a href="https://ryanellisdale.github.io/ModularArchitecture/md__documentation_2_credits.html">Credits</a></p>

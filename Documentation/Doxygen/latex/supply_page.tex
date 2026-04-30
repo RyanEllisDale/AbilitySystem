@@ -2,7 +2,7 @@
 \hypertarget{supply_page}{}\label{supply_page}\index{Supply System@{Supply System}}
 \label{supply_page_md__documentation_2_supply_page}%
 \Hypertarget{supply_page_md__documentation_2_supply_page}%
-\hypertarget{supply_page_autotoc_md94}{}\doxysubsection{\texorpdfstring{How‑\+To:\+ Supplies}{How‑\+To:\+ Supplies}}\label{supply_page_autotoc_md94}
+\hypertarget{supply_page_autotoc_md107}{}\doxysubsection{\texorpdfstring{How‑\+To:\+ Supplies}{How‑\+To:\+ Supplies}}\label{supply_page_autotoc_md107}
 Supplies represent resource costs required to activate an ability. They allow abilities to consume mana, stamina, ammo, energy, or any custom resource your game defines.
 
 This chapter explains:\+ \begin{DoxyVerb}- What a Supply is
@@ -12,7 +12,7 @@ This chapter explains:\+ \begin{DoxyVerb}- What a Supply is
 - How to connect supplies to your resource system
 - Best practices
 \end{DoxyVerb}
-\hypertarget{supply_page_autotoc_md95}{}\doxysubsubsection{\texorpdfstring{1. Understanding Supplies}{1. Understanding Supplies}}\label{supply_page_autotoc_md95}
+\hypertarget{supply_page_autotoc_md108}{}\doxysubsubsection{\texorpdfstring{1. Understanding Supplies}{1. Understanding Supplies}}\label{supply_page_autotoc_md108}
 Supplies are simple data objects that define:\+ \begin{DoxyVerb}- Which resource an ability consumes
 - How much of that resource is required
 - Whether the user has enough to activate the ability
@@ -29,7 +29,7 @@ Supplies are evaluated automatically by:\+
 \DoxyCodeLine{AbilitySystemAPI.ExecuteAbility(...)}
 
 \end{DoxyCode}
- Supplies do not store runtime state. They simply reference external resource values through Data\+Reference$<$float$>$. \hypertarget{supply_page_autotoc_md96}{}\doxysubsubsection{\texorpdfstring{2. Supply Class}{2. Supply Class}}\label{supply_page_autotoc_md96}
+ Supplies do not store runtime state. They simply reference external resource values through Data\+Reference$<$float$>$. \hypertarget{supply_page_autotoc_md109}{}\doxysubsubsection{\texorpdfstring{2. Supply Class}{2. Supply Class}}\label{supply_page_autotoc_md109}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{[System.Serializable]}
@@ -72,7 +72,7 @@ Checks whether the ability can afford the cost.
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
- Supplies assume that Evaluate() has already passed before Use() is called. \hypertarget{supply_page_autotoc_md97}{}\doxysubsubsection{\texorpdfstring{3. Integrating Supplies With Abilities}{3. Integrating Supplies With Abilities}}\label{supply_page_autotoc_md97}
+ Supplies assume that Evaluate() has already passed before Use() is called. \hypertarget{supply_page_autotoc_md110}{}\doxysubsubsection{\texorpdfstring{3. Integrating Supplies With Abilities}{3. Integrating Supplies With Abilities}}\label{supply_page_autotoc_md110}
 Supplies are added directly to an Ability\+Data asset.
 
 Example:\+ \begin{DoxyVerb}- Mana cost
@@ -97,7 +97,7 @@ This is handled internally by:\+
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
- \hypertarget{supply_page_autotoc_md98}{}\doxysubsubsection{\texorpdfstring{4. Creating Supplies in the Inspector}{4. Creating Supplies in the Inspector}}\label{supply_page_autotoc_md98}
+ \hypertarget{supply_page_autotoc_md111}{}\doxysubsubsection{\texorpdfstring{4. Creating Supplies in the Inspector}{4. Creating Supplies in the Inspector}}\label{supply_page_autotoc_md111}
 Supplies are configured inside an Ability\+Data asset.
 
 Each supply requires:\+ \begin{DoxyVerb}- A resource reference (DataReference<float>)
@@ -119,7 +119,7 @@ This allows:\+ \begin{DoxyVerb}- Designers to tune costs without touching code
 - Dynamic resource values (DataReference) to update at runtime
 - Abilities to share resource pools
 \end{DoxyVerb}
-\hypertarget{supply_page_autotoc_md99}{}\doxysubsubsection{\texorpdfstring{5. Connecting Supplies to Your Resource System}{5. Connecting Supplies to Your Resource System}}\label{supply_page_autotoc_md99}
+\hypertarget{supply_page_autotoc_md112}{}\doxysubsubsection{\texorpdfstring{5. Connecting Supplies to Your Resource System}{5. Connecting Supplies to Your Resource System}}\label{supply_page_autotoc_md112}
 Supplies rely on Data\+Reference$<$float$>$, which means:\+ \begin{DoxyVerb}- Resources can be stored anywhere
 - Resources can be shared between units
 - Resources can be modified by buffs, statuses, or gameplay events
@@ -147,7 +147,7 @@ Pattern C — Hybrid
 
 Some resources are local, others global.
 
-Supplies work with all patterns. \hypertarget{supply_page_autotoc_md100}{}\doxysubsubsection{\texorpdfstring{6. Example:\+ Mana Cost}{6. Example:\+ Mana Cost}}\label{supply_page_autotoc_md100}
+Supplies work with all patterns. \hypertarget{supply_page_autotoc_md113}{}\doxysubsubsection{\texorpdfstring{6. Example:\+ Mana Cost}{6. Example:\+ Mana Cost}}\label{supply_page_autotoc_md113}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{[SerializeField]\ \textcolor{keyword}{private}\ DataReference<float>\ mana;}
@@ -162,7 +162,7 @@ Supplies work with all patterns. \hypertarget{supply_page_autotoc_md100}{}\doxys
 \DoxyCodeLine{\};}
 
 \end{DoxyCode}
- Add this supply to an Ability\+Data’s supplies list. \hypertarget{supply_page_autotoc_md101}{}\doxysubsubsection{\texorpdfstring{7. Example:\+ Ammo Cost}{7. Example:\+ Ammo Cost}}\label{supply_page_autotoc_md101}
+ Add this supply to an Ability\+Data’s supplies list. \hypertarget{supply_page_autotoc_md114}{}\doxysubsubsection{\texorpdfstring{7. Example:\+ Ammo Cost}{7. Example:\+ Ammo Cost}}\label{supply_page_autotoc_md114}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{[SerializeField]\ \textcolor{keyword}{private}\ DataReference<float>\ ammo;}
@@ -177,7 +177,7 @@ Supplies work with all patterns. \hypertarget{supply_page_autotoc_md100}{}\doxys
 \DoxyCodeLine{\};}
 
 \end{DoxyCode}
- \hypertarget{supply_page_autotoc_md102}{}\doxysubsubsection{\texorpdfstring{8. Best Practices}{8. Best Practices}}\label{supply_page_autotoc_md102}
+ \hypertarget{supply_page_autotoc_md115}{}\doxysubsubsection{\texorpdfstring{8. Best Practices}{8. Best Practices}}\label{supply_page_autotoc_md115}
 \begin{DoxyVerb}- Keep supplies simple and focused
 - Use DataReferences for dynamic resource values
 - Use multiple supplies for multi‑resource abilities
@@ -185,7 +185,7 @@ Supplies work with all patterns. \hypertarget{supply_page_autotoc_md100}{}\doxys
 - Keep resource logic outside the ability system
 - Use supplies for numeric costs; use conditions for logical requirements
 \end{DoxyVerb}
-\hypertarget{supply_page_autotoc_md103}{}\doxysubsubsection{\texorpdfstring{9. Summary}{9. Summary}}\label{supply_page_autotoc_md103}
+\hypertarget{supply_page_autotoc_md116}{}\doxysubsubsection{\texorpdfstring{9. Summary}{9. Summary}}\label{supply_page_autotoc_md116}
 Supplies in the Tactics Ability System Package are:\+ \begin{DoxyVerb}- Lightweight
 - Data‑driven
 - Easy to configure
@@ -194,4 +194,11 @@ Supplies in the Tactics Ability System Package are:\+ \begin{DoxyVerb}- Lightwei
 \end{DoxyVerb}
 
 
-They provide a clean, modular way to enforce ability costs without embedding resource logic into abilities themselves. 
+They provide a clean, modular way to enforce ability costs without embedding resource logic into abilities themselves.\hypertarget{supply_page_autotoc_md117}{}\doxysubsubsubsection{\texorpdfstring{{\ttfamily Suggested Readings}}{{\ttfamily Suggested Readings}}}\label{supply_page_autotoc_md117}
+\doxysectlink{_installation}{How to install the package}{0}
+
+\href{https://ryanellisdale.github.io/ModularArchitecture/md__documentation_2_credits.html}{\texttt{Credits}}
+
+\href{https://ryanellisdale.github.io/ModularArchitecture/md__third_01_party_01_notices.html}{\texttt{Third Party Notices}}
+
+\href{https://ryanellisdale.github.io/ModularArchitecture/md__l_i_c_e_n_s_e.html}{\texttt{Licensing}} 
