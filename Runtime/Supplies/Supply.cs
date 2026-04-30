@@ -1,8 +1,8 @@
 // Dependancies : 
 using UnityEngine;
-using ModularArchitecture;
+using ModularArchitecture.Data;
 
-namespace AbilitySystem
+namespace AbilitySystem.Supplies
 {
     /// <summary>
     /// Represents a resource requirement for activating an ability. <br/>

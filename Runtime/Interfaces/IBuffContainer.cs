@@ -1,4 +1,4 @@
-namespace AbilitySystem
+namespace AbilitySystem.Buff
 {
     /// <summary>
     /// Interface for any object capable of receiving and managing buffs. <br/><br/>

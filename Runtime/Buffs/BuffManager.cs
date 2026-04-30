@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AbilitySystem
+namespace AbilitySystem.Buff
 {
     /// <summary>
     /// The Buff Manager is a composite runtime container that manages all active <b>BuffInstance</b> objects

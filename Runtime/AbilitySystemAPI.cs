@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using ModularArchitecture;
+using ModularArchitecture.Data;
+using ModularArchitecture.Conditions;
+using AbilitySystem.Status;
+using AbilitySystem.Buff;
+using AbilitySystem.Ability;
+using AbilitySystem.Supplies;
 
 namespace AbilitySystem
 {
@@ -186,8 +191,9 @@ namespace AbilitySystem
                 return false;
             }
 
-            foreach (Condition currentCondition in Instance.ability.conditions)
+            foreach (ConditionReference currentConditionReference in Instance.ability.conditions)
             {
+                Condition currentCondition = currentConditionReference.value;
                 if (currentCondition.Evaluate() == false)
                 {
                     Debug.Log("Conditions False");

@@ -1,6 +1,7 @@
 // Dependancies : 
 using UnityEngine;
 using UnityEditor;
+using AbilitySystem.Status;
 
 namespace AbilitySystem.Editor
 {

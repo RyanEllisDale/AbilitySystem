@@ -1,7 +1,7 @@
 // Dependancies :
-using ModularArchitecture;
+using ModularArchitecture.Enums;
 
-namespace AbilitySystem
+namespace AbilitySystem.Ability
 {
     /// <summary>
     /// Categories used to classify abilities within the Ability System. <br/><br/>

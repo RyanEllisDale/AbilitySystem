@@ -1,7 +1,7 @@
 // Dependancies :
 using UnityEngine;
 
-namespace AbilitySystem
+namespace AbilitySystem.Status
 {
     /// <summary>
     /// StatusData representing a regeneration effect. <br/><br/>

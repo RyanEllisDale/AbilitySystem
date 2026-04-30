@@ -1,7 +1,8 @@
 // Dependancies :
 using UnityEngine;
+using AbilitySystem.Buff;
 
-namespace AbilitySystem
+namespace AbilitySystem.Status
 {
     /// <summary>
     /// StatusData wrapper for applying a <b>BuffData</b> asset as a status effect. <br/><br/>

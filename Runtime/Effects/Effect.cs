@@ -1,7 +1,7 @@
 // Dependancies
 using UnityEngine;
 
-namespace AbilitySystem
+namespace AbilitySystem.Ability
 {
     /// <summary>
     /// Base class for all ability effects. Effects define a single action performed when an ability activates. <br/><br/>

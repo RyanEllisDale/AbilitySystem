@@ -1,7 +1,7 @@
 // Dependancies :
 using UnityEngine;
 
-namespace AbilitySystem
+namespace AbilitySystem.Ability
 {
     /// <summary>
     /// Effect that prints a message to the console when activated. <br/><br/>

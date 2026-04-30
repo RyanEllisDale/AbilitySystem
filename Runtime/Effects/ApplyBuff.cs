@@ -1,7 +1,8 @@
 // Dependancies :
 using UnityEngine;
+using AbilitySystem.Buff;
 
-namespace AbilitySystem
+namespace AbilitySystem.Ability
 {
     /// <summary>
     /// Effect that applies a <b>BuffData</b> to the target unit. <br/><br/>

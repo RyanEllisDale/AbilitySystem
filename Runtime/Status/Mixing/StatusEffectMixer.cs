@@ -1,7 +1,7 @@
 // Dependancies : 
 using UnityEngine;
 
-namespace AbilitySystem
+namespace AbilitySystem.Status
 {
     /// <summary>
     /// Static singleton accessor for the <b>StatusEffectMixingDatabase</b>. <br/>

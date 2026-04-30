@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AbilitySystem
+namespace AbilitySystem.Status
 {
     /// <summary>
     /// StatusData representing a composite effect made up of multiple sub‑effects. <br/><br/>

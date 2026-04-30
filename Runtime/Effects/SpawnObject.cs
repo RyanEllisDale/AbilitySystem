@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AbilitySystem
+namespace AbilitySystem.Ability
 {
     /// <summary>
     /// Effect that spawns a prefab at the target's position with an optional offset. <br/><br/>

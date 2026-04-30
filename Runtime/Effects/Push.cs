@@ -1,7 +1,7 @@
 // Dependancies : 
 using UnityEngine;
 
-namespace AbilitySystem
+namespace AbilitySystem.Ability
 {
     /// <summary>
     /// Effect that pushes the target unit by a specified grid offset. <br/><br/>

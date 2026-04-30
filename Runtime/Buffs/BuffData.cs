@@ -1,7 +1,7 @@
 // Dependancies : 
 using UnityEngine;
 
-namespace AbilitySystem
+namespace AbilitySystem.Buff
 {
     /// <summary>
     /// Small enumeration type for telling buffs ( positive and negative ) how their value responds to the respective target stat. <br/> 

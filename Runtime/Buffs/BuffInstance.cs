@@ -2,7 +2,7 @@
 using UnityEngine;
 using System;
 
-namespace AbilitySystem
+namespace AbilitySystem.Buff
 {
     /// <summary>
     /// A runtime instance for buff data to be applied to buff managers, modifies the stats of <b>IBuffContainer</b> containers based on the data's modifiers. <br/>

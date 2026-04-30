@@ -1,7 +1,9 @@
 // Dependancies :
 using UnityEngine;
+using AbilitySystem.Status;
+using AbilitySystem;
 
-namespace AbilitySystem
+namespace AbilitySystem.Ability
 {
     /// <summary>
     /// Effect that applies a <b>StatusData</b> to the target unit. <br/><br/>

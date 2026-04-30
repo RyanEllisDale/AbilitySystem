@@ -1,7 +1,7 @@
 using UnityEngine;
-using ModularArchitecture;
+using ModularArchitecture.Data;
 
-namespace AbilitySystem
+namespace AbilitySystem.Ability
 {
     /// <summary>
     /// Effect that restores health to the target unit. <br/><br/>

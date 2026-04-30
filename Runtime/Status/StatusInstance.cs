@@ -2,7 +2,7 @@
 using UnityEngine;
 using System;
 
-namespace AbilitySystem
+namespace AbilitySystem.Status
 {
     /// <summary>
     /// Runtime instance of a StatusData asset. Stores temporary state such as remaining duration

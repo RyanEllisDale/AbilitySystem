@@ -1,8 +1,8 @@
 // Dependancies :
-using ModularArchitecture;
+using ModularArchitecture.Events;
 using UnityEngine;
 
-namespace AbilitySystem
+namespace AbilitySystem.Ability
 {
     /// <summary>
     /// Effect that raises a <b>GameEvent</b> when activated. <br/><br/>

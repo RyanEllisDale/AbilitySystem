@@ -1,7 +1,7 @@
 // Dependancies :
-using ModularArchitecture;
+using ModularArchitecture.Enums;
 
-namespace AbilitySystem
+namespace AbilitySystem.Ability
 {
     /// <summary>
     /// Types of damage used by abilities and status effects. <br/><br/>

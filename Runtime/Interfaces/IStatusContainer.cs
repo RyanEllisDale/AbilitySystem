@@ -1,4 +1,4 @@
-namespace AbilitySystem
+namespace AbilitySystem.Status
 {
     /// <summary>
     /// Primary interface for any object capable of receiving and interacting with status effects. <br/>

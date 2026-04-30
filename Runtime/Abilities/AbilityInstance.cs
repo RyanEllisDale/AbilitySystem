@@ -1,7 +1,7 @@
 // Dependancies : 
 using UnityEngine;
 
-namespace AbilitySystem
+namespace AbilitySystem.Ability
 {
     /// <summary>
     /// Runtime instance of an <b>AbilityData</b> asset. Stores temporary state such as cooldown

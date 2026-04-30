@@ -5,7 +5,7 @@ using UnityEngine;
     using UnityEditor;
 #endif
 
-namespace AbilitySystem
+namespace AbilitySystem.Status
 {
     /// <summary>
     /// Runtime manager responsible for handling all active <b>StatusInstance</b> effects applied to a unit. <br/>

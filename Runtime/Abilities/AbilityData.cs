@@ -1,9 +1,10 @@
 // Dependancies : 
 using System.Collections.Generic;
 using UnityEngine;
-using ModularArchitecture;
+using ModularArchitecture.Data;
+using AbilitySystem.Supplies;
 
-namespace AbilitySystem
+namespace AbilitySystem.Ability
 {
     /// <summary>
     /// Data asset defining an ability within the Ability System. Stores all permanent configuration
@@ -35,7 +36,7 @@ namespace AbilitySystem
         [SerializeField] public AbilityCategory abilityCategory; 
 
         [Header("Requirements:")]
-        [SerializeField] public List<DataReference<Condition>> conditions;
+        [SerializeField] public List<ConditionReference> conditions;
         [SerializeField] public List<Supply> supplies;
         [SerializeField] public DataReference<int> turnCooldown;
     }
