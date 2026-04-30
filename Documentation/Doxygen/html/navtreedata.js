@@ -24,9 +24,16 @@
 */
 var NAVTREE =
 [
-  [ "Modular Ability System", "index.html", [
-    [ "Tactics Ability System", "index.html", null ],
+  [ "Tactics Ability System", "index.html", [
     [ "Changelog", "md__c_h_a_n_g_e_l_o_g.html", [
+      [ "Overview", "index.html#autotoc_md31", [
+        [ "Features", "index.html#autotoc_md32", null ]
+      ] ],
+      [ "Package Structure", "index.html#autotoc_md33", null ],
+      [ "Documentation", "index.html#autotoc_md34", null ],
+      [ "Thank You For Reading", "index.html#autotoc_md35", [
+        [ "<span class=\"tt\">Suggested Readings</span>", "index.html#autotoc_md36", null ]
+      ] ],
       [ "About", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md1", null ],
       [ "[1.0.0] - Initial Release", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md3", [
         [ "Added", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md4", null ]
@@ -82,7 +89,7 @@ var NAVTREEINDEX =
 [
 "_a_p_i_page.html",
 "class_ability_system_1_1_editor_1_1_script_templates.html#a3d0f021f78ce788f60335950d618b9ce",
-"status_page.html#autotoc_md103"
+"pages.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
