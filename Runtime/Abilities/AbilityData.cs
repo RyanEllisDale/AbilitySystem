@@ -28,6 +28,7 @@ namespace AbilitySystem.Ability
         [Header("Effects:")]
         [SerializeField] public string id;
         [SerializeField] public List<AudioClip> audioClips;
+        [SerializeField] public List<GameObject> particlePrefabs;
         [SerializeField] public List<Effect> plugInEffects;
         [SerializeField] public int range;
 

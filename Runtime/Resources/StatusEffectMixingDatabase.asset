@@ -12,19 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9b842d1de4d6ca458347675a43146ea, type: 3}
   m_Name: StatusEffectMixingDatabase
   m_EditorClassIdentifier: 
-  mixRules:
-  - effectA: {fileID: 11400000, guid: 7cc920536de2ef8419bb7924c8b357ab, type: 2}
-    effectB: {fileID: 11400000, guid: 56a7100a83476a544abd5e03c5bb0066, type: 2}
-    result: {fileID: 11400000, guid: 9182b5cf501aeee42b48288b4333b8cf, type: 2}
-  - effectA: {fileID: 11400000, guid: 56a7100a83476a544abd5e03c5bb0066, type: 2}
-    effectB: {fileID: 11400000, guid: 8482b5b6ca693774da30c1f6932d655e, type: 2}
-    result: {fileID: 11400000, guid: 257fc7e5a02e8a64cad6169c6d364c27, type: 2}
-  - effectA: {fileID: 11400000, guid: 257fc7e5a02e8a64cad6169c6d364c27, type: 2}
-    effectB: {fileID: 11400000, guid: 7cc920536de2ef8419bb7924c8b357ab, type: 2}
-    result: {fileID: 11400000, guid: 9e6513b110caa33479e566d659caf783, type: 2}
-  - effectA: {fileID: 11400000, guid: 9182b5cf501aeee42b48288b4333b8cf, type: 2}
-    effectB: {fileID: 11400000, guid: 8482b5b6ca693774da30c1f6932d655e, type: 2}
-    result: {fileID: 11400000, guid: 9e6513b110caa33479e566d659caf783, type: 2}
-  - effectA: {fileID: 11400000, guid: 9182b5cf501aeee42b48288b4333b8cf, type: 2}
-    effectB: {fileID: 11400000, guid: 257fc7e5a02e8a64cad6169c6d364c27, type: 2}
-    result: {fileID: 11400000, guid: 9e6513b110caa33479e566d659caf783, type: 2}
+  mixRules: []
