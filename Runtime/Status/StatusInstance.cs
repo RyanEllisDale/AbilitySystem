@@ -35,6 +35,7 @@ namespace AbilitySystem.Status
         public StatusInstance(StatusData aData)
         {
             data = aData;
+            currentDuration = aData.duration;
         }
 
         #region Data Methods

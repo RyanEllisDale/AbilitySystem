@@ -2,7 +2,7 @@
   "name": "com.ryanellisdale.ability-system",
   "displayName": "Ability System",
   "version": "1.0.0",
-  "description": "A modular ability system for grid-based turn-based tactics games built in Unity. Built using the modular architecture package available at: https://github.com/RyanEllisDale/ModularArchitecture",
+  "description": "The Tactics Ability System Package is a lightweight Unity framework that provides modular, data‑driven building blocks for turn‑based tactics gameplay. It replaces tightly coupled MonoBehaviour logic with clean, composable ScriptableObject systems for abilities, effects, statuses, buffs, and resource costs. The goal is to make tactics projects more flexible, scalable, and easier to extend through a clear, backend‑only architecture that integrates smoothly with any grid, unit, or turn system. Built using the modular architecture package available at: https://github.com/RyanEllisDale/ModularArchitecture",
   "unity": "2019.1",
   "dependencies": {
     "com.ryanellisdale.modular-architecture": "1.0.0"
@@ -26,9 +26,19 @@
   },
   "samples": [
     {
-      "displayName": "Sample Scene",
-      "description": "Miniture scene that shows the example runtime and editor scripts.",
-      "path": "Samples/SampleScene"
+      "displayName": "Buff Sample",
+      "description": "Small little visual scene to show how buffs functions when added, removed and how turn progression impacts them",
+      "path": "Samples/Buff Sample"
+    },
+    { 
+      "displayName": "Status Sample",
+      "description": "A tiny log based status scene with turn control buttons and status application buttons, used to demonstrate basic status structure.",
+      "path": "Samples/Status Sample"
+    },
+    {
+      "displayName": "Supply Sample",
+      "description": "Small scene to show the evaluation and usage of supplies as data assets. ( used for resources like mana / gold )",
+      "path": "Samples/Supply Sample"
     }
   ]
 }

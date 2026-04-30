@@ -35,6 +35,8 @@ namespace AbilitySystem.Supplies
         /// </summary>
         public void Use() { _resource.value = _resource.value - _cost.value; }
 
+        public float GetCost() { return _cost.value; }
+        public float GetResource() { return _resource; }    
         #endregion  
     }
 }
