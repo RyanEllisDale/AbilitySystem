@@ -19,6 +19,9 @@ namespace AbilitySystem
     /// </summary>
     public interface IUnit : IStatusContainer, IBuffContainer
     {
+        GameObject GameObject { get; }
+
+
         /// <summary>
         /// The list of runtime ability instances available to this unit.
         /// </summary>
