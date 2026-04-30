@@ -1,13 +1,17 @@
 var searchData=
 [
-  ['majorversion_20minorversion_20patchversion_20year_20month_20day_0',['[MajorVersion.MinorVersion.PatchVersion] - Year-Month-Day',['../md__c_h_a_n_g_e_l_o_g.html#autotoc_md4',1,'']]],
-  ['manager_1',['Package Manager',['../_installation.html#autotoc_md30',1,'']]],
-  ['manager_20—_20git_2',['Package Manager — Git',['../_installation.html#autotoc_md32',1,'']]],
-  ['manager_20disk_3',['Package Manager Disk',['../_installation.html#autotoc_md31',1,'']]],
-  ['manual_20install_4',['Manual Install',['../_installation.html#autotoc_md33',1,'']]],
-  ['minorversion_20patchversion_20year_20month_20day_5',['[MajorVersion.MinorVersion.PatchVersion] - Year-Month-Day',['../md__c_h_a_n_g_e_l_o_g.html#autotoc_md4',1,'']]],
-  ['modular_20architecture_6',['Modular Architecture',['../md__third_01_party_01_notices.html#autotoc_md67',1,'']]],
-  ['modular_20architecture_20home_7',['Modular Architecture - Home',['../index.html',1,'']]],
-  ['modularity_20in_20unity_8',['The Benefits to Modularity In Unity',['../index.html#autotoc_md24',1,'']]],
-  ['month_20day_9',['[MajorVersion.MinorVersion.PatchVersion] - Year-Month-Day',['../md__c_h_a_n_g_e_l_o_g.html#autotoc_md4',1,'']]]
+  ['c_20mix_20both_20approaches_0',['C) Mix both approaches',['../ability_page.html#autotoc_md13',1,'']]],
+  ['can_20be_20used_1',['Checking if an Ability Can Be Used',['../ability_page.html#autotoc_md17',1,'']]],
+  ['changelog_2',['Changelog',['../md__c_h_a_n_g_e_l_o_g.html',1,'']]],
+  ['checking_20if_20an_20ability_20can_20be_20used_3',['Checking if an Ability Can Be Used',['../ability_page.html#autotoc_md17',1,'']]],
+  ['code_4',['B) Create and assign abilities entirely in code',['../ability_page.html#autotoc_md12',1,'']]],
+  ['create_20an_20abilitydata_5',['Step 2 — Create an AbilityData',['../ability_page.html#autotoc_md24',1,'']]],
+  ['create_20an_20effect_6',['Step 1 — Create an Effect',['../ability_page.html#autotoc_md23',1,'']]],
+  ['create_20and_20assign_20abilities_20entirely_20in_20code_7',['B) Create and assign abilities entirely in code',['../ability_page.html#autotoc_md12',1,'']]],
+  ['create_20instances_20at_20runtime_8',['A) Assign AbilityData in the inspector and create instances at runtime',['../ability_page.html#autotoc_md11',1,'']]],
+  ['creating_20a_20simple_20ability_9',['7. Example: Creating a Simple Ability',['../ability_page.html#autotoc_md22',1,'']]],
+  ['creating_20ability_20instances_10',['3. Creating Ability Instances',['../ability_page.html#autotoc_md9',1,'']]],
+  ['creating_20an_20ability_11',['2. Creating an Ability',['../ability_page.html#autotoc_md7',1,'']]],
+  ['credits_12',['Credits',['../md__documentation_2_credits.html',1,'']]],
+  ['css_13',['CSS',['../md__documentation_2_credits.html#autotoc_md49',1,'Doxygen Awesome CSS'],['../md__third_01_party_01_notices.html#autotoc_md53',1,'Doxygen Awesome CSS']]]
 ];

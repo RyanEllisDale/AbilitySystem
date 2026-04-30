@@ -1,6 +1,33 @@
 \chapter{Installation }
 \hypertarget{_installation}{}\label{_installation}\index{Installation@{Installation}}
-The modular architecture package can be added to your Unity project in three ways. The first two use the Package Manager, while the third is a manual fallback if the Package Manager is unavailable.\hypertarget{_installation_autotoc_md30}{}\doxysubsection{\texorpdfstring{Package Manager}{Package Manager}}\label{_installation_autotoc_md30}
+The Tactics Ability System Package is distributed as a Unity package and requires the Modular Architecture framework to function. Follow the steps below to install both packages into your project.\hypertarget{_installation_autotoc_md35}{}\doxysection{\texorpdfstring{Requirements :\+}{Requirements :\+}}\label{_installation_autotoc_md35}
+
+\begin{DoxyItemize}
+\item Unity 2019.\+4+ (developed on 2022.\+3.\+1, but compatible with older versions)
+\item {\bfseries{Modular Architecture Package (must be installed first)}}
+\end{DoxyItemize}\hypertarget{_installation_autotoc_md36}{}\doxysubsection{\texorpdfstring{Modular Architecture ( Dependency /\+ Base )}{Modular Architecture ( Dependency /\+ Base )}}\label{_installation_autotoc_md36}
+The Tactics Ability System Package is built on top of the Modular Architecture framework. You must install it before importing this package.
+
+You can find the full details on installation here :\+ \href{https://ryanellisdale.github.io/ModularArchitecture/_installation.html}{\texttt{https:\+/\+/\+ryanellisdale.\+github.\+io/\+\+Modular\+Architecture/\+\+\_\+installation.\+html}} Quick Summary Options :\+\hypertarget{_installation_autotoc_md37}{}\doxysubsubsection{\texorpdfstring{Option A — Install via Git URL (Unity Package Manager)}{Option A — Install via Git URL (Unity Package Manager)}}\label{_installation_autotoc_md37}
+
+\begin{DoxyEnumerate}
+\item Open {\bfseries{Unity}}
+\item Go to {\bfseries{Window → Package Manager}}
+\item Click the {\bfseries{+}} button
+\item Select {\bfseries{“\+Add package from Git URL…”}}
+\item Use:\+ \href{https://github.com/RyanEllisDale/ModularArchitecture.git}{\texttt{https:\+/\+/\+github.\+com/\+\+Ryan\+Ellis\+Dale/\+\+Modular\+Architecture.\+git}}
+\item Press Add
+\end{DoxyEnumerate}
+
+Unity will download and install the package automatically.\hypertarget{_installation_autotoc_md38}{}\doxysubsubsection{\texorpdfstring{Option B — Manual Installation}{Option B — Manual Installation}}\label{_installation_autotoc_md38}
+
+\begin{DoxyEnumerate}
+\item Download the latest release from Git\+Hub:\+ \href{https://github.com/RyanEllisDale/ModularArchitecture}{\texttt{https:\+/\+/\+github.\+com/\+\+Ryan\+Ellis\+Dale/\+\+Modular\+Architecture}}
+\item Extract the {\ttfamily .zip} file.
+\item Drag the extracted folder into your Unity project’s {\ttfamily Package/\+} directory.
+\item Unity will automatically import the package and compile the scripts.
+\end{DoxyEnumerate}\hypertarget{_installation_autotoc_md39}{}\doxysubsection{\texorpdfstring{Installing the Tactics Ability System Package :\+}{Installing the Tactics Ability System Package :\+}}\label{_installation_autotoc_md39}
+\hypertarget{_installation_autotoc_md40}{}\doxysubsubsection{\texorpdfstring{Package Manager}{Package Manager}}\label{_installation_autotoc_md40}
 You can access the Package Manager by opening your Unity project, selecting {\bfseries{Window}} from the top menu bar, and choosing {\bfseries{Package Manager}}. In the top‑left corner of the Package Manager window, the Add button allows you to install external packages.
 
 This package supports two Package Manager installation methods:\+
@@ -21,7 +48,7 @@ This package supports two Package Manager installation methods:\+
 
 \item \href{https://docs.unity3d.com/6000.4/Documentation/Manual/PackagesList.html}{\texttt{https:\+/\+/\+docs.\+unity3d.\+com/\+6000.\+4/\+\+Documentation/\+\+Manual/\+\+Packages\+List.\+html}} 
 \end{DoxyItemize}\end{adjustwidth}
-\hypertarget{_installation_autotoc_md31}{}\doxysubsubsection{\texorpdfstring{Package Manager Disk}{Package Manager Disk}}\label{_installation_autotoc_md31}
+\hypertarget{_installation_autotoc_md41}{}\doxysubsubsection{\texorpdfstring{Package Manager Disk}{Package Manager Disk}}\label{_installation_autotoc_md41}
 To install from disk, download and extract the package, place it anywhere on your machine, then select {\bfseries{Add package from disk}} and point Unity to the folder. Packages installed this way are {\itshape local} and not stored inside the project. ~\newline
  If the folder is moved or deleted, Unity will lose the reference and you’ll need to re‑add it.
 
@@ -32,13 +59,13 @@ To install from disk, download and extract the package, place it anywhere on you
 \begin{DoxyItemize}
 \item \href{https://docs.unity3d.com/2020.1/Documentation/Manual/upm-ui-local.html}{\texttt{https:\+/\+/\+docs.\+unity3d.\+com/\+2020.\+1/\+\+Documentation/\+\+Manual/\+upm-\/ui-\/local.\+html}} 
 \end{DoxyItemize}\end{adjustwidth}
-\hypertarget{_installation_autotoc_md32}{}\doxysubsubsection{\texorpdfstring{Package Manager — Git}{Package Manager — Git}}\label{_installation_autotoc_md32}
+\hypertarget{_installation_autotoc_md42}{}\doxysubsubsection{\texorpdfstring{Package Manager — Git}{Package Manager — Git}}\label{_installation_autotoc_md42}
 This is the simplest way to add the package to your project. ~\newline
  Open the Package Manager, click the {\bfseries{Add}} button, and select {\bfseries{Add package from Git URL}}. Unity will prompt you for a valid Git URL. ~\newline
- Use :\+ \href{https://github.com/RyanEllisDale/ModularArchitecture.git}{\texttt{https:\+/\+/\+github.\+com/\+\+Ryan\+Ellis\+Dale/\+\+Modular\+Architecture.\+git}}
+ Use :\+ \href{https://github.com/RyanEllisDale/AbilitySystem.git}{\texttt{https:\+/\+/\+github.\+com/\+\+Ryan\+Ellis\+Dale/\+\+Ability\+System.\+git}}
 
 You can also find this URL on the project’s Git\+Hub page:\+ ~\newline
- \href{https://github.com/RyanEllisDale/ModularArchitecture}{\texttt{https:\+/\+/\+github.\+com/\+\+Ryan\+Ellis\+Dale/\+\+Modular\+Architecture}}
+ \href{https://github.com/RyanEllisDale/AbilitySystem}{\texttt{https:\+/\+/\+github.\+com/\+\+Ryan\+Ellis\+Dale/\+\+Ability\+System}}
 
 Installing the package this way prevents editing the package directly inside your project, but allows you to update it at any time through the Package Manager.
 
@@ -48,16 +75,16 @@ Installing the package this way prevents editing the package directly inside you
 
 \begin{DoxyItemize}
 \item \href{https://docs.unity3d.com/2020.1/Documentation/Manual/upm-ui-giturl.html}{\texttt{https:\+/\+/\+docs.\+unity3d.\+com/\+2020.\+1/\+\+Documentation/\+\+Manual/\+upm-\/ui-\/giturl.\+html}}
-\item \href{https://github.com/RyanEllisDale/ModularArchitecture.git}{\texttt{https:\+/\+/\+github.\+com/\+\+Ryan\+Ellis\+Dale/\+\+Modular\+Architecture.\+git}}
-\item \href{https://github.com/RyanEllisDale/ModularArchitecture}{\texttt{https:\+/\+/\+github.\+com/\+\+Ryan\+Ellis\+Dale/\+\+Modular\+Architecture}} 
+\item \href{https://github.com/RyanEllisDale/AbilitySystem.git}{\texttt{https:\+/\+/\+github.\+com/\+\+Ryan\+Ellis\+Dale/\+\+Ability\+System.\+git}} 
 \end{DoxyItemize}\end{adjustwidth}
-\hypertarget{_installation_autotoc_md33}{}\doxysubsection{\texorpdfstring{Manual Install}{Manual Install}}\label{_installation_autotoc_md33}
+\hypertarget{_installation_autotoc_md43}{}\doxysubsubsection{\texorpdfstring{Manual Install}{Manual Install}}\label{_installation_autotoc_md43}
 Manual installation is also possible if the Package Manager is unavailable or not preferred. ~\newline
  To install the package manually, download and extract it, then place the extracted folder inside your project\textquotesingle{}s {\ttfamily Packages/\+} directory (located in the project root). If the {\ttfamily Packages/\+} folder does not exist, create it manually.
 
-Ensure that you copy only the package’s root folder — the one that directly contains the {\ttfamily package.\+json} file.\hypertarget{_installation_autotoc_md34}{}\doxysubsection{\texorpdfstring{Thank You For Reading}{Thank You For Reading}}\label{_installation_autotoc_md34}
-\hypertarget{_installation_autotoc_md35}{}\doxysubsubsection{\texorpdfstring{{\ttfamily Suggested Readings}}{{\ttfamily Suggested Readings}}}\label{_installation_autotoc_md35}
-\doxysectlink{_how-_to-_use}{How to use the package}{0}
+Ensure that you copy only the package’s root folder — the one that directly contains the {\ttfamily package.\+json} file.\hypertarget{_installation_autotoc_md44}{}\doxysubsection{\texorpdfstring{Verification}{Verification}}\label{_installation_autotoc_md44}
+After installing both, you should be able to find both {\ttfamily Modular Architecture} and {\ttfamily Ability System} in your project\textquotesingle{}s browser in the package/\+ section. If not, check to see if you have packages enabled in your project browser, and restart Unity.\hypertarget{_installation_autotoc_md45}{}\doxysubsection{\texorpdfstring{Thank You For Reading}{Thank You For Reading}}\label{_installation_autotoc_md45}
+\hypertarget{_installation_autotoc_md46}{}\doxysubsubsection{\texorpdfstring{{\ttfamily Suggested Readings}}{{\ttfamily Suggested Readings}}}\label{_installation_autotoc_md46}
+How to use the package
 
 \href{https://ryanellisdale.github.io/ModularArchitecture/md__documentation_2_credits.html}{\texttt{Credits}}
 

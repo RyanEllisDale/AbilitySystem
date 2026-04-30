@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['you_20for_20reading_0',['You For Reading',['../index.html#autotoc_md33',1,'Thank You For Reading'],['../_installation.html#autotoc_md45',1,'Thank You For Reading'],['../md__documentation_2_how-_to-_use.html#autotoc_md50',1,'Thank You For Reading']]]
+];

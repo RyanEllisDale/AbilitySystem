@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['—_20git_0',['Package Manager — Git',['../_installation.html#autotoc_md32',1,'']]]
+  ['notices_0',['Third Party Notices',['../md__third_01_party_01_notices.html',1,'']]]
 ];

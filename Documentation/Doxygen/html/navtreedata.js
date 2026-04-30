@@ -25,42 +25,40 @@
 var NAVTREE =
 [
   [ "Modular Ability System", "index.html", [
-    [ "Modular Architecture - Home", "index.html", null ],
+    [ "Tactics Ability System", "index.html", null ],
     [ "Changelog", "md__c_h_a_n_g_e_l_o_g.html", [
-      [ "Notes", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md1", null ],
-      [ "Layout", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md3", [
-        [ "[MajorVersion.MinorVersion.PatchVersion] - Year-Month-Day", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md4", [
-          [ "Added", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md5", null ],
-          [ "Changed", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md6", null ],
-          [ "Fixed", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md7", null ],
-          [ "Deprecated", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md8", null ],
-          [ "Removed", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md9", null ],
-          [ "Security", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md10", null ]
-        ] ]
-      ] ],
-      [ "Example", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md12", [
-        [ "[1.0.0] - 2026-03-15", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md13", [
-          [ "Added", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md14", null ],
-          [ "Changed", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md15", null ],
-          [ "Fixed", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md16", null ],
-          [ "Removed", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md17", null ]
+      [ "About", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md1", null ],
+      [ "[1.0.0] - Initial Release", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md3", [
+        [ "Added", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md4", null ]
+      ] ]
+    ] ],
+    [ "Installation", "_installation.html", [
+      [ "Requirements :", "_installation.html#autotoc_md35", [
+        [ "Modular Architecture ( Dependency / Base )", "_installation.html#autotoc_md36", [
+          [ "Option A — Install via Git URL (Unity Package Manager)", "_installation.html#autotoc_md37", null ],
+          [ "Option B — Manual Installation", "_installation.html#autotoc_md38", null ]
         ] ],
-        [ "[1.0.1] - 2026-03-17", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md19", [
-          [ "Added", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md20", null ],
-          [ "Changed", "md__c_h_a_n_g_e_l_o_g.html#autotoc_md21", null ]
+        [ "Installing the Tactics Ability System Package :", "_installation.html#autotoc_md39", [
+          [ "Package Manager", "_installation.html#autotoc_md40", null ],
+          [ "Package Manager Disk", "_installation.html#autotoc_md41", null ],
+          [ "Package Manager — Git", "_installation.html#autotoc_md42", null ],
+          [ "Manual Install", "_installation.html#autotoc_md43", null ]
+        ] ],
+        [ "Verification", "_installation.html#autotoc_md44", null ],
+        [ "Thank You For Reading", "_installation.html#autotoc_md45", [
+          [ "<span class=\"tt\">Suggested Readings</span>", "_installation.html#autotoc_md46", null ]
         ] ]
       ] ]
     ] ],
-    [ "Installation", "_installation.html", null ],
-    [ "How-To-Use", "_how-_to-_use.html", null ],
     [ "Credits", "md__documentation_2_credits.html", [
-      [ "Doxygen", "md__documentation_2_credits.html#autotoc_md63", null ],
-      [ "Doxygen Awesome CSS", "md__documentation_2_credits.html#autotoc_md64", null ]
+      [ "Doxygen", "md__documentation_2_credits.html#autotoc_md48", null ],
+      [ "Doxygen Awesome CSS", "md__documentation_2_credits.html#autotoc_md49", null ]
     ] ],
+    [ "How-To-Use", "md__documentation_2_how-_to-_use.html", "md__documentation_2_how-_to-_use" ],
     [ "LICENSE", "md__l_i_c_e_n_s_e.html", null ],
     [ "Third Party Notices", "md__third_01_party_01_notices.html", [
-      [ "Doxygen Awesome CSS", "md__third_01_party_01_notices.html#autotoc_md66", null ],
-      [ "Modular Architecture", "md__third_01_party_01_notices.html#autotoc_md67", null ]
+      [ "Doxygen Awesome CSS", "md__third_01_party_01_notices.html#autotoc_md53", null ],
+      [ "Modular Architecture", "md__third_01_party_01_notices.html#autotoc_md54", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]
@@ -82,8 +80,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_how-_to-_use.html",
-"class_ability_system_1_1_status_1_1_regeneration_status_data.html#acfc3012585be9f4c471b1e8f12ffb191"
+"_a_p_i_page.html",
+"class_ability_system_1_1_status_1_1_composite_status_instance.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

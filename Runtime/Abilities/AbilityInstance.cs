@@ -17,5 +17,8 @@ namespace AbilitySystem.Ability
         // Member Data :
         public AbilityData ability;
         public int currentCooldown = 0;
+
+        public AbilityInstance() { }
+        public AbilityInstance(AbilityData ability) { this.ability = ability; }
     }
 }

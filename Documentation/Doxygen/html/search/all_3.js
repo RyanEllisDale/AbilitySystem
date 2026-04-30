@@ -1,25 +1,5 @@
 var searchData=
 [
-  ['_5fbuffcontainer_0',['_buffContainer',['../class_ability_system_1_1_buff_1_1_buff_manager.html#a48b43f5ccd626cd9e1059b6f4ed83c62',1,'AbilitySystem::Buff::BuffManager']]],
-  ['_5fbuffdata_1',['_buffData',['../class_ability_system_1_1_ability_1_1_apply_buff.html#aad07eda64f46c98b2cccbd4a9165f06b',1,'AbilitySystem::Ability::ApplyBuff']]],
-  ['_5fbuffinstances_2',['_buffInstances',['../class_ability_system_1_1_buff_1_1_buff_manager.html#aab75764ad01919ba555b53a5ff14f502',1,'AbilitySystem::Buff::BuffManager']]],
-  ['_5fbuffstatusdata_3',['_buffStatusData',['../class_ability_system_1_1_status_1_1_buff_status_instance.html#a63ef7055908e10bcf888fbb0b5f719dd',1,'AbilitySystem::Status::BuffStatusInstance']]],
-  ['_5fcompositedata_4',['_compositeData',['../class_ability_system_1_1_status_1_1_composite_status_instance.html#a7c68005d2e6677f0407f0e76863cb874',1,'AbilitySystem::Status::CompositeStatusInstance']]],
-  ['_5fcost_5',['_cost',['../class_ability_system_1_1_supplies_1_1_supply.html#a1cdab35b7afaa38056cf3d7b9318737f',1,'AbilitySystem::Supplies::Supply']]],
-  ['_5fdata_6',['_data',['../class_ability_system_1_1_buff_1_1_buff_instance.html#af1273d0eba70b29cc23307451ed46e47',1,'AbilitySystem::Buff::BuffInstance']]],
-  ['_5fdotdata_7',['_dotData',['../class_ability_system_1_1_status_1_1_damage_over_time_status_instance.html#ae70f0322913831e38e8a9d6af92fb408',1,'AbilitySystem::Status::DamageOverTimeStatusInstance']]],
-  ['_5fgameevent_8',['_gameEvent',['../class_ability_system_1_1_ability_1_1_call_event.html#a1edaa93d2b28ffe772d1a0cd4bb31978',1,'AbilitySystem::Ability::CallEvent']]],
-  ['_5fhealamount_9',['_healAmount',['../class_ability_system_1_1_ability_1_1_heal_effect.html#a0cb3b278442f92a739ae43b3b77d57fa',1,'AbilitySystem::Ability::HealEffect']]],
-  ['_5finstances_10',['_instances',['../class_ability_system_1_1_status_1_1_composite_status_instance.html#a40c8bfb440d41fa594fdcc8f532a5ae4',1,'AbilitySystem::Status::CompositeStatusInstance']]],
-  ['_5fmessage_11',['_message',['../class_ability_system_1_1_ability_1_1_print_effect.html#a3b6647d160ed0edd2d791435d89fff18',1,'AbilitySystem::Ability::PrintEffect']]],
-  ['_5fmodifiers_12',['_modifiers',['../class_ability_system_1_1_buff_1_1_buff_data.html#a158d06a0bfcedeab5519db8eb4931bee',1,'AbilitySystem::Buff::BuffData']]],
-  ['_5fobjectprefab_13',['_objectPrefab',['../class_ability_system_1_1_ability_1_1_spawn_object_effect.html#ab8526c722156c861932bfcd0734bcce3',1,'AbilitySystem::Ability::SpawnObjectEffect']]],
-  ['_5foffset_14',['_offset',['../class_ability_system_1_1_ability_1_1_spawn_object_effect.html#abb74d302332115a9aac706d816287f79',1,'AbilitySystem::Ability::SpawnObjectEffect']]],
-  ['_5fowner_15',['_owner',['../class_ability_system_1_1_status_1_1_status_manager.html#affe65b01304b400bc43c29a842e374e3',1,'AbilitySystem::Status::StatusManager']]],
-  ['_5fpushforce_16',['_pushForce',['../class_ability_system_1_1_ability_1_1_push_effect.html#a69f0df0c9da2c569b185f976867eced3',1,'AbilitySystem::Ability::PushEffect']]],
-  ['_5fregendata_17',['_regenData',['../class_ability_system_1_1_status_1_1_regeneration_status_instance.html#a0e9e531255866d16e68678fe2350ebc5',1,'AbilitySystem::Status::RegenerationStatusInstance']]],
-  ['_5fresource_18',['_resource',['../class_ability_system_1_1_supplies_1_1_supply.html#ac9d7951274b898b4f79d9d40c3a8c89a',1,'AbilitySystem::Supplies::Supply']]],
-  ['_5fstatusdata_19',['_statusData',['../class_ability_system_1_1_ability_1_1_apply_status_effect.html#a4acca36598aac524dcac750f27b97609',1,'AbilitySystem::Ability::ApplyStatusEffect']]],
-  ['_5funderlyingdatabaseinstance_20',['_underlyingDatabaseInstance',['../class_ability_system_1_1_status_1_1_status_effect_mixer.html#a8741893cb5c7adb905f728c488680e65',1,'AbilitySystem::Status::StatusEffectMixer']]],
-  ['_5funderlyinginstance_21',['_underlyingInstance',['../class_ability_system_1_1_ability_system_a_p_i.html#ab73237cd1b78083c5169b88e77f8c21c',1,'AbilitySystem::AbilitySystemAPI']]]
+  ['3_20—_20assign_20ability_20to_20a_20unit_0',['Step 3 — Assign Ability to a Unit',['../ability_page.html#autotoc_md25',1,'']]],
+  ['3_20creating_20ability_20instances_1',['3. Creating Ability Instances',['../ability_page.html#autotoc_md9',1,'']]]
 ];
