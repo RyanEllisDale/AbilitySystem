@@ -1,4 +1,0 @@
-#MSearchBox 
-{
-    width: calc(var(--side-nav-fixed-width) - calc(2 * var(--spacing-medium)) - var(--searchbar-height) - 1px)
-}
