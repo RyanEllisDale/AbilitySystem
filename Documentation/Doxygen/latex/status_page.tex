@@ -2,6 +2,335 @@
 \hypertarget{status_page}{}\label{status_page}\index{Status System@{Status System}}
 \label{status_page_md__documentation_2_status_page}%
 \Hypertarget{status_page_md__documentation_2_status_page}%
+\hypertarget{status_page_autotoc_md66}{}\doxysubsection{\texorpdfstring{How‑\+To:\+ Status Effects}{How‑\+To:\+ Status Effects}}\label{status_page_autotoc_md66}
+Statuses are long‑lasting effects applied to units during gameplay. They can heal over time, deal damage over time, apply buffs, combine into new effects, or trigger logic at the start or end of each turn.
+
+This chapter explains:\+ \begin{DoxyVerb}- What a StatusData is
+- What a StatusInstance is
+- How statuses are applied and removed
+- How turn‑based activation works
+- How status mixing works
+- How to create custom statuses
+- How to use built‑in statuses
+- How to integrate statuses into your turn system
+- How to connect statuses to UI, VFX, and audio
+- Best practices
+\end{DoxyVerb}
+\hypertarget{status_page_autotoc_md67}{}\doxysubsubsection{\texorpdfstring{1. Understanding Statuses}{1. Understanding Statuses}}\label{status_page_autotoc_md67}
+Statuses in this system are split into two layers:\+ Status\+Data (Permanent Data)
+
+A Scriptable\+Object that defines:\+ \begin{DoxyVerb}- id
+- description
+- duration
+- components (for mixing)
+- CreateInstance()
+\end{DoxyVerb}
 
 
-Hello Status ! 
+This is the design‑time representation of a status. Status\+Instance (Runtime State)
+
+A lightweight class that stores:\+ \begin{DoxyVerb}- A reference to the StatusData
+- The current duration
+- Activation hooks:
+
+    - OnApply
+    - OnRemove
+    - OnTurnStart
+    - OnTurnEnd
+\end{DoxyVerb}
+
+
+Each unit holds a list of Status\+Instances through its Status\+Manager. Key Concepts \begin{DoxyVerb}- Statuses are turn‑based
+- Statuses are single‑target
+- Statuses are backend‑only
+- Statuses can mix into new statuses
+- Statuses can be composite (multiple sub‑effects)
+- Statuses can apply buffs
+\end{DoxyVerb}
+
+
+Statuses do not handle UI, VFX, or audio. Developers should use Ability\+System\+API events to connect statuses to presentation. \hypertarget{status_page_autotoc_md68}{}\doxysubsubsection{\texorpdfstring{2. Status\+Data}{2. Status\+Data}}\label{status_page_autotoc_md68}
+A Status\+Data defines the permanent configuration of a status. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{abstract}\ \textcolor{keyword}{class\ }StatusData\ :\ ScriptableObject}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ id;}
+\DoxyCodeLine{\ \ \ \ [Multiline]\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ description;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ duration\ =\ 1;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ List<StatusData>\ components\ =\ \textcolor{keyword}{new}\ List<StatusData>();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{abstract}\ StatusInstance\ CreateInstance();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Fields \begin{DoxyVerb}- id  A unique identifier for referencing the status.
+- description  A multiline description for UI or debugging.
+- duration  How many turns the status lasts once applied.
+- components  A flattened list of sub‑effects used for mixing logic.
+\end{DoxyVerb}
+
+
+Creating a Status\+Data Code
+
+Right‑click → Create → Abilities → Status → Status :\+ $<$\+Type$>$
+
+Script Generation Template
+
+You can also generate a new status script via:\+ Code
+
+Assets → Create → Abilities → Status → Create New Status
+
+This produces a ready‑to‑edit Status\+Data + Status\+Instance pair. \hypertarget{status_page_autotoc_md69}{}\doxysubsubsection{\texorpdfstring{3. Status\+Instance}{3. Status\+Instance}}\label{status_page_autotoc_md69}
+A Status\+Instance stores runtime state and implements turn‑based behavior. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }StatusInstance\ :\ IEquatable<StatusInstance>}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ StatusData\ data;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ currentDuration\ =\ 0;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ OnTurnStart(IStatusContainer\ target)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ OnTurnEnd(IStatusContainer\ target)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ OnApply(IStatusContainer\ target)\ \{\ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ OnRemove(IStatusContainer\ target)\ \{\ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Activation Hooks \begin{DoxyVerb}- OnApply  Called when the status is first applied.
+- OnRemove  Called when the status expires or is removed.
+- OnTurnStart  Called at the start of each turn.
+- OnTurnEnd  Called at the end of each turn.
+\end{DoxyVerb}
+
+
+Equality
+
+Two Status\+Instances are considered equal if they share the same Status\+Data. \hypertarget{status_page_autotoc_md70}{}\doxysubsubsection{\texorpdfstring{4. Status\+Manager}{4. Status\+Manager}}\label{status_page_autotoc_md70}
+Each unit implementing IStatus\+Container owns a Status\+Manager. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }StatusManager}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ List<StatusInstance>\ activeEffects\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ IStatusContainer\ unitOwner\ =>\ \_owner\ as\ IStatusContainer;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Responsibilities \begin{DoxyVerb}- Applying statuses
+- Removing statuses
+- Mixing statuses
+- Preventing component conflicts
+- Triggering OnApply / OnRemove
+- Managing active status instances
+\end{DoxyVerb}
+
+
+Applying a Status 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{StatusInstance\ ApplyEffect(StatusData\ newEffect)}
+
+\end{DoxyCode}
+ This method:\+ \begin{DoxyVerb}- Prevents adding component effects of active combined statuses
+- Attempts to mix the new effect with active effects
+- Attempts to mix pending effects with each other
+- Applies the final combined effect
+- Calls OnApply
+\end{DoxyVerb}
+
+
+Removing a Status 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{RemoveEffect(StatusData\ effect)}
+\DoxyCodeLine{RemoveEffect(StatusInstance\ instance)}
+
+\end{DoxyCode}
+ Both remove the status and call On\+Remove. \hypertarget{status_page_autotoc_md71}{}\doxysubsubsection{\texorpdfstring{5. Status Mixing}{5. Status Mixing}}\label{status_page_autotoc_md71}
+Statuses can combine into new statuses using Mix\+Rules. Mix\+Rule 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }MixRule}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ StatusData\ effectA;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ StatusData\ effectB;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ StatusData\ result;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Status\+Effect\+Mixing\+Database
+
+A Scriptable\+Object containing all mix rules. Code
+
+Right‑click → Create → Abilities → Status → Mixing Database
+
+Status\+Effect\+Mixer Singleton 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{StatusEffectMixer.instance.TryMix(a,\ b)}
+
+\end{DoxyCode}
+ How Mixing Works
+
+When applying a new status:\+ \begin{DoxyVerb}- Check if it mixes with any active status
+- If so, remove the active status
+- Replace both with the mixed result
+- Repeat until no more mixes occur
+- Apply the final result
+\end{DoxyVerb}
+
+
+Component Lists
+
+Mix\+Rules automatically generate flattened component lists so the system knows:\+ \begin{DoxyVerb}- Which statuses are “ingredients”
+- Which statuses should not be re‑applied
+- How to prevent circular mixes
+\end{DoxyVerb}
+\hypertarget{status_page_autotoc_md72}{}\doxysubsubsection{\texorpdfstring{6. Built‑\+In Statuses}{6. Built‑\+In Statuses}}\label{status_page_autotoc_md72}
+The package includes several ready‑to‑use statuses. Built‑\+In Status Summary 
+\begin{DoxyTable}{2}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Status Name  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Description  \\
+{\bfseries{Regeneration}}  &Restores health at the start of each turn  \\
+{\bfseries{Damage\+Over\+Time}}  &Deals damage at the end of each turn  \\
+{\bfseries{Composite}}  &A status made of multiple sub‑statuses  \\
+{\bfseries{Buff\+Status}}  &Applies a Buff\+Data as a status  \\
+\end{DoxyTable}
+
+
+Restores health at the start of each turn. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{bool}\ OnTurnStart(IStatusContainer\ target)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ target.ApplyStatusDamage(-\/\_regenData.healthPerTurn);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Damage‑\+Over‑\+Time
+
+Deals damage at the end of each turn. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{bool}\ OnTurnEnd(IStatusContainer\ target)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ target.ApplyStatusDamage(\_dotData.damagePerTurn);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Composite Status
+
+A status that contains multiple sub‑statuses. \begin{DoxyVerb}- Forwards OnTurnStart
+- Forwards OnTurnEnd
+- Forwards OnApply
+- Forwards OnRemove
+\end{DoxyVerb}
+
+
+Buff\+Status
+
+Applies a Buff\+Data as a status. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AbilitySystemAPI.ApplyBuff(statsContainer,\ \_buffStatusData.data);}
+
+\end{DoxyCode}
+ \hypertarget{status_page_autotoc_md73}{}\doxysubsubsection{\texorpdfstring{7. Creating Custom Statuses}{7. Creating Custom Statuses}}\label{status_page_autotoc_md73}
+Use the script template:\+ Code
+
+Assets → Create → Abilities → Status → Create New Status
+
+This generates:\+ \begin{DoxyVerb}- <Name>StatusData
+- <Name>StatusInstance
+\end{DoxyVerb}
+
+
+Example:\+ Stun 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{bool}\ OnApply(IStatusContainer\ target)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Disable\ movement\ or\ actions}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Example:\+ Shield 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{bool}\ OnApply(IStatusContainer\ target)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Add\ temporary\ HP}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Example:\+ Slow 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{bool}\ OnTurnStart(IStatusContainer\ target)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Reduce\ movement\ range}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \hypertarget{status_page_autotoc_md74}{}\doxysubsubsection{\texorpdfstring{8. Integrating Statuses Into Gameplay}{8. Integrating Statuses Into Gameplay}}\label{status_page_autotoc_md74}
+Applying a Status 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AbilitySystemAPI.ApplyStatus(unit,\ statusData);}
+
+\end{DoxyCode}
+ Removing a Status 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AbilitySystemAPI.RemoveStatus(unit,\ statusData);}
+
+\end{DoxyCode}
+ Turn Start /\+ Turn End
+
+Your turn system must call:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AbilitySystemAPI.OnTurnStart(unit);}
+\DoxyCodeLine{AbilitySystemAPI.OnTurnEnd(unit);}
+
+\end{DoxyCode}
+ This handles:\+ \begin{DoxyVerb}- Status ticking
+- Status activation
+- Duration reduction
+- Status expiration
+\end{DoxyVerb}
+
+
+UI, VFX, and Audio
+
+Statuses do not handle presentation.
+
+Use events:\+ \begin{DoxyVerb}- StatusApplied
+- StatusRemoved
+- StatusActivated
+\end{DoxyVerb}
+
+
+These allow you to:\+ \begin{DoxyVerb}- Show icons
+- Play animations
+- Spawn VFX
+- Play audio
+- Update UI
+\end{DoxyVerb}
+\hypertarget{status_page_autotoc_md75}{}\doxysubsubsection{\texorpdfstring{9. Best Practices}{9. Best Practices}}\label{status_page_autotoc_md75}
+\begin{DoxyVerb}- Keep statuses small and focused
+- Use mixing for emergent gameplay
+- Use Composite for multi‑effect statuses
+- Avoid putting UI/VFX logic inside statuses
+- Use events for presentation
+- Keep StatusData immutable
+- Use StatusInstance for runtime state only
+- Use components to prevent re‑applying ingredient statuses
+\end{DoxyVerb}
+\hypertarget{status_page_autotoc_md76}{}\doxysubsubsection{\texorpdfstring{10. Summary}{10. Summary}}\label{status_page_autotoc_md76}
+Statuses in the Tactics Ability System Package are:\+ \begin{DoxyVerb}- Modular
+- Turn‑based
+- Extensible
+- Mixable
+- Backend‑only
+- Designed for tactics games
+\end{DoxyVerb}
+\hypertarget{status_page_autotoc_md77}{}\doxysubsubsection{\texorpdfstring{Thank You For Reading}{Thank You For Reading}}\label{status_page_autotoc_md77}
+\hypertarget{status_page_autotoc_md78}{}\doxysubsubsubsection{\texorpdfstring{{\ttfamily Suggested Readings}}{{\ttfamily Suggested Readings}}}\label{status_page_autotoc_md78}
+\doxysectlink{_installation}{How to install the package}{0}
+
+\href{https://ryanellisdale.github.io/ModularArchitecture/md__documentation_2_credits.html}{\texttt{Credits}}
+
+\href{https://ryanellisdale.github.io/ModularArchitecture/md__third_01_party_01_notices.html}{\texttt{Third Party Notices}}
+
+\href{https://ryanellisdale.github.io/ModularArchitecture/md__l_i_c_e_n_s_e.html}{\texttt{Licensing}} 

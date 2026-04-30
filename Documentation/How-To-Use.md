@@ -1,9 +1,9 @@
 - \subpage ability_page
 - \subpage effect_page
-- \subpage API_page
 - \subpage status_page
 - \subpage buff_page
 - \subpage supply_page
+- \subpage API_page
 
 ## Thank You For Reading 
 

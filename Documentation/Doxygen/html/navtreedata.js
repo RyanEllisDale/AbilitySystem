@@ -33,32 +33,32 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Installation", "_installation.html", [
-      [ "Requirements :", "_installation.html#autotoc_md35", [
-        [ "Modular Architecture ( Dependency / Base )", "_installation.html#autotoc_md36", [
-          [ "Option A — Install via Git URL (Unity Package Manager)", "_installation.html#autotoc_md37", null ],
-          [ "Option B — Manual Installation", "_installation.html#autotoc_md38", null ]
+      [ "Requirements :", "_installation.html#autotoc_md37", [
+        [ "Modular Architecture ( Dependency / Base )", "_installation.html#autotoc_md38", [
+          [ "Option A — Install via Git URL (Unity Package Manager)", "_installation.html#autotoc_md39", null ],
+          [ "Option B — Manual Installation", "_installation.html#autotoc_md40", null ]
         ] ],
-        [ "Installing the Tactics Ability System Package :", "_installation.html#autotoc_md39", [
-          [ "Package Manager", "_installation.html#autotoc_md40", null ],
-          [ "Package Manager Disk", "_installation.html#autotoc_md41", null ],
-          [ "Package Manager — Git", "_installation.html#autotoc_md42", null ],
-          [ "Manual Install", "_installation.html#autotoc_md43", null ]
+        [ "Installing the Tactics Ability System Package :", "_installation.html#autotoc_md41", [
+          [ "Package Manager", "_installation.html#autotoc_md42", null ],
+          [ "Package Manager Disk", "_installation.html#autotoc_md43", null ],
+          [ "Package Manager — Git", "_installation.html#autotoc_md44", null ],
+          [ "Manual Install", "_installation.html#autotoc_md45", null ]
         ] ],
-        [ "Verification", "_installation.html#autotoc_md44", null ],
-        [ "Thank You For Reading", "_installation.html#autotoc_md45", [
-          [ "<span class=\"tt\">Suggested Readings</span>", "_installation.html#autotoc_md46", null ]
+        [ "Verification", "_installation.html#autotoc_md46", null ],
+        [ "Thank You For Reading", "_installation.html#autotoc_md47", [
+          [ "<span class=\"tt\">Suggested Readings</span>", "_installation.html#autotoc_md48", null ]
         ] ]
       ] ]
     ] ],
     [ "Credits", "md__documentation_2_credits.html", [
-      [ "Doxygen", "md__documentation_2_credits.html#autotoc_md48", null ],
-      [ "Doxygen Awesome CSS", "md__documentation_2_credits.html#autotoc_md49", null ]
+      [ "Doxygen", "md__documentation_2_credits.html#autotoc_md50", null ],
+      [ "Doxygen Awesome CSS", "md__documentation_2_credits.html#autotoc_md51", null ]
     ] ],
     [ "How-To-Use", "md__documentation_2_how-_to-_use.html", "md__documentation_2_how-_to-_use" ],
     [ "LICENSE", "md__l_i_c_e_n_s_e.html", null ],
     [ "Third Party Notices", "md__third_01_party_01_notices.html", [
-      [ "Doxygen Awesome CSS", "md__third_01_party_01_notices.html#autotoc_md53", null ],
-      [ "Modular Architecture", "md__third_01_party_01_notices.html#autotoc_md54", null ]
+      [ "Doxygen Awesome CSS", "md__third_01_party_01_notices.html#autotoc_md80", null ],
+      [ "Modular Architecture", "md__third_01_party_01_notices.html#autotoc_md81", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]
@@ -81,7 +81,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_p_i_page.html",
-"class_ability_system_1_1_status_1_1_composite_status_instance.html"
+"class_ability_system_1_1_status_1_1_composite_status_data.html#ada1230706de645607127b18a8b0517b3"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
