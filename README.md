@@ -2,7 +2,7 @@
 
 Full API documentation is available here:
 
-- [API Reference](https://ryanellisdale.github.io/ModularArchitecture/)
+- [API Reference](https://ryanellisdale.github.io/AbilitySystem/)
 
 # Tactics Ability System Package
 
